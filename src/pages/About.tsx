@@ -18,8 +18,10 @@ import restaurantShots2 from "@/assets/images/restaurant-image.png"
 import folasopeAiyesimoju from "@/assets/images/directors/folasope-aiyesimoju.png"
 import debolaBadejo from "@/assets/images/directors/debola-badejo.png"
 import darrenHele from "@/assets/images/directors/darren-hele.png"
+import { useState } from "react"
 
 export const About = () => {
+  const [isOpen, setIsOpen]=useState(false)
   return (
     <Flex className="w-screen" alignItems={"center"} direction={"column"} color="dark.900">
       <Flex
@@ -159,8 +161,8 @@ export const About = () => {
         <Grid gapY={10}>
           {Array.from({length:2}).map((_) => (<HStack gap={4}>
             {boardOfDirectors.map((director) => (
-              <GridItem bgColor="blue.100" w='26.5rem' h="15rem" borderColor="gray.50" className="relative border rounded-lg">
-                <Flex alignItems="end" h="full" className=" p-4">
+              <GridItem onClick={()=>setIsOpen(true)} bgColor="blue.100" w='26.5rem' h="15rem" borderColor="gray.50" className="relative border rounded-lg">
+                <Flex onClick={() =>setIsOpen(true)} alignItems="end" h="full" className="cursor-pointer p-4">
                   <Span>
                     <Text bgColor="brand.900" color="white" className="py-1 mb-2 px-4 w-fit text-center items-center rounded-full">{director.role}</Text>
                     <Text w="13rem" fontWeight="medium" fontSize="1.3rem">{director.name}</Text>
@@ -168,9 +170,13 @@ export const About = () => {
                   </Span>
                   <Flex h="15rem" className=" absolute bottom-0 right-0 rounded-lg self-end place-self-end  overflow-hidden"><Image w="10rem" className="rounded-lg " src={director.img}/></Flex>
                 </Flex>
+               
             </GridItem>))}
           </HStack>))}
-        </Grid>
+        </Grid> 
+        <Box className={`${isOpen?'fixed z-50':'hidden z-0' }inset-0  bg-black bg-opacity-50 w-screen h-screen`}>
+                  <Flex>NNN</Flex>
+                </Box>
       </Box>
     </Flex>
   )

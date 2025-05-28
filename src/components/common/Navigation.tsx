@@ -5,7 +5,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { CloseButton } from "../ui/close-button";
 import logo from "@/assets/logo/logoDark.png";
 
-export const Navigation = () => {
+export const Navigation:React.FC <({color: string})>=({color}) => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const isMobile = useBreakpointValue({ base: true, md: false });
