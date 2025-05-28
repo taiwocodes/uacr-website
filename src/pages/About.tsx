@@ -1,7 +1,7 @@
 import { Box, Flex, Grid, GridItem, Heading, HStack, Image, Span, Text } from "@chakra-ui/react"
 
-import bgLine6 from "@/assets/images/bg-design-images/bg-line6.png"
-import bgLine7 from "@/assets/images/bg-design-images/bg-line7.png"
+import bgLine6 from "@/assets/images/bg-design-images/bg-line11.png"
+import bgLine7 from "@/assets/images/bg-design-images/bg-line10.png"
 import bgLine8 from "@/assets/images/bg-design-images/bg-line8.png"
 import bgLine9 from "@/assets/images/bg-design-images/bg-line9.png"
 import bgStar6 from "@/assets/images/bg-design-images/bg-star6.png"
@@ -21,10 +21,11 @@ import darrenHele from "@/assets/images/directors/darren-hele.png"
 
 export const About = () => {
   return (
-    <Box color="dark.900">
-      <Box
+    <Flex className="w-screen" alignItems={"center"} direction={"column"} color="dark.900">
+      <Flex
         h="45rem"
-        className=" bg-linear-to-b from-[#E5F2F2] from-80% to-white"
+        direction={"column"}
+        className="items-center w-full bg-linear-to-b from-[#E5F2F2] from-80% to-white"
       >
         <Image src={bgStar6} className="absolute top-[110px] left-1/3 " />
         <Image src={bgLine6} className="absolute top-0 right-0" />
@@ -77,12 +78,12 @@ export const About = () => {
             />
           </HStack>
         </Flex>
-      </Box>
-      <Box  className="relative py-16 ">
+      </Flex>
+      <Box  className="w-full relative py-16 ">
         <Image src={bgLine7}  className="absolute top-10 left-0 " />
         <Image src={bgStar7} className=" absolute right-0 bottom-[373px]" />
         <Flex direction="column" justifyContent={"center"} alignItems={"center"} className=" z-10">
-           <Flex w={"full"} justifyContent="space-around" alignItems="end"> 
+           <Flex w={"full"} justifyContent="center" alignItems="end"> 
               <Box>
                 <Heading fontSize="2rem" fontWeight="bold">Our Company</Heading>
                 <Text w="29rem" color="gray.90" className="my-3">
@@ -91,7 +92,7 @@ export const About = () => {
                 </Text>
                 <Image  src={restaurantShots2} />
               </Box>
-              <Box fontSize="1.08rem" color="gray.90" w="37rem">
+              <Box className="ml-20" fontSize="1.08rem" color="gray.90" w="37rem">
                 <Text>
                   UAC Restaurants (UACR) pioneered QSR in Nigeria with the launch
                   of Mr Bigg’s in 1986. Mr Biggs quickly became a household name
@@ -132,9 +133,9 @@ export const About = () => {
             </HStack>
         </Flex>
       </Box>
-      <Box h="47rem" bgColor="blue.100" className="py-16 relative pl-16">
+      <Box h="47rem" bgColor="blue.100" className="w-full py-16 relative pl-16">
         <Image src={bgHeart} h="10rem" className="absolute top-0 left-20" />
-        <Image src={bgStar10}  className="absolute bottom-14 right-20" />
+        <Image src={bgStar10}  className="absolute bottom-3 right-0" />
         <Flex w="full" direction="column" justifyContent="center" >
           <Text fontSize="2.3rem" fontWeight="bold">Core Values</Text>
           <Text color="gray.90" fontSize="1.2rem" className="mb-14">These principles guide every decision, from kitchen to dining room</Text>
@@ -171,7 +172,7 @@ export const About = () => {
           </HStack>))}
         </Grid>
       </Box>
-    </Box>
+    </Flex>
   )
 }
 
