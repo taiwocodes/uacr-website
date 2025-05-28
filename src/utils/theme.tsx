@@ -14,13 +14,18 @@ const system = createSystem(defaultConfig, {
 				gray: {
 					50: { value: '#EFEFEF' },
                     70: { value: '#A0A0A0' },
-					90: { value: '#6F7777' }
+					90: { value: '#6F7777' },
+					200: { value: '#80808033'}
 				},
 				success: {
 					300: { value: '#178155' }
 				},
 				blue: {
-					100:{ value: '#F7F8FC'}
+					50: { value: '#F3F5FBB2'},
+					100: { value: '#F7F8FC'}
+				},
+				yellow: {
+					500: { value: '#E7A300'}
 				}
 			},
 			fonts: {

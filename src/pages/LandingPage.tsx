@@ -16,7 +16,3 @@ export const LandingPage = () => {
     </Box>
   );
 };
-
-
-
-

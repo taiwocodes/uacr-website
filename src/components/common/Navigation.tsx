@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { Box, Button, Flex, HStack, Image } from "@chakra-ui/react";
-import logo from "@/assets/logo-dark.png";
+import logo from "@/assets/logo/logoDark.png";
 
 export const Navigation = () => {
   const navigate = useNavigate();

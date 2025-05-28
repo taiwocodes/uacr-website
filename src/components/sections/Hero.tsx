@@ -111,7 +111,6 @@ export const Hero = () => {
                   </HStack>
                 </Box>
               </Box>
-
     )
 }
 

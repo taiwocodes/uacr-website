@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { Box, Flex, Heading, HStack, Image, Stack } from "@chakra-ui/react";
-import logo from "@/assets/logo-light.png";
 import dayjs from "dayjs";
+import logo from "@/assets/logo/logoLight.png";
 
 export const Footer = () => {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ export const Footer = () => {
   return (
     <Box  bg="dark.900" w="full">
       <footer className="p-[3rem] w-screen">
-        <Flex justify="space-between" align="start">
+        <Flex justify="space-between" align="start" wrap={{base: 'wrap', lg: 'revert'}}>
           <Image
             src={logo}
             alt="Logo"
@@ -18,7 +18,7 @@ export const Footer = () => {
             cursor="pointer"
           />
 
-          <HStack gap="5rem" align="start">
+          <HStack gap="5rem" align="start" wrap={{base: 'wrap', lg: 'revert'}}>
             {footerLinks.map((section) => (
               <Stack key={section.heading} gap={3}>
                 <Heading fontSize="18px" color="white" fontWeight="bold" mb={2}>
