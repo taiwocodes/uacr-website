@@ -44,7 +44,7 @@ export const FAQ = () =>{
           <Box className="relative mt-10 mb-32">
             <Image src={bgLine2} />
             <Image src={bgStar3} className="absolute right-0 -z-10" />
-            <Flex w="full" justifyContent="space-between" alignItems="end" className="absolute p-10 px-16 top-0">
+            <Flex w="full" justifyContent="space-around" alignItems="end" className="absolute p-10 px-0 top-0">
               <Box>
                 <Text color="#6F7777">Do you have any questions?</Text>
                 <Text fontSize="2.5rem" fontWeight="bold" mb="1rem">Frequently Asked Questions</Text>
