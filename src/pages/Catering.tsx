@@ -10,13 +10,13 @@ export const Catering = () => {
     return (
         <Box px={{ base: '1.2rem', lg: '8rem' }} py={{ base: '1.2rem', lg: '9rem' }} position='relative'>
             <VStack gap={5}>
-                <Heading className="text-5xl font-semibold" lineHeight={1.3}>
+                <Heading className="text-5xl font-semibold text-center" lineHeight={1.3}>
                     Deliciously
                     <Span color='gray.500'>{' '}Crafted with Passion,</Span><br />
                     Perfectly Served with
                     <Span color='brand.900'>{' '}Precision.</Span>
                 </Heading>
-                <Text color='gray.500' className="text-center text-2xl" maxW={{ base: 'full', lg: '846px' }}>
+                <Text color='gray.500' className="text-center text-xl md:text-2xl" maxW={{ base: 'full', lg: '846px' }}>
                     Whether you're planning a corporate event, private party, or a special celebration, UAC Restaurants brings flavor, quality, and impeccable service to every occasion.
                 </Text>
                 <Button
@@ -31,16 +31,16 @@ export const Catering = () => {
                 >
                     Book Now
                 </Button>
-                <Image src={heroImg} alt='buffet' w='full' mt={8} />
+                <Image src={heroImg} alt='buffet' mt={8} className="rounded-xl w-full" />
             </VStack>
 
-            <Box py='6rem' position='relative'>
+            <Box py={{base: '2rem', lg: '6rem'}} position='relative'>
                 <section title="Why Choose Us?">
-                    <Heading className="text-5xl font-bold mb-3">Why Choose UAC Catering</Heading>
+                    <Heading className="text-3xl md:text-5xl font-bold mb-3">Why Choose UAC Catering</Heading>
                     <Text className="font-medium text-gray-500">
                         From boardroom lunches to grand celebrations, we bring UAC Restaurant's signature quality and service excellence to every event—because your guests deserve nothing less.
                     </Text>
-                    <HStack justify='center' gap='3rem' maxW={{ base: 'full', lg: '82rem' }} margin='2rem auto'>
+                    <HStack justify='center' gap='3rem' maxW={{ base: 'full', lg: '82rem' }} margin='2rem auto' wrap={{ base: "wrap", lg: "revert" }}>
                         <Image src={restaurantBg} alt='restaurant' />
                         <Text color='gray.500' fontSize='lg'>
                             Trusted Culinary Excellence: With decades of experience in the food industry, our chefs know how to deliver both taste and consistency across all meals.<br /><br />
@@ -70,4 +70,4 @@ export const Catering = () => {
             </section>
         </Box>
     )
-}
+};
