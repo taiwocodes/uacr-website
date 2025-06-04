@@ -2,7 +2,7 @@ import { Box, Flex, Grid, GridItem, Heading, HStack, Image, Span, Text } from "@
 
 import bgLine6 from "@/assets/images/bg-design-images/bg-line11.png"
 import bgLine7 from "@/assets/images/bg-design-images/bg-line10.png"
-import bgLine8 from "@/assets/images/bg-design-images/bg-line8.png"
+import bgLine8 from "@/assets/images/bg-design-images/bg-line13.png"
 import bgLine9 from "@/assets/images/bg-design-images/bg-line9.png"
 import bgStar6 from "@/assets/images/bg-design-images/bg-star6.png"
 import bgStar7 from "@/assets/images/bg-design-images/bg-star7.png"
