@@ -23,21 +23,21 @@ import rating from "@/assets/images/star.png";
 import smiley from "@/assets/images/smiley.png";
 
 export const Hero = () => {
-    return(
-           <Box as="section" className="relative px-16 py-10 ">
+    return (
+           <Box as="section" className="relative p-[1.2rem] md:px-16 md:py-10 ">
                 <Image src={bgStar1} className="rounded-lg absolute left-5" />
-                <Flex className=" justify-center text-start inset-0 h-fit">
+                <Flex className=" justify-center text-start inset-0 h-fit" wrap={{base: 'wrap', lg: 'revert'}}>
                   <VStack
                     justifyContent="start"
                     alignItems="start"
                     className=" w-fit h-fit ml-3 mt-[3rem]"
                   >
-                    <Text fontWeight="medium" className=" text-start" color="gray.70">
+                    <Text fontWeight="medium" className="text-start" color="gray.70">
                       Welcome to UAC Restaurants
                     </Text>
                     <Heading
                       color="dark.900"
-                      className=" text-[4rem] leading-none font-bold w-[47rem]"
+                      className=" text-[4rem] leading-none font-bold w-full md:w-[47rem]"
                     >
                       Flavors Crafted to Last Where Every Bite Becomes a Memory
                     </Heading>
@@ -52,7 +52,7 @@ export const Hero = () => {
                       Explore Restaurants
                     </Button>
                   </VStack>
-                  <Flex className="relative items-center justify-center w-[52rem] ">
+                  <Flex className="relative items-center justify-center w-full md:w-[52rem]">
                     <Image src={eatingImage} className="w-[28rem]" />
                     <Flex
                       bg="white"
@@ -77,6 +77,7 @@ export const Hero = () => {
                     <Image src={smiley} className="absolute top-20 right-4" />
                   </Flex>
                 </Flex>
+                
                 <Box bg="white" className="shadow-lg drop-shadow-lg w-[86%] rounded-lg p-5 absolute -bottom-20 z-10">
                   <Text color="dark.900" className="mb-5 text-lg">Find a UAC restaurant close to you </Text>
                   <HStack gap="10" className=" flex items-end justify-end">
@@ -115,9 +116,9 @@ export const Hero = () => {
 }
 
 const states = createListCollection({
-  items:[
-    {label:"Lagos",value:"Lagos"},
-    {label:"Abuja",value:"Abuja"},
-    {label:"Port-Harcourt",value:"port-harcourt"},
-    {label:"Ogun",value:"ogun"}]
+  items: [
+    {label:"Lagos", value:"Lagos"},
+    {label:"Abuja", value:"Abuja"},
+    {label:"Port-Harcourt", value:"port-harcourt"},
+    {label:"Ogun", value:"ogun"}]
 })

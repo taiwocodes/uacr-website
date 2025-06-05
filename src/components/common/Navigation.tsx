@@ -56,7 +56,7 @@ export const Navigation = () => {
                     <Button
                       onClick={() => { navigate("/contact"); setOpen(false) }}
                       bg="brand.900"
-                      className="text-white text-[20px] font-medium p-6 rounded-lg"
+                      className="text-white text-[20px] font-medium p-6 rounded-lg mt-10"
                     >
                       Contact Us
                     </Button>

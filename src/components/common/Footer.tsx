@@ -9,7 +9,7 @@ export const Footer = () => {
 
   return (
     <Box  bg="dark.900" w="full">
-      <footer className="p-[3rem] w-screen">
+      <footer className="p-[1.2rem] md:p-[3rem] w-screen">
         <Flex justify="space-between" align="start" wrap={{base: 'wrap', lg: 'revert'}}>
           <Image
             src={logo}
@@ -18,7 +18,7 @@ export const Footer = () => {
             cursor="pointer"
           />
 
-          <HStack gap="5rem" align="start" wrap={{base: 'wrap', lg: 'revert'}}>
+          <HStack gap={{base: "3rem", lg: "5rem"}} align="start" wrap={{base: 'wrap', lg: 'revert'}} mt={{base: 4, lg: 0}}>
             {footerLinks.map((section) => (
               <Stack key={section.heading} gap={3}>
                 <Heading fontSize="18px" color="white" fontWeight="bold" mb={2}>
@@ -38,7 +38,7 @@ export const Footer = () => {
           </HStack>
         </Flex>
 
-        <Flex color="gray.70" justify="end" fontSize="sm" mt="7rem">
+        <Flex color="gray.70" justify={{base: "start", lg: "end"}} fontSize="sm" mt="7rem">
           Copyright UACR ©{currentYear}
         </Flex>
       </footer>
