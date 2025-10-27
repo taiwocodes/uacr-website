@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Box, Button, HStack, IconButton, Image, useBreakpointValue, Stack, Drawer, Portal, Popover, Flex, Text, Icon, Center } from "@chakra-ui/react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CloseButton } from "../ui/close-button";
@@ -8,6 +8,8 @@ import { navLinks } from "../../utils/data";
 import { GoArrowUpRight } from "react-icons/go"
 import { SubLink } from "../../utils/model";
 import { useRef } from "react"
+import aboutUs from "@/assets/images/about-nav-image.png"
+import { TbCirclePercentageFilled } from "react-icons/tb"
 
 
 export const Navigation: React.FC<({ color: string })> = () => {
@@ -15,6 +17,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
   const ref = useRef<HTMLButtonElement | null>(null)
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  const [isAbout, setIsAbout] = useState(false)
   const isMobile = useBreakpointValue({ base: true, md: false });
   const [activeLink, setActiveLink] = useState<SubLink[]>([]);
 
@@ -22,7 +25,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
   const NavLinks = (
     <>
       {navLinks.map((link) => (
-        <NavLink className="nav-link border-b text-[#222222] border-gray-300 pb-6 md:p-0 md:border-none" to={link.path ? link.path : "#"} key={link.path} onClick={() => { setOpen(link.subLinks ? true : false); setActiveLink(link.subLinks ?? []) }}>
+        <NavLink className="nav-link border-b text-[#222222] border-gray-300 pb-6 md:p-0 md:border-none" to={link.path ? link.path : "#"} key={link.path} onClick={() => { setOpen(link.subLinks ? true : false); setActiveLink(link.subLinks ?? []); if (link.title === "About Us") setIsAbout(true); else setIsAbout(false) }}>
           {link.title}
         </NavLink>))}
 
@@ -32,42 +35,60 @@ export const Navigation: React.FC<({ color: string })> = () => {
   type Props = { links: SubLink[] };
 
   const NavBox = ({ links }: Props) => {
-    return (<HStack> {links.map((link) => (
-      <Flex
-        key={link.path}
-        bgImage={`url(${link.image})`}
-        className="relative justify-center rounded-lg"
-        bgRepeat="no-repeat"
-        backgroundPosition="center"
-        bgSize="cover"
-        w='295px'
-        h={'237px'}
-      >
-        <Flex
-          w="96%"
-          h="52px"
-          color={'#FFFFFF'}
-          className="absolute bg-[#ffffff54] shadow-sm rounded-md items-center justify-between px-4 bottom-3 backdrop:blur-[12px]"
-        >
-          <Flex justify={'center'} align={'center'}>
-            <Image src={link.logo} className="rounded-full size-[29px]" />
-            <Text ml={4}>{link.title}</Text>
-          </Flex>
-          <Center
-            bg={'white'}
-            onClick={() => navigate(link.path)}
-            className="size-[22px] rounded-full cursor-pointer"
+    if (isAbout)
+      return (
+        <HStack>
+          <Box px={3}>
+            {links.map((link) => (
+              <Link to={link.path} className="flex bg-[#F3F5FB] w-[343px] items-center my-3 p-2 rounded-lg">
+                <Center className="p-2 rounded-md bg-[#C80104] mr-2"><TbCirclePercentageFilled size={'15px'} color="white" /></Center>
+                <Text>{link.title}</Text>
+              </Link>
+            ))}</Box>
+          <Center className="p-3 w-full h-full bg-[#F3F5FB]">
+            <Image src={aboutUs} className="relative justify-center rounded-lg" w='295px' h={'237px'} />
+          </Center> </HStack>
+      )
+
+    else
+      return (
+        <HStack p={4}> {links.map((link) => (
+          <Flex
+            key={link.path}
+            bgImage={`url(${link.image})`}
+            className="relative justify-center rounded-lg"
+            bgRepeat="no-repeat"
+            backgroundPosition="center"
+            bgSize="cover"
+            w='295px'
+            h={'237px'}
           >
-            <Icon as={GoArrowUpRight} color="black" />
-          </Center>
-        </Flex>
-      </Flex>
-    ))}</HStack>);
+            <Flex
+              w="96%"
+              h="52px"
+              color={'#FFFFFF'}
+              className="absolute bg-[#ffffff54] shadow-sm rounded-md items-center justify-between px-4 bottom-3 backdrop:blur-[12px]"
+            >
+              <Flex justify={'center'} align={'center'}>
+                <Image src={link.logo} className="rounded-full size-[29px]" />
+                <Text ml={4}>{link.title}</Text>
+              </Flex>
+              <Center
+                bg={'white'}
+                onClick={() => navigate(link.path)}
+                className="size-[22px] rounded-full cursor-pointer"
+              >
+                <Icon as={GoArrowUpRight} color="black" />
+              </Center>
+            </Flex>
+          </Flex>
+        )
+        )}</HStack>);
   }
 
   return (
     <Box borderBottom="1px solid #80808033" w="100%" className="absolute px-4 border border-green-800-700  z-40" background="transparent">
-      <HStack justifyContent="space-between" className="shadow-sm rounded-xl" bg={'white'} px={4} py={4} mt="2rem" w="full" h={{ lg: "87px" }}>
+      <HStack justifyContent="space-between" className="shadow-sm rounded-xl" bg={'white'} px={4} py={4} mt="1rem" w="full" h={{ lg: "87px" }}>
         <Image src={logo} alt="Logo" onClick={() => navigate("/")} cursor="pointer" />
         {isMobile ? (
           <Drawer.Root size="full" open={open} onOpenChange={(e) => setOpen(e.open)}>
@@ -108,12 +129,12 @@ export const Navigation: React.FC<({ color: string })> = () => {
           <>
             <Popover.Root
               initialFocusEl={() => ref.current}
-              positioning={{ offset: { crossAxis: 0, mainAxis: 0 } }} onInteractOutside={() => setOpen(false)} open={open}>
+              positioning={{ offset: { crossAxis: 5, mainAxis: 5 } }} onInteractOutside={() => setOpen(false)} open={open}>
               <Popover.Trigger><HStack gap={8}>{NavLinks}</HStack></Popover.Trigger>
               <Portal>
                 <Popover.Positioner>
-                  <Popover.Content w={'full'} p={3}>
-                    <Box className=" w-full  h-full"><NavBox links={activeLink} /></Box>
+                  <Popover.Content w={'full'} roundedBottom={'2xl'} roundedTop={'none'}>
+                    <Box className=" w-full h-full"><NavBox links={activeLink} /></Box>
                   </Popover.Content>
                   <Popover.Arrow />
                 </Popover.Positioner>
@@ -132,7 +153,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
 
       </HStack>
 
-    </Box>
+    </Box >
   );
 };
 

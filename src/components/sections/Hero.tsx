@@ -14,32 +14,53 @@ import {
   createListCollection,
   Portal,
 } from "@chakra-ui/react";
-import heroImage from '@/assets/images/hero-bg-image.png'
+import heroImage1 from '@/assets/images/hero-image-1.png'
+import heroImage2 from '@/assets/images/hero-image-2.png'
+import heroImage3 from '@/assets/images/hero-image-3.png'
 import mrBiggsLogo from "@/assets/images/mrbiggs-logo.png";
 import debonairsLogo from "@/assets/images/debonairs-logo.png";
+import iceCreamLogo from "@/assets/images/ice-cream-logo.png";
 import rating from "@/assets/images/star.png";
 import smiley from "@/assets/images/smiley.png";
+import { useEffect, useState } from "react";
 
 export const Hero = () => {
+
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => setActiveSlide((slide) => (slide + 1) % SLIDES.length),
+      3_000
+    );
+
+    return () => clearInterval(interval);
+  }, [activeSlide]);
+
   return (
-    <Box as="section" className="border   relative h-[500px] p-[1.2rem] md:px-16 md:py-10 ">
-      <Flex bgImage={`url(${heroImage})`} bgRepeat="no-repeat" backgroundSize={'cover'} className=" absolute justify-center text-start inset-0 h-full" wrap={{ base: 'wrap', lg: 'revert' }}>
+    <Box as="section" className="border relative h-[700px] p-[1.2rem] md:px-16 md:py-10 ">
+      <Flex
+        key={activeSlide}
+        style={{ backgroundImage: `url(${SLIDES[activeSlide]})` }}
+        bgRepeat="no-repeat"
+        backgroundSize={'cover'}
+        className=" absolute justify-center items-center text-start inset-0 h-full"
+        wrap={{ base: 'wrap', lg: 'revert' }}>
 
         <VStack
           justifyContent="start"
           alignItems="start"
-          className=" w-fit h-fit ml-3 mt-[3rem]"
+          className=" w-fit h-fit ml-5 mb-10 mt-[2rem]"
         >
           <Text fontWeight="medium" className="text-start" color="gray.70">
             Welcome to UAC Restaurants
           </Text>
           <Heading
-            color="dark.900"
-            className=" text-[4rem] leading-none font-bold w-full md:w-[47rem]"
+            className=" text-[3rem] text-white leading-none font-bold w-full md:w-[34rem]"
           >
             Flavors Crafted to Last Where Every Bite Becomes a Memory
           </Heading>
-          <Text color="gray.70" fontWeight="medium" className=" w-[29rem]">
+          <Text color="#FFFFFF" fontWeight="medium" className=" w-[29rem]">
             Designed to stay with you; the unforgettable flavors we craft, the
             timeless moments we create together.
           </Text>
@@ -50,32 +71,22 @@ export const Hero = () => {
             Explore Restaurants
           </Button>
         </VStack>
-        <Flex className="relative items-center justify-center w-full md:w-[52rem]">
-          <Flex
-            bg="white"
-            className="rounded-md p-2 shadow-lg drop-shadow-lg w-fit m-2 absolute left-0 top-40 "
-          >
-            <Image src={mrBiggsLogo} />
-            <Span>
-              <Text color="dark.900">Mr Biggs</Text>
-              <Span color="gray.70">{Array.from({ length: 5 }).map((_) => (<Image src={rating} className="inline" />))} (246)</Span>
-            </Span>
-          </Flex>
-          <Flex
-            bg="white"
-            className="rounded-md p-2 shadow-lg drop-shadow-lg w-fit m-2 absolute right-5 bottom-24 "
-          >
-            <Image src={debonairsLogo} />
-            <Span>
-              <Text color="dark.900">Debonairs Pizza</Text>
-              <Span color="gray.70">{Array.from({ length: 5 }).map((_) => (<Image src={rating} className="inline" />))} (246)</Span>
-            </Span>
-          </Flex>
-          <Image src={smiley} className="absolute top-20 right-4" />
+        <Flex className="relative items-center justify-center h-full w-full md:w-[45rem]">
+          {ratingcardinfo.map((card) => (
+            <Flex
+              bg="white"
+              className={`rounded-md p-2 shadow-lg drop-shadow-lg w-fit m-2 absolute ${card.position} `}
+            >
+              <Image src={card.logo} className="size-[56px] rounded-full p-1" />
+              <Span>
+                <Text color="dark.900">{card.name}</Text>
+                <Span color="gray.70">{Array.from({ length: 5 }).map((_) => (<Image src={rating} className="inline" />))} (246)</Span>
+              </Span>
+            </Flex>))}
         </Flex>
       </Flex>
 
-      <Box bg="white" className="shadow-lg drop-shadow-lg w-[86%] rounded-lg p-5 absolute -bottom-20 z-10">
+      {/*<Box bg="white" className="shadow-lg drop-shadow-lg w-[86%] rounded-lg p-5 absolute -bottom-20 z-10">
         <Text color="dark.900" className="mb-5 text-lg">Find a UAC restaurant close to you </Text>
         <HStack gap="10" className=" flex items-end justify-end">
           <Field.Root className="" w="40rem">
@@ -107,7 +118,7 @@ export const Hero = () => {
           <Button bg="brand.900"
             className="text-white text-[18px] self-end font-medium p-6 rounded-lg">Find Restaurant</Button>
         </HStack>
-      </Box>
+      </Box>*/}
     </Box>
   )
 }
@@ -119,3 +130,11 @@ const states = createListCollection({
     { label: "Port-Harcourt", value: "port-harcourt" },
     { label: "Ogun", value: "ogun" }]
 })
+
+const SLIDES = [heroImage1, heroImage2, heroImage3]
+
+const ratingcardinfo = [
+  { logo: mrBiggsLogo, name: "Mr Biggs", position: 'left-10 bottom-40' },
+  { logo: debonairsLogo, name: "Debonairs", position: 'right-20 top-60' },
+  { logo: iceCreamLogo, name: "Ice Cream", position: 'right-40 bottom-20' }
+]
