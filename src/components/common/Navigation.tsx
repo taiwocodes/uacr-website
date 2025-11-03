@@ -37,7 +37,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
   const NavBox = ({ links }: Props) => {
     if (isAbout)
       return (
-        <HStack>
+        <HStack color={'black'}>
           <Box px={3}>
             {links.map((link) => (
               <Link to={link.path} className="flex bg-[#F3F5FB] w-[343px] items-center my-3 p-2 rounded-lg">
@@ -62,7 +62,10 @@ export const Navigation: React.FC<({ color: string })> = () => {
             bgSize="cover"
             w='295px'
             h={'237px'}
+            onClick={() => navigate(link.path)}
+            _hover={{ cursor: 'pointer' }}
           >
+            {link.title === 'Ice Cream' && <Center bg={'#C80104'} className="p-3 absolute right-2 top-2 rounded-lg w-[112px] h-[50px] text-white">Coming Soon</Center>}
             <Flex
               w="96%"
               h="52px"
@@ -87,8 +90,8 @@ export const Navigation: React.FC<({ color: string })> = () => {
   }
 
   return (
-    <Box borderBottom="1px solid #80808033" w="100%" className="absolute px-4 border border-green-800-700  z-40" background="transparent">
-      <HStack justifyContent="space-between" className="shadow-sm rounded-xl" bg={'white'} px={4} py={4} mt="1rem" w="full" h={{ lg: "87px" }}>
+    <Box w="100%" className="absolute px-4 z-40" background="transparent">
+      <HStack justifyContent="space-between" className="shadow-sm rounded-xl" bg={'white'} px={4} py={4} mt="36px" w="full" h={{ lg: "87px" }}>
         <Image src={logo} alt="Logo" onClick={() => navigate("/")} cursor="pointer" />
         {isMobile ? (
           <Drawer.Root size="full" open={open} onOpenChange={(e) => setOpen(e.open)}>
@@ -133,7 +136,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
               <Popover.Trigger><HStack gap={8}>{NavLinks}</HStack></Popover.Trigger>
               <Portal>
                 <Popover.Positioner>
-                  <Popover.Content w={'full'} roundedBottom={'2xl'} roundedTop={'none'}>
+                  <Popover.Content bg={'white'} w={'full'} roundedBottom={'2xl'} roundedTop={'none'}>
                     <Box className=" w-full h-full"><NavBox links={activeLink} /></Box>
                   </Popover.Content>
                   <Popover.Arrow />

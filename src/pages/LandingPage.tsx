@@ -4,15 +4,40 @@ import { Services } from "@/components/sections/Services";
 import { FAQ } from "@/components/sections/FAQ";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Shots } from "@/components/sections/Shots";
+import { OurSpecials } from "@/components/sections/OurSpecials";
+import { StayUpdated } from "@/components/sections/StayUpdated";
+import { UpdatesPromos } from "@/components/sections/UpdatesPromos";
 
 export const LandingPage = () => {
   return (
     <Box color="dark.900" className="relative overflow-x-hidden">
       <Hero />
       <Services />
+      <OurSpecials OurSpecial={OurSpecial} ScrollImages={ScrollImages} />
       <FAQ />
+      <StayUpdated />
+      <UpdatesPromos />
       <Testimonials />
       <Shots />
     </Box>
   );
 };
+
+
+const OurSpecial = [
+  "/images/pizza-debonairs-our-specials.png",
+  "/images/pizza-debonairs2-our-specials.png",
+  "/images/timeless-flavours-our-specials.png",
+  "/images/hmm-delicious-our-specials.png"
+]
+
+const ScrollImages = [
+  "/images/food9-our-specials.png",
+  "/images/food-our-specials.png",
+  "/images/food2-our-specials.png",
+  "/images/food3-our-specials.png",
+  "/images/food4-our-specials.png",
+  "/images/food5-our-specials.png",
+  "/images/food6-our-specials.png",
+  "/images/food7-our-specials.png",
+]

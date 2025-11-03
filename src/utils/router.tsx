@@ -9,6 +9,9 @@ import { Careers } from "@/pages/Careers";
 import { Catering } from "@/pages/Catering";
 import { Contact } from "@/pages/Contact";
 import { NotFound } from "@/pages/NotFound";
+import { TeamPage } from "@/pages/TeamPage";
+import { Impact } from "@/pages/Impact";
+import { FAQ } from "@/pages/FAQ";
 
 const routes: RouteObject[] = [
     {
@@ -19,6 +22,9 @@ const routes: RouteObject[] = [
             { path: "mrbiggs", element: <MrBiggs /> },
             { path: "debonairs", element: <Debonairs /> },
             { path: "about", element: <About /> },
+            { path: 'team', element: <TeamPage /> },
+            { path: "impact", element: <Impact /> },
+            { path: 'faq', element: <FAQ /> },
             { path: "news", element: <News /> },
             { path: "careers", element: <Careers /> },
             { path: "catering", element: <Catering /> },

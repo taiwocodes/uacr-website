@@ -1,0 +1,30 @@
+import { Box, Center, Flex, Heading, Image } from "@chakra-ui/react"
+
+interface OurSpecialsProps {
+    OurSpecial: string[]
+    ScrollImages: string[]
+}
+
+
+export const OurSpecials = ({ OurSpecial, ScrollImages }: OurSpecialsProps) => {
+    return (
+        <Box className=" relative bg-[#F3F5FBB2] mt-12 py-16">
+            <Heading fontWeight="bold" className="text-[2rem] text-black w-fulll text-center my-6">Our Specials</Heading>
+            <Flex w={'100%'} h={'658px'} className=" justify-center items-center px-16" gap={'1rem'}>
+                <Box className=" h-full">
+                    <Image w='312px' h={'317px'} rounded={'2xl'} src={OurSpecial[0]} />
+                    <Image w='312px' h={'317px'} rounded={'2xl'} className="mt-5" src={OurSpecial[1]} />
+                </Box>
+                <Image className=" rounded-2xl" h={'full'} w={'736px'} src={OurSpecial[2]} />
+                <Center rounded={'2xl'} h={'full'} overflow={'hidden'}><Image className=" rounded-2xl" h={'800px'} w={'312px'} src={OurSpecial[3]} /></Center>
+            </Flex>
+            <Flex h={'312px'} overflowX={'scroll'} overflowY={'hidden'} className=" items-center w-screen max-w-screen-2xl" gap={'1rem'}>
+                {ScrollImages.map((image, index) => (
+                    <Image className=" rounded-full size-[197px]" key={index} src={image} />
+                ))}
+                <Image className=" rounded-[90%] w-[200px] h-[200px]" src="/images/food8-our-specials.png" />
+            </Flex>
+        </Box>
+    )
+}
+

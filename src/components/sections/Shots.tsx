@@ -10,20 +10,18 @@ import {
 
 import bgStar5 from "@/assets/images/bg-design-images/bg-star5.png"
 import bgLine4 from "@/assets/images/bg-design-images/bg-line4.png";
-import bgLine5 from "@/assets/images/bg-design-images/bg-line5.png";
+import bgLine5 from "@/assets/images/bg-line.png";
 import eatingImage2 from "@/assets/images/eating-image2.png"
-import riceImage from "@/assets/images/rice-image.jpg";
-import pizzaImage from "@/assets/images/pizza-image.jpg";
-import restaurantImage from "@/assets/images/restaurant-image2.jpg";
-import meatpieImage from "@/assets/images/meatpie-image.jpg"
+import Shots2 from "@/assets/images/shots-2.png";
+import Shots4 from "@/assets/images/shots-4.png";
+import restaurantImage from "@/assets/images/shots-1.png";
+import Shots3 from "@/assets/images/shots-3.png"
 
 
 export const Shots = () => {
   return (
     <>
       <Box h="55rem" className="relative pt-10">
-        <Image src={bgStar5} className="absolute top-10 left-5" />
-        <Image src={bgLine4} className="absolute bottom-0 right-0" />
         <Flex direction="column" justify='center' className="absolute top-0 py-20 px-16 items-center">
           <Flex className="mb-5">
             <Flex direction="column" justifyContent="space-between" w="20rem" className=" shadow-lg rounded-lg p-4 " bg="white">
@@ -34,22 +32,22 @@ export const Shots = () => {
             <Image w="62rem" h="20rem" className="rounded-lg ml-5" src={restaurantImage} />
           </Flex>
           <HStack gap={5}>
-            <Image w="27rem" h="20rem" className="rounded-lg" src={riceImage} />
-            <Image w="27rem" h="20rem" className="rounded-lg" src={meatpieImage} />
-            <Image w="27rem" h="20rem" className="rounded-lg" src={pizzaImage} />
+            <Image w="27rem" h="20rem" className="rounded-lg" src={Shots2} />
+            <Image w="27rem" h="20rem" className="rounded-lg" src={Shots3} />
+            <Image w="27rem" h="20rem" className="rounded-lg" src={Shots4} />
           </HStack>
         </Flex>
       </Box>
       <Flex className="relative justify-center px-16 py-16">
-        <Flex bg="dark.900" w="full" h={"20rem"} alignItems="center" justifyContent="space-between" className="rounded-2xl p-0">
+        <Flex bg="dark.900" w="full" h={"20rem"} alignItems="center" justifyContent="space-between" className="rounded-2xl overflow-hidden p-0">
           <Box color="white" className="ml-16">
             <Text fontSize="2rem" fontWeight="bold">Become a Partner in Success</Text>
             <Text w="25rem" className="mb-5">Grow your business while elevating ours – let’s create excellence together.</Text>
-            <Button border={"white", "solid"} className=" p-4 rounded-md">Book Us Now</Button>
+            <Button bg={'brand.100'} className=" p-4 rounded-md">Register</Button>
           </Box>
-          <Box className="relative " h="100%">
+          <Box className="relative w-[545px]" h="100%">
             <Image src={bgLine5} />
-            <Image src={eatingImage2} className="absolute rounded-r-lg bottom-0" />
+            <Image src={eatingImage2} className="absolute rounded-r-lg right-0 bottom-0" />
           </Box>
         </Flex>
       </Flex>

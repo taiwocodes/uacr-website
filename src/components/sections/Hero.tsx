@@ -38,7 +38,7 @@ export const Hero = () => {
   }, [activeSlide]);
 
   return (
-    <Box as="section" className="border relative h-[700px] p-[1.2rem] md:px-16 md:py-10 ">
+    <Box as="section" className="border relative h-[900px] p-[1.2rem] md:px-16 md:py-10 ">
       <Flex
         key={activeSlide}
         style={{ backgroundImage: `url(${SLIDES[activeSlide]})` }}
@@ -50,7 +50,7 @@ export const Hero = () => {
         <VStack
           justifyContent="start"
           alignItems="start"
-          className=" w-fit h-fit ml-5 mb-10 mt-[2rem]"
+          className=" w-fit h-fit  mb-10 mt-[2rem]"
         >
           <Text fontWeight="medium" className="text-start" color="gray.70">
             Welcome to UAC Restaurants
