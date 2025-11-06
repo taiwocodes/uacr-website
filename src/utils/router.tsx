@@ -5,13 +5,15 @@ import { MrBiggs } from "@/pages/MrBiggs";
 import { Debonairs } from "@/pages/Debonairs";
 import { About } from "@/pages/About";
 import { News } from "@/pages/News";
-import { Careers } from "@/pages/Careers";
 import { Catering } from "@/pages/Catering";
 import { Contact } from "@/pages/Contact";
 import { NotFound } from "@/pages/NotFound";
 import { TeamPage } from "@/pages/TeamPage";
 import { Impact } from "@/pages/Impact";
 import { FAQ } from "@/pages/FAQ";
+
+import OpenRoles from "@/pages/OpenRoles";
+import Career from "@/pages/Career";
 
 const routes: RouteObject[] = [
     {
@@ -25,8 +27,18 @@ const routes: RouteObject[] = [
             { path: 'team', element: <TeamPage /> },
             { path: "impact", element: <Impact /> },
             { path: 'faq', element: <FAQ /> },
-            { path: "news", element: <News /> },
-            { path: "careers", element: <Careers /> },
+            {
+                path: "blogs", children: [
+                    { index: true, element: <News /> },
+                    { path: ":id", element: <News /> },
+                ]
+            },
+            {
+                path: "careers", children: [
+                    { index: true },
+                    { path: "careers-at-uacr", element: <Career /> },
+                    { path: "open-roles", element: <OpenRoles /> }]
+            },
             { path: "catering", element: <Catering /> },
             { path: "contact", element: <Contact /> },
             { path: "*", element: <NotFound /> },

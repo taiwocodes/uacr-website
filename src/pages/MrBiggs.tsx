@@ -17,23 +17,20 @@ export const MrBiggs = () => {
                 bgImage={`url(${heroImg})`}
                 bgSize="cover" backgroundPosition="center"
                 bgRepeat="no-repeat" color={"white"} className="relative">
-                <Span w={"full"} className="absolute top-0">
-                    <Navigation color="white" />
-                </Span>
                 <Span alignItems="center" className="place-self-center self-center justify-self-center" justifySelf={"center"} alignSelf={"center"}>
-                    <Heading w={"50rem"} fontSize={"3rem"} lineHeight={"normal"} fontWeight={"bold"}>Nigeria’s Favorite Comfort Food, Served Fresh & Fast Since 1986</Heading>
-                    <Text fontSize="1.2rem" w={"45rem"} className="mb-5">From our legendary chicken to golden meat pies—every bite delivers the taste you’ve loved for generations. Dine in, grab & go, or order for delivery!</Text>
+                    <Heading w={{ base: 'full', lg: "50rem" }} fontSize={{ base: '32px', lg: "3rem" }} lineHeight={"normal"} fontWeight={"bold"}>Nigeria’s Favorite Comfort Food, Served Fresh & Fast Since 1986</Heading>
+                    <Text fontSize={{ base: '16px', lg: "1.2rem" }} w={{ base: 'full', lg: "45rem" }} className="mb-5">From our legendary chicken to golden meat pies—every bite delivers the taste you’ve loved for generations. Dine in, grab & go, or order for delivery!</Text>
                     <Button w={"10rem"} bg="brand.900" className="text-white text-[18px] font-medium p-6 rounded-lg">Learn More</Button>
                 </Span>
             </Flex>
-            <Flex justifyContent={"center"} w={"full"} color="dark.900" bgColor="white" className="relative py-16 px-16 ">
-                <Flex className="" justifyContent={"center"} alignItems={"end"} w={"full"} >
-                    <Span w={"50rem"}>
-                        <Text fontSize={"2.1rem"} w={"20rem"} fontWeight={"bold"}>About Mr Biggs</Text>
-                        <Text w={"30rem"} fontSize={"1.1rem"} color="gray.90" className="mb-5">Through decades of change, one thing stays the same: our commitment to hot, fresh, affordable joy.</Text>
+            <Flex justifyContent={"center"} w={"full"} color="dark.900" bgColor="white" className="relative py-16 px-3 md:px-16 ">
+                <Flex className="flex-col lg:flex-row" justifyContent={"center"} alignItems={"end"} w={"full"} >
+                    <Span w={{ base: "full", lg: "50rem" }}>
+                        <Text fontSize={{ base: '32px', lg: "2.1rem" }} w={"20rem"} fontWeight={"bold"}>About Mr Biggs</Text>
+                        <Text w={{ base: "full", lg: "30rem" }} fontSize={{ base: '16px', lg: "1.1rem" }} color="gray.90" className="mb-5">Through decades of change, one thing stays the same: our commitment to hot, fresh, affordable joy.</Text>
                         <Image w={"35rem"} h={"20rem"} className="rounded-2xl" src={restaurantImage} />
                     </Span>
-                    <Span fontSize={"1.1rem"} w={"45rem"} color={"gray.90"}>
+                    <Span className="mt-4 lg:mt-0" fontSize={{ base: '16px', lg: "1.1rem" }} w={{ base: "full", lg: "45rem" }} color={"gray.90"}>
                         <Text>
                             Mr Bigg’s is Nigeria’s pioneer QSR brand, renowned for its delicious meals and freshly baked pastries. We have grown over the years, constantly re-inventing our products and services, to match the ever-evolving needs of our customers.
                         </Text>

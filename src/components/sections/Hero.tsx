@@ -38,29 +38,30 @@ export const Hero = () => {
   }, [activeSlide]);
 
   return (
-    <Box as="section" className="border relative h-[900px] p-[1.2rem] md:px-16 md:py-10 ">
+    <Box as="section" className="relative h-[1050px] md:h-[900px] p-3  md:px-16 md:py-10 ">
       <Flex
+        direction={{ base: 'column', lg: 'row' }}
         key={activeSlide}
-        style={{ backgroundImage: `url(${SLIDES[activeSlide]})` }}
+        backgroundImage={{ base: 'none', lg: `url(${SLIDES[activeSlide]})` }}
         bgRepeat="no-repeat"
         backgroundSize={'cover'}
-        className=" absolute justify-center items-center text-start inset-0 h-full"
+        className=" absolute justify-end lg:justify-center items-center text-start px-3 inset-0 h-full"
         wrap={{ base: 'wrap', lg: 'revert' }}>
 
         <VStack
           justifyContent="start"
           alignItems="start"
-          className=" w-fit h-fit  mb-10 mt-[2rem]"
+          className=" w-full lg:w-fit h-fit lg:ml-5  px-2 lg:px-0  lg:mb-10  mt-[2rem]"
         >
           <Text fontWeight="medium" className="text-start" color="gray.70">
             Welcome to UAC Restaurants
           </Text>
           <Heading
-            className=" text-[3rem] text-white leading-none font-bold w-full md:w-[34rem]"
+            className=" text-[40px] lg:text-[3rem] text-black lg:text-white leading-[120%] lg:leading-none font-bold w-full md:w-[34rem]"
           >
             Flavors Crafted to Last Where Every Bite Becomes a Memory
           </Heading>
-          <Text color="#FFFFFF" fontWeight="medium" className=" w-[29rem]">
+          <Text color={{ base: 'gray.90', lg: "#FFFFFF" }} fontWeight="medium" className=" w-full lg:w-[29rem]">
             Designed to stay with you; the unforgettable flavors we craft, the
             timeless moments we create together.
           </Text>
@@ -71,7 +72,12 @@ export const Hero = () => {
             Explore Restaurants
           </Button>
         </VStack>
-        <Flex className="relative items-center justify-center h-full w-full md:w-[45rem]">
+        <Flex
+          key={activeSlide}
+          bgRepeat="no-repeat"
+          backgroundSize={'cover'}
+          backgroundPosition={'right'}
+          backgroundImage={{ base: `url(${SLIDES[activeSlide]})`, lg: 'none' }} className="relative mt-7  rounded-2xl  h-[436px] lg:h-full items-center justify-center w-full md:w-[45rem]">
           {ratingcardinfo.map((card) => (
             <Flex
               bg="white"
@@ -134,7 +140,7 @@ const states = createListCollection({
 const SLIDES = [heroImage1, heroImage2, heroImage3]
 
 const ratingcardinfo = [
-  { logo: mrBiggsLogo, name: "Mr Biggs", position: 'left-10 bottom-40' },
-  { logo: debonairsLogo, name: "Debonairs", position: 'right-20 top-60' },
-  { logo: iceCreamLogo, name: "Ice Cream", position: 'right-40 bottom-20' }
+  { logo: mrBiggsLogo, name: "Mr Biggs", position: 'left-3 lg:left-10 bottom-64 lg:bottom-64' },
+  { logo: debonairsLogo, name: "Debonairs", position: 'right-3 lg:right-20 top-3 lg:top-60' },
+  { logo: iceCreamLogo, name: "Ice Cream", position: 'right-3 lg:right-40 bottom-3 lg:bottom-20' }
 ]

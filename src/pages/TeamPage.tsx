@@ -1,4 +1,4 @@
-import { Box, CloseButton, Dialog, Flex, Grid, GridItem, Heading, HStack, Image, Portal, Span, Text } from "@chakra-ui/react"
+import { Box, CloseButton, Dialog, Flex, Grid, GridItem, Heading, HStack, Image, Portal, Span, Stack, Text } from "@chakra-ui/react"
 import { useState } from "react"
 
 import folasopeAiyesimoju from "@/assets/images/directors/folasope-aiyesimoju.png"
@@ -21,19 +21,18 @@ export const TeamPage = () => {
     })
     return (
         <Box>
-            <Flex h={'550px'} direction={'column'} className="justify-end items-center bg-[linear-gradient(180deg,#E5F2F2_46.21%,#FFFFFF_105.1%)] py-16 px-24">
-
-                <Heading w="595px" fontSize="48px" lineHeight="normal" fontWeight="bold" className="mb-2 text-center text-black">
+            <Flex h={{ base: '650px', lg: '550px' }} direction={'column'} className="justify-end items-center bg-[linear-gradient(180deg,#E5F2F2_46.21%,#FFFFFF_105.1%)] py-16 px-3 lg:px-24">
+                <Heading w={{ base: 'full', lg: "595px" }} fontSize={{ base: '32px', lg: "48px" }} lineHeight="normal" fontWeight="bold" className="mb-2 text-center text-black">
                     Seasoned Non-Executive Board of Directors
                 </Heading>
-                <Text w="891px" fontSize={'20px'} color="gray.90" className="text-center mb-14">
+                <Text w={{ base: 'full', lg: "891px" }} fontSize={{ base: '16px', lg: '20px' }} color="gray.90" className="text-center mb-14">
                     Our board believes good governance is a journey, not a destination. We are committed to strong governance principles geared towards continuous improvement. For us, our stakeholders and customers remain our top priority.
                 </Text>
             </Flex>
-            <Flex h={'fit'} direction={'column'} className="px-16 my-10" >
-                <HStack className="justify-center" w={'full'} gap={0}>
+            <Flex h={'fit'} direction={'column'} className="px-3 lg:px-16 my-10" >
+                <Stack direction={{ base: 'column', md: 'row' }} className="justify-center" w={'full'} gap={0}>
                     {boardOfDirectors.map((director) => (
-                        <GridItem onClick={() => { setSelected(director); setIsOpen(true) }} w='302.23px' h="fit" borderColor="gray.50" className="relative rounded-lg">
+                        <GridItem onClick={() => { setSelected(director); setIsOpen(true) }} w={{ base: 'full', md: '302.23px' }} h="fit" borderColor="gray.50" className="relative rounded-lg">
                             <Flex onClick={() => { setSelected(director); setIsOpen(true) }} w={'full'} direction={'column'} h="full" className="cursor-pointer p-4">
                                 <Image w="full" className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
                                 <Span w={'full'} className="">
@@ -43,16 +42,16 @@ export const TeamPage = () => {
                                 </Span>
                             </Flex>
                         </GridItem>))}
-                </HStack>
+                </Stack>
             </Flex>
-            <Flex direction={'column'} color={'dark.900'} bg={'#F3F5FBB2'} className="px-24 py-10 my-10">
-                <Flex justify={'space-between'} align={'center'}>
-                    <Heading fontSize={'48px'} lineHeight={'normal'} fontWeight={'bold'}>Strong and Experienced Management Team</Heading>
-                    <Text fontSize={'20px'} color={'gray.90'}>Behind scenes is our crew of young and vibrant professionals with a wealth of experience constantly ensuring that the UAC Restaurants promise is fulfilled.</Text>
+            <Flex direction={'column'} color={'dark.900'} bg={'#F3F5FBB2'} className="px-3 lg:px-24 py-10 my-10">
+                <Flex direction={{ base: 'column', md: 'row' }} justify={'space-between'} align={'center'}>
+                    <Heading fontSize={{ base: '32px', md: '48px' }} lineHeight={'normal'} fontWeight={'bold'}>Strong and Experienced Management Team</Heading>
+                    <Text className="mt-4 lg:mt-0" fontSize={{ base: '16px', md: '20px' }} color={'gray.90'}>Behind scenes is our crew of young and vibrant professionals with a wealth of experience constantly ensuring that the UAC Restaurants promise is fulfilled.</Text>
                 </Flex>
                 <Grid templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(2,1fr)', lg: 'repeat(3,1fr)' }} className="justify-center mt-10" w={'full'} gap={0}>
                     {management.map((director) => (
-                        <GridItem key={director.name} onClick={() => { setSelected(director); setIsOpen(true); }} w='413.67px' h="fit" borderColor="gray.50" className="relative rounded-lg">
+                        <GridItem key={director.name} onClick={() => { setSelected(director); setIsOpen(true); }} w={{ base: 'full', md: '413.67px' }} h="fit" borderColor="gray.50" className="relative rounded-lg">
                             <Flex onClick={() => setIsOpen(true)} w={'full'} direction={'column'} h="full" className="cursor-pointer p-4">
                                 <Image w="full" className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
                                 <Span w={'full'} className="">

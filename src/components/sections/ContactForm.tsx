@@ -108,7 +108,8 @@ export const ContactForm = () => {
                                     border: "1px solid #80808033",
                                     borderRadius: '8px',
                                     padding: '8px',
-                                    fontSize: '16px'
+                                    fontSize: '16px',
+                                    background: isContactPage ? 'white' : 'transparent'
                                 }}
                                 value={field.value}
                                 onChange={(value, country) => {

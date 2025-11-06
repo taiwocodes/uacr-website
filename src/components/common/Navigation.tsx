@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { Box, Button, HStack, IconButton, Image, useBreakpointValue, Stack, Drawer, Portal, Popover, Flex, Text, Icon, Center } from "@chakra-ui/react";
+import { Box, Button, HStack, IconButton, Image, useBreakpointValue, Stack, Drawer, Portal, Popover, Flex, Text, Icon, Center, Collapsible } from "@chakra-ui/react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CloseButton } from "../ui/close-button";
 import logo from "@/assets/logo/logoDark.png";
@@ -25,9 +25,22 @@ export const Navigation: React.FC<({ color: string })> = () => {
   const NavLinks = (
     <>
       {navLinks.map((link) => (
-        <NavLink className="nav-link border-b text-[#222222] border-gray-300 pb-6 md:p-0 md:border-none" to={link.path ? link.path : "#"} key={link.path} onClick={() => { setOpen(link.subLinks ? true : false); setActiveLink(link.subLinks ?? []); if (link.title === "About Us") setIsAbout(true); else setIsAbout(false) }}>
-          {link.title}
-        </NavLink>))}
+        <>
+          <NavLink className="nav-link border-b text-[#222222] border-gray-300 pb-6 md:p-0 md:border-none" to={link.path ? link.path : "#"} key={link.path} onClick={() => { setOpen(link.subLinks ? true : false); setActiveLink(link.subLinks ?? []); if (link.title === "About Us") setIsAbout(true); else setIsAbout(false) }}>
+            {isMobile && link.subLinks ?
+              <Collapsible.Root>
+                <Collapsible.Trigger>{link.title}</Collapsible.Trigger>
+                <Collapsible.Content>
+                  <Flex ml={2} color={'gray.90'} direction={'column'}>
+                    {link.subLinks.map((link) => (
+                      <Link to={link.path} onClick={() => { setOpen(false); setActiveLink([]) }} className="my-2" color="gray.90">{link.title}</Link>
+                    ))}
+                  </Flex>
+                </Collapsible.Content>
+              </Collapsible.Root> : link.title}
+          </NavLink>
+
+        </>))}
 
     </>
   );
@@ -40,7 +53,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
         <HStack color={'black'}>
           <Box px={3}>
             {links.map((link) => (
-              <Link to={link.path} className="flex bg-[#F3F5FB] w-[343px] items-center my-3 p-2 rounded-lg">
+              <Link to={link.path} onClick={() => setOpen(false)} className="flex bg-[#F3F5FB] w-[343px] items-center my-3 p-2 rounded-lg">
                 <Center className="p-2 rounded-md bg-[#C80104] mr-2"><TbCirclePercentageFilled size={'15px'} color="white" /></Center>
                 <Text>{link.title}</Text>
               </Link>
@@ -62,7 +75,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
             bgSize="cover"
             w='295px'
             h={'237px'}
-            onClick={() => navigate(link.path)}
+            onClick={() => { setOpen(false); setActiveLink([]); navigate(link.path) }}
             _hover={{ cursor: 'pointer' }}
           >
             {link.title === 'Ice Cream' && <Center bg={'#C80104'} className="p-3 absolute right-2 top-2 rounded-lg w-[112px] h-[50px] text-white">Coming Soon</Center>}
@@ -91,7 +104,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
 
   return (
     <Box w="100%" className="absolute px-4 z-40" background="transparent">
-      <HStack justifyContent="space-between" className="shadow-sm rounded-xl" bg={'white'} px={4} py={4} mt="36px" w="full" h={{ lg: "87px" }}>
+      <HStack justifyContent="space-between" className="shadow-sm rounded-xl" bg={{ base: 'transparent', lg: 'white' }} px={4} py={4} mt="36px" w="full" h={{ lg: "87px" }}>
         <Image src={logo} alt="Logo" onClick={() => navigate("/")} cursor="pointer" />
         {isMobile ? (
           <Drawer.Root size="full" open={open} onOpenChange={(e) => setOpen(e.open)}>
@@ -104,10 +117,10 @@ export const Navigation: React.FC<({ color: string })> = () => {
 
             <Portal>
               <Drawer.Positioner>
-                <Drawer.Content pt={10}>
+                <Drawer.Content bg={'white'} pt={10}>
                   <HStack justify="space-between">
                     <Image src={logo} alt="Logo" onClick={() => { navigate("/"); setOpen(false) }} cursor="pointer" pt={8} pl={3} />
-                    <Drawer.CloseTrigger>
+                    <Drawer.CloseTrigger color={'black'}>
                       <CloseButton size='2xl' />
                     </Drawer.CloseTrigger>
                   </HStack>

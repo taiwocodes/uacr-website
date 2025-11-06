@@ -7,7 +7,8 @@ import {
   Span,
   HStack,
   Collapsible,
-  Button
+  Button,
+  Grid
 } from "@chakra-ui/react";
 
 import bgStar3 from "@/assets/images/bg-design-images/bg-star3.png"
@@ -24,34 +25,42 @@ import { GoChevronDown } from "react-icons/go";
 
 export const FAQ = () => {
   return (<>
-    <Box w="full" h="55rem" justifyContent="space-between" alignItems="center" className="px-16 py-10" >
-      <Flex justifyContent='space-between' mb={5} alignItems="center">
-        <Box w="25rem" >
+    <Box w="full" h={{ base: '55rem', lg: "60rem" }} justifyContent="space-between" alignItems="center" className=" px-3 lg:px-16 py-10" >
+      <Flex direction={{ base: 'column', lg: 'row' }} justifyContent='space-between' mb={5} alignItems={{ base: 'start', lg: "center" }}>
+        <Box w={{ base: "full", lg: "25rem" }} >
           <Text className="text-[2.5rem] font-bold mb-3 ">We Are Growing</Text>
           <Text color="gray.70" className="font-medium text-[20px]">Our Goal is to build and grow a portfolio of distinct and highly valued restaurants.</Text>
         </Box>
-        <Button bg="brand.100" className=" text-white py-5 px-7 rounded-lg">Explore Restaurants</Button>
+        <Button bg="brand.100" className=" my-4 lg:my-0 text-white py-5 px-7 rounded-lg">Explore Restaurants</Button>
       </Flex>
-      <Image src={exploreBg} />
-      <HStack className="mt-5" gap={5}>
+      <Image className="w-full h-[249px] rounded-2xl lg:h-[504px]" src={exploreBg} />
+      <Grid templateColumns={{ base: 'repeat(2,1fr)', lg: 'repeat(4,1fr)' }} className="mt-5" gap={5}>
         <Span bg={`url(${bgExplore})`} className="py-5 px-7  rounded-lg flex flex-col justify-center w-[100%]">
-          <Text color="white" fontSize="46px" fontWeight="semibold">61+</Text>
-          <Text fontSize={'20px'} color="white">Restaurants</Text>
+          <Text color="white" fontSize={{
+            base: '32px', lg: "46px"
+          }} fontWeight="semibold">61+</Text>
+          < Text fontSize={{ base: '16px', lg: '20px' }} color="white" > Restaurants</Text>
         </Span>
         <Span bg={`url(${bgExplore2})`} className=" py-5 px-7 rounded-lg flex flex-col justify-center w-[100%]">
-          <Text color="brand.100" fontSize="46px" fontWeight="semibold">40+</Text>
-          <Text fontSize={'20px'} color="brand.100">Franchaise Stores</Text>
+          <Text color="brand.100" fontSize={{
+            base: '32px', lg: "46px"
+          }} fontWeight="semibold">40+</Text>
+          < Text fontSize={{ base: '16px', lg: '20px' }} color="brand.100" > Franchaise Stores</Text>
         </Span>
         <Span bg={`url(${bgExplore3})`} className=" py-5 px-7 rounded-lg flex flex-col justify-center w-[100%]">
-          <Text color="white" fontSize="46px" fontWeight="semibold">14</Text>
-          <Text fontSize={'20px'} color="white">States</Text>
-        </Span>
+          <Text color="white" fontSize={{
+            base: '32px', lg: "46px"
+          }} fontWeight="semibold">14</Text>
+          < Text fontSize={{ base: '16px', lg: '20px' }} color="white" > States</Text>
+        </Span >
         <Span bg={`url(${bgExplore4})`} className=" py-5 px-7 rounded-lg flex flex-col justify-center w-[100%]">
-          <Text color="black" fontSize="46px" fontWeight="semibold">900+</Text>
-          <Text fontSize={'20px'} color="black">Team Members</Text>
-        </Span>
-      </HStack>
-    </Box>
+          <Text color="black" fontSize={{
+            base: '32px', lg: "46px"
+          }} fontWeight="semibold">900+</Text>
+          < Text fontSize={{ base: '16px', lg: '20px' }} color="black" > Team Members</Text>
+        </Span >
+      </Grid >
+    </Box >
     {/*<Box className="relative mt-10 mb-32">
       <Image src={bgLine2} />
       <Image src={bgStar3} className="absolute right-0 -z-10" />

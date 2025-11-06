@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Heading, HStack, Image, Span, Text } from "@chakra-ui/react"
+import { Box, Flex, Grid, GridItem, Heading, HStack, Image, Span, Stack, Text } from "@chakra-ui/react"
 
 import bgLine6 from "@/assets/images/bg-design-images/bg-line11.png"
 import bgLine7 from "@/assets/images/bg-design-images/bg-line10.png"
@@ -26,33 +26,33 @@ export const About = () => {
   return (
     <Flex className="w-screen" alignItems={"center"} direction={"column"} color="dark.900">
       <Flex
-        h={'1000px'}
+        h={{ base: '900px', lg: '1000px' }}
         direction={"column"}
-        className="justify-center items-center w-full  bg-[linear-gradient(180deg,#E5F2F2_46.21%,#FFFFFF_105.1%)]"
+        className="justify-center items-center w-full bg-[linear-gradient(180deg,#E5F2F2_46.21%,#FFFFFF_105.1%)]"
       >
         <Flex
           textAlign="center"
           justifyContent="center"
           alignItems="center"
           direction="column"
-          className=" py-10 px-16"
+          className=" py-10 px-3 lg:px-16"
         >
           <Heading
-            fontSize="2.5rem"
+            fontSize={{ base: '32px', lg: "2.5rem" }}
             fontWeight="bold"
             lineHeight="normal"
-            w="24.5rem"
+            w={{ base: 'full', lg: "24.5rem" }}
           >
             Exclusive Flavors for Discerning Taste
           </Heading>
-          <Text color="gray.90" fontSize="1.2rem">
+          <Text color="gray.90" fontSize={{ base: '16px', lg: "1.2rem" }}>
             Exclusive doesn’t mean exclusionary—it means elevated care.
           </Text>
-          <Text color="gray.90" fontSize="1.2rem" w="54rem" className="mb-10">
+          <Text color="gray.90" fontSize={{ base: '16px', lg: "1.2rem" }} w={{ base: 'full', lg: "54rem" }} className="mb-10">
             From our kitchens to your table, every element is chosen to spark
             joy for true flavor enthusiasts.
           </Text>
-          <HStack>
+          <HStack maxW={'full'} overflowX={'scroll'}>
             <Image
               w="20rem"
               h="23rem"
@@ -81,17 +81,17 @@ export const About = () => {
         </Flex>
       </Flex>
       <Box className="w-full relative py-10 ">
-        <Flex direction="column" justifyContent={"center"} alignItems={"center"} className=" z-10">
-          <Flex w={"full"} justifyContent="center" alignItems="end">
+        <Flex direction="column" justifyContent={"center"} alignItems={"center"} className=" px-3 z-10">
+          <Flex direction={{ base: 'column', lg: 'row' }} w={"full"} justifyContent="center" alignItems={{ base: 'start', lg: "end" }}>
             <Box>
               <Heading fontSize="2rem" fontWeight="bold">Our Company</Heading>
-              <Text w="29rem" color="gray.90" className="my-3">
+              <Text w={{ base: 'full', lg: "29rem" }} color="gray.90" className="my-3">
                 Great food, greater stories. At UAC Restaurants, every meal
                 celebrates the art of bringing people together.
               </Text>
               <Image w={'554px'} src={foodShots4} />
             </Box>
-            <Box className="ml-20" fontSize="1.08rem" color="gray.90" w="37rem">
+            <Box className="mt-4 lg:mt-0 lg:ml-20" fontSize="1.08rem" color="gray.90" w={{ base: 'full', lg: "37rem" }}>
               <Text>
                 UAC Restaurants (UACR) pioneered QSR in Nigeria with the launch
                 of Mr Bigg’s in 1986. Mr Biggs quickly became a household name
@@ -116,32 +116,33 @@ export const About = () => {
               </Text>
             </Box>
           </Flex>
-          <HStack className=" mt-10" gap={5}>
-            <Flex bgColor="#FFD7000D" direction="column" w="40rem" h="14rem" justifyContent="start" className="relative p-10 rounded-2xl">
+          <Stack direction={{ base: 'column', lg: 'row' }} className=" mt-10" gap={5}>
+            <Flex bgColor="#FFD7000D" direction="column" w={{ base: 'full', lg: '40rem' }} h="14rem" justifyContent="start" className="relative  p-10 rounded-2xl">
               <Text fontSize="1.5rem" fontWeight="bold">Our Mission</Text>
               <Text color="gray.90" fontSize="1.1rem">To serve quality affordable and great-tasting meals by operating Africa’s most trusted QSR brands in an innovative and sustainable way.</Text>
             </Flex>
-            <Flex bgColor="#F812120D" direction="column" w="40rem" h="14rem" className="relative p-10 rounded-2xl">
+            <Flex bgColor="#F812120D" direction="column" w={{ base: 'full', lg: '40rem' }} h="14rem" className="relative  p-10 rounded-2xl">
               <Text fontSize="1.5rem" fontWeight="bold">Our Vision</Text>
               <Text color="gray.90" fontSize="1.1rem">To be the leading Quick Service Restaurant and Food Services business in Nigeria.</Text>
             </Flex>
-          </HStack>
+          </Stack>
         </Flex>
       </Box>
-      <Box h="47rem" bgColor="blue.100" className="w-full py-16 relative pl-16">
+      <Box h={{ base: "1972px", lg: '47rem' }} bgColor="blue.100" className="w-full py-16 relative px-4 lg:pl-16">
         <Flex w="full" direction="column" justifyContent="center" >
           <Text fontSize="2.3rem" fontWeight="bold">Core Values</Text>
           <Text color="gray.90" fontSize="1.2rem" className="mb-14">These principles guide every decision, from kitchen to dining room</Text>
-          <Grid className="h-[28rem] overflow-hidden" templateColumns="repeat(3,1fr)" gapX={6} >{coreValues.map((coreValue) => (
-            <GridItem w="24rem">
-              <Text fontSize="1.5rem" h="1.8rem" borderColor="brand.900" fontWeight="bold" className="flex items-center border-l-2 pl-6 pt-0">{coreValue.value}</Text>
-              <Text color="gray.90" fontSize="1.2rem" borderColor="gray.50" h="5.5rem" className="pl-6 pt-4 pb-32 border-l-2 border-dashed">{coreValue.meaning}</Text>
-            </GridItem>
-          ))}</Grid>
+          <Grid className="lg:h-[28rem] h-[1672px] overflow-hidden" templateColumns={{ base: 'repeat(1,1fr)', md: "repeat(3,1fr)" }} gapX={{ base: 1, lg: 6 }} >
+            {coreValues.map((coreValue) => (
+              <GridItem w={{ base: 'full', lg: "24rem" }}>
+                <Text fontSize="1.5rem" h="1.8rem" borderColor="brand.900" fontWeight="bold" className="flex items-center border-l-2 pl-6 pt-0">{coreValue.value}</Text>
+                <Text color="gray.90" fontSize="1.2rem" borderColor="gray.50" h="5.5rem" className="pl-6 pt-4 pb-32 border-l-2 border-dashed">{coreValue.meaning}</Text>
+              </GridItem>
+            ))}</Grid>
         </Flex>
       </Box>
 
-    </Flex>
+    </Flex >
   )
 }
 

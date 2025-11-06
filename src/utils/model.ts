@@ -10,3 +10,10 @@ export interface SubLink {
   image?: string
   logo?: string
 }
+
+export interface NewsItem {
+  image: string
+  title: string
+  description: string
+  date: string
+}

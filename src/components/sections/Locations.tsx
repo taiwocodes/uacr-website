@@ -6,7 +6,7 @@ export const Locations = () => {
         <Flex direction={"column"} bg={'white'} justifyContent={"center"} alignItems={"center"} color={"dark.900"} w={'100%'} h={'fit-content'} className="relative py-10 px-16" >
             <Box w={"full"}>
                 <Heading fontSize={"2.1rem"} fontWeight={"bold"} className="mb-20 ">Our Locations</Heading>
-                <Grid templateColumns={'repeat(3,1fr)'} justifyContent={"center"} className="" alignItems={"center"}>
+                <Grid templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(3,1fr)' }} justifyContent={"center"} className="" alignItems={"center"}>
                     {Array.from({ length: 6 }).map((_) => (
                         <VStack gap={5} className="m-5  ">
                             <Box bgSize={"cover"} backgroundPosition={"center"} bgRepeat={"no-repeat"}

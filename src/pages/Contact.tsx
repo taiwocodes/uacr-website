@@ -10,11 +10,9 @@ export const Contact = () => {
 
     return (
         <Box position='relative' p={{ base: '1.2rem', lg: '5rem' }}>
-            <Flex wrap={{ base: 'wrap', lg: 'revert' }} justify='center' align='start' gap='3rem' maxW='82rem' margin='auto'>
+            <Flex color={'black'} wrap={{ base: 'wrap', lg: 'revert' }} pt={'150px'} justify='center' align='start' gap='3rem' maxW='82rem' margin='auto'>
                 <Box>
-                    <Box mb='2rem' >
-                        <Image src={bgStar} position='absolute' left='15%' top={5} />
-                        <Image src={bgLine} position='absolute' right={0} top='8rem' />
+                    <Box className="text-black" mb='2rem' >
                         <Heading className="text-6xl font-extrabold" lineHeight={1.3}>
                             Got Any
                             <span className="text-[#E7A300]">{' '}Issues?</span>
@@ -37,12 +35,12 @@ export const Contact = () => {
                     <section title='Contact Information'>
                         <ContactInfo />
                     </section>
-                </Box>
+                </Box >
 
                 <section title='Contact Us'>
                     <ContactForm />
                 </section>
-            </Flex>
-        </Box>
+            </Flex >
+        </Box >
     )
 }
