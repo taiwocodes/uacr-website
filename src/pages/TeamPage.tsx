@@ -1,4 +1,4 @@
-import { Box, CloseButton, Dialog, Flex, Grid, GridItem, Heading, HStack, Image, Portal, Span, Stack, Text } from "@chakra-ui/react"
+import { Box, CloseButton, Dialog, Flex, Grid, GridItem, Heading, Image, Span, Stack, Text } from "@chakra-ui/react"
 import { useState } from "react"
 
 import folasopeAiyesimoju from "@/assets/images/directors/folasope-aiyesimoju.png"

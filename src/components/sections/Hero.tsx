@@ -7,12 +7,6 @@ import {
   Text,
   Heading,
   Span,
-  HStack,
-  Input,
-  Field,
-  Select,
-  createListCollection,
-  Portal,
 } from "@chakra-ui/react";
 import heroImage1 from '@/assets/images/hero-image-1.png'
 import heroImage2 from '@/assets/images/hero-image-2.png'
@@ -21,7 +15,6 @@ import mrBiggsLogo from "@/assets/images/mrbiggs-logo.png";
 import debonairsLogo from "@/assets/images/debonairs-logo.png";
 import iceCreamLogo from "@/assets/images/ice-cream-logo.png";
 import rating from "@/assets/images/star.png";
-import smiley from "@/assets/images/smiley.png";
 import { useEffect, useState } from "react";
 
 export const Hero = () => {
@@ -129,13 +122,13 @@ export const Hero = () => {
   )
 }
 
-const states = createListCollection({
+/*const states = createListCollection({
   items: [
     { label: "Lagos", value: "Lagos" },
     { label: "Abuja", value: "Abuja" },
     { label: "Port-Harcourt", value: "port-harcourt" },
     { label: "Ogun", value: "ogun" }]
-})
+}) */
 
 const SLIDES = [heroImage1, heroImage2, heroImage3]
 

@@ -1,4 +1,4 @@
-import { Box, Circle, Flex, Heading, HStack, Image, Stack, Text } from "@chakra-ui/react"
+import { Box, Circle, Flex, Heading, Image, Stack, Text } from "@chakra-ui/react"
 import bgImage from '@/assets/images/stay-updated-image.png'
 import avatar from '@/assets/images/testimonial-image.png'
 import UpdatePromoImage from '@/assets/images/update-and-promos-image.png'

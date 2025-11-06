@@ -1,9 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { Box, Button, Flex, Heading, Text, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import { ContactInfo } from "@/components/sections/ContactInfo";
 import { ContactForm } from "@/components/sections/ContactForm";
-import bgStar from "@/assets/images/bg-design-images/bg-star1.png";
-import bgLine from "@/assets/images/bg-design-images/bg-line6.png";
 
 export const Contact = () => {
     const navigate = useNavigate();

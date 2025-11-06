@@ -5,12 +5,9 @@ import {
   Image,
   Text,
   Span,
-  HStack,
   Stack,
 } from "@chakra-ui/react";
 
-import bgStar5 from "@/assets/images/bg-design-images/bg-star5.png"
-import bgLine4 from "@/assets/images/bg-design-images/bg-line4.png";
 import bgLine5 from "@/assets/images/bg-line.png";
 import eatingImage2 from "@/assets/images/eating-image2.png"
 import Shots2 from "@/assets/images/shots-2.png";

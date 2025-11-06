@@ -2,7 +2,6 @@ import { Box, Flex, Stack, Image, HStack, Avatar, Text, Heading, Button } from "
 import { NewsCard } from "@/components/sections/NewsCard";
 import editorImg from "@/assets/images/news-editor.png";
 import newsImage from "@/assets/images/blogs-hero.png";
-import bgLine8 from "@/assets/images/bg-design-images/bg-line8.png";
 
 export const News = () => {
   return (

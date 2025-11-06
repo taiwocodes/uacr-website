@@ -2,18 +2,11 @@ import {
   Box,
   Flex,
   Image,
-  VStack,
   Text,
   Span,
-  HStack,
-  Collapsible,
   Button,
   Grid
 } from "@chakra-ui/react";
-
-import bgStar3 from "@/assets/images/bg-design-images/bg-star3.png"
-import bgLine2 from "@/assets/images/bg-design-images/bg-line2.png";
-import restaurantBg from "@/assets/images/restaurant-image.png"
 
 import bgExplore from '@/assets/images/bg-explore/61-restaurants.png';
 import bgExplore2 from '@/assets/images/bg-explore/40-franchaise.png';
@@ -21,7 +14,6 @@ import bgExplore3 from '@/assets/images/bg-explore/14-states.png';
 import bgExplore4 from '@/assets/images/bg-explore/900-team.png';
 import exploreBg from '@/assets/images/bg-explore/explore-bg.png';
 
-import { GoChevronDown } from "react-icons/go";
 
 export const FAQ = () => {
   return (<>
@@ -82,10 +74,3 @@ export const FAQ = () => {
   </>)
 }
 
-const FAQs = ([
-  { question: "Do you accommodate food allergies?", answer: "Yes! Notify your server, and we’ll customize your meal. (Severe allergies? Let us know for extra precautions." },
-  { question: "What are your operating hours?", answer: "Yes! Notify your server, and we’ll customize your meal. (Severe allergies? Let us know for extra precautions." },
-  { question: "Do you take walk-ins, or is reservation required?", answer: "Yes! Notify your server, and we’ll customize your meal. (Severe allergies? Let us know for extra precautions." },
-  { question: "Where are you located? Is there parking available?", answer: "Yes! Notify your server, and we’ll customize your meal. (Severe allergies? Let us know for extra precautions." },
-  { question: "Do you accommodate food allergies?", answer: "Yes! Notify your server, and we’ll customize your meal. (Severe allergies? Let us know for extra precautions." },
-])

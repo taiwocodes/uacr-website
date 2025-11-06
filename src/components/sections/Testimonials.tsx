@@ -3,12 +3,9 @@ import {
   Flex,
   Image,
   Text,
-  HStack,
   Stack,
 } from "@chakra-ui/react";
 
-import bgStar4 from "@/assets/images/bg-design-images/bg-star4.png"
-import bgLine3 from "@/assets/images/bg-design-images/bg-line3.png";
 import quotes from "@/assets/images/quote-up.png";
 import testimonial from "@/assets/images/testimonial-image.png"
 

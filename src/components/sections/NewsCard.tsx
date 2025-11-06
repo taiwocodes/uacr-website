@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, HStack, Image, Text, Stack, Grid } from "@chakra-ui/react";
+import { Box, Heading, HStack, Image, Text, Stack, Grid } from "@chakra-ui/react";
 
 import Shots2 from "@/assets/images/shots-2.png";
 import Shots3 from "@/assets/images/shots-3.png"

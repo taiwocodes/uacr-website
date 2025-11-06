@@ -1,5 +1,5 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { Box, Flex, Grid, Heading, HStack, Image, Span, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Grid, Image, Span, Stack, Text, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import logo from "@/assets/logo/logoLight.png";
 import footerBg from '@/assets/images/footer-bg.jpg'

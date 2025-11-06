@@ -1,11 +1,6 @@
-import { Flex, Box, Heading, Text, Button, Span, Image, HStack, VStack, Grid } from "@chakra-ui/react"
+import { Flex, Box, Heading, Text, Button, Span, Image } from "@chakra-ui/react"
 import heroImg from "@/assets/images/mrbiggs-hero-img.png"
 import restaurantImage from "@/assets/images/mrbiggs-restaurant-image.png"
-import restaurantImage2 from "@/assets/images/restaurant-image3.png"
-import bgImage from '@/assets/images/stay-updated-image.png'
-import BgLine12 from "@/assets/images/bg-design-images/bg-line12.svg"
-import BgStar11 from "@/assets/images/bg-design-images/bg-star11.png"
-import { Navigation } from "@/components/common/Navigation"
 import { Footer } from "@/components/common/Footer"
 import { OurSpecials } from "@/components/sections/OurSpecials"
 import { Locations } from "@/components/sections/Locations"

@@ -1,13 +1,8 @@
 import { Box, Button, Heading, Span, Text, Image, VStack, HStack, Stack } from "@chakra-ui/react";
 import { ContactForm } from "@/components/sections/ContactForm";
-import heroImg from "../assets/images/cateringHero.png";
 
 import UacCatering from '@/assets/images/update-and-promos-image4.png'
 import bgImage from '@/assets/images/stay-updated-image.png'
-import restaurantBg from "@/assets/images/restaurant-image.png";
-import bgStar from "@/assets/images/bg-design-images/bg-star1.png";
-import bgStar4 from "@/assets/images/bg-design-images/bg-star4.png";
-import bgLine7 from "@/assets/images/bg-design-images/bg-line7.png";
 
 export const Catering = () => {
     return (
