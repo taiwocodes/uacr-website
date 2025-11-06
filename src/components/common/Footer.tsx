@@ -51,12 +51,14 @@ export const Footer = () => {
             <Text fontWeight={'bold'} fontSize={'22px'}>+234 815 8991 518</Text>
             <VStack className="mt-4" align="start" key={footerLinks[2].heading} gapY={1} gapX={0}>
               {footerLinks[2].links.map((link) => (
+                'title' in link &&
                 <NavLink
                   key={link.label}
                   to={link.to}
                   style={{ color: "#A6AEAE" }}
                   className={'flex justify-start items-center'}
                 >
+
                   <Text color={'#3C403C'} mx={2}>{link.label}</Text> <Text>{link.title}</Text>
                 </NavLink>
               ))}
