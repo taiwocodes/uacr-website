@@ -10,6 +10,7 @@ import { SubLink } from "../../utils/model";
 import { useRef } from "react"
 import aboutUs from "@/assets/images/about-nav-image.png"
 import { TbCirclePercentageFilled } from "react-icons/tb"
+import { BsChevronDown } from "react-icons/bs";
 
 
 export const Navigation: React.FC<({ color: string })> = () => {
@@ -26,7 +27,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
     <>
       {navLinks.map((link) => (
         <>
-          <NavLink className="nav-link border-b text-[#222222] border-gray-300 pb-6 md:p-0 md:border-none" to={link.path ? link.path : "#"} key={link.path} onClick={() => { setOpen(link.subLinks ? true : false); setActiveLink(link.subLinks ?? []); if (link.title === "About Us") setIsAbout(true); else setIsAbout(false) }}>
+          <NavLink end={false} className="nav-link font-medium border-b text-[#222222] border-gray-300 pb-6 md:p-0 md:border-none" to={link.path ? link.path : "#"} key={link.path} onClick={(e) => { link.subLinks ? e.preventDefault() : null; setOpen(link.subLinks ? true : false); setActiveLink(link.subLinks ?? []); if (link.title === "About Us") setIsAbout(true); else setIsAbout(false) }}>
             {isMobile && link.subLinks ?
               <Collapsible.Root>
                 <Collapsible.Trigger>{link.title}</Collapsible.Trigger>
@@ -37,7 +38,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
                     ))}
                   </Flex>
                 </Collapsible.Content>
-              </Collapsible.Root> : link.title}
+              </Collapsible.Root> : <HStack>{link.title} {link.subLinks && <BsChevronDown />}</HStack>}
           </NavLink>
 
         </>))}
@@ -104,8 +105,8 @@ export const Navigation: React.FC<({ color: string })> = () => {
 
   return (
     <Box w="100%" className="absolute px-4 z-40" background="transparent">
-      <HStack justifyContent="space-between" className="shadow-sm rounded-xl" bg={{ base: 'transparent', lg: 'white' }} px={4} py={4} mt="36px" w="full" h={{ lg: "87px" }}>
-        <Image src={logo} alt="Logo" onClick={() => navigate("/")} cursor="pointer" />
+      <HStack justifyContent={{ base: 'space-between', lg: "start" }} className="shadow-sm rounded-xl" bg={{ base: 'transparent', lg: 'white' }} px={4} py={4} mt="36px" w="full" h={{ lg: "87px" }}>
+        <Image src={logo} alt="Logo" mr={20} onClick={() => navigate("/")} cursor="pointer" />
         {isMobile ? (
           <Drawer.Root size="full" open={open} onOpenChange={(e) => setOpen(e.open)}>
             <Drawer.Backdrop />
@@ -130,7 +131,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
                       {NavLinks}
                       <Button
                         onClick={() => { navigate("/contact"); setOpen(false) }}
-                        bg="brand.900"
+                        bg="brand.100"
                         className="text-white text-[20px] font-medium p-6 rounded-lg mt-10"
                       >
                         Contact Us
@@ -142,7 +143,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
             </Portal>
           </Drawer.Root>
         ) : (
-          <>
+          <Flex w={'100%'} justifyContent={'space-between'}>
             <Popover.Root
               initialFocusEl={() => ref.current}
               positioning={{ offset: { crossAxis: 5, mainAxis: 5 } }} onInteractOutside={() => setOpen(false)} open={open}>
@@ -164,7 +165,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
               Contact Us
             </Button>
 
-          </>
+          </Flex>
         )}
 
       </HStack>

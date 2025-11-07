@@ -1,19 +1,19 @@
 import { RouteObject } from "react-router-dom";
 import { Layout } from "@/pages/Layout";
 import { LandingPage } from "@/pages/LandingPage";
-import { MrBiggs } from "@/pages/MrBiggs";
-import { Debonairs } from "@/pages/Debonairs";
-import { About } from "@/pages/About";
+import { MrBiggs } from "@/pages/BrandPages/MrBiggs";
+import { Debonairs } from "@/pages/BrandPages/Debonairs";
+import { About } from "@/pages/AboutPages";
 import { News } from "@/pages/News";
 import { Catering } from "@/pages/Catering";
 import { Contact } from "@/pages/Contact";
 import { NotFound } from "@/pages/NotFound";
-import { TeamPage } from "@/pages/TeamPage";
-import { Impact } from "@/pages/Impact";
-import { FAQ } from "@/pages/FAQ";
+import { TeamPage } from "@/pages/AboutPages/TeamPage";
+import { Impact } from "@/pages/AboutPages/Impact";
+import { FAQ } from "@/pages/AboutPages/FAQ";
 
-import OpenRoles from "@/pages/OpenRoles";
-import Career from "@/pages/Career";
+import OpenRoles from "@/pages/CareerPages/OpenRoles";
+import Career from "@/pages/CareerPages/Career";
 
 const routes: RouteObject[] = [
     {
@@ -21,12 +21,20 @@ const routes: RouteObject[] = [
         element: <Layout />,
         children: [
             { index: true, element: <LandingPage /> },
-            { path: "mrbiggs", element: <MrBiggs /> },
-            { path: "debonairs", element: <Debonairs /> },
-            { path: "about", element: <About /> },
-            { path: 'team', element: <TeamPage /> },
-            { path: "impact", element: <Impact /> },
-            { path: 'faq', element: <FAQ /> },
+            {
+                path: 'brands', children: [
+                    { path: "mrbiggs", element: <MrBiggs /> },
+                    { path: "debonairs", element: <Debonairs /> },
+                ]
+            },
+            {
+                path: "about", children: [
+                    { index: true, element: <About /> },
+                    { path: "team", element: <TeamPage /> },
+                    { path: "impact", element: <Impact /> },
+                    { path: "faq", element: <FAQ /> },
+                ]
+            },
             {
                 path: "blogs", children: [
                     { index: true, element: <News /> },

@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Heading, Image, Span, Stack, Text } from "@chakra-ui/react";
-import HeroImage from '@/assets/images/career-images/careers-hero.png'
+import HeroImage from '@/assets/images/careers-hero.png'
 import { Link } from "react-router-dom";
 import { GraduateTrainee, ManagementTraineePrograms } from "@/utils/data";
 

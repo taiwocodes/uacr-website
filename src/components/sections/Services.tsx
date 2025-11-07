@@ -41,13 +41,13 @@ export const Services = () => {
               <Image className="absolute inset-0 -z-10 size-full rounded-lg" src={bgMrBiggs1} />
               <HStack gap={{ base: '10rem', lg: "2rem" }} className="bg-[#FFFFFF4D]  w-full rounded-2xl p-2 lg:p-3">
                 <Box className="flex items-center">
-                  <Image className="border-l-2 border-yellow-300 size-12 lg:size-16 rounded-full" src={mrBiggsLogo} />
+                  <Image className="border-l-2 border-yellow-300 size-12 rounded-full" src={mrBiggsLogo} />
                   <Text className="text-2xl lg:text-3xl font-bold ml-1 lg:ml-2">Mr Biggs</Text>
                 </Box>
-                <Box className="flex max-w-[597px] justify-between items-center">
+                <Box className="flex max-w-[607px] justify-between items-center">
                   <Text display={{ base: 'none', lg: 'block' }} lineClamp={{ base: 'none', lg: 2 }} >Mr Bigg’s is Nigeria’s pioneer QSR brand, renowned for its delicious meals and freshly baked pastries. We have grown over the years, constantly re-inventing our services, to match the ever-evolving needs of our customers.
                   </Text>
-                  <Center className="rounded-full bg-white size-6 lg:size-9 lg:ml-4 text-black text-[6px] lg:text-[1rem] "><Link to="/mrbiggs"><GoArrowUpRight className="size-[10px] lg:size-5 " /></Link></Center>
+                  <Center className="rounded-full bg-white size-6 p-2 lg:size-9 lg:ml-4 text-black text-[6px] lg:text-[1rem] "><Link to="/mrbiggs"><GoArrowUpRight className="size-[10px] lg:size-5 " /></Link></Center>
                 </Box>
               </HStack>
             </Flex>
@@ -55,15 +55,15 @@ export const Services = () => {
               <Image className="absolute inset-0 -z-10 size-full rounded-lg" src={bgDebonairs} />
               <HStack gap={"4rem"} className="bg-[#FFFFFF4D] w-full rounded-2xl p-3">
                 <Box className="flex items-center">
-                  <Image className="border-l-2 border-yellow-300 size-12 lg:size-16 rounded-full" src={debonairsLogo} />
+                  <Image className="border-l-2 border-yellow-300 size-12 rounded-full" src={debonairsLogo} />
                   <Text className="text-2xl lg:text-3xl font-semibold lg:font-bold ml-1 lg:ml-2">Debonairs Pizza</Text>
                 </Box>
                 <Box className="flex max-w-[597px] justify-between items-center">
                   <Text display={{ base: 'none', lg: 'block' }} lineClamp={{ base: 'none', lg: 2 }} textOverflow={'ellipsis'}>Debonairs Pizza is one of the leading restaurants in Africa, well known for its amazing pizza. We have become a local favorite with our wide range of delicious pizzas, abundant toppings and incredible pizza deals. </Text>
-                  <Center className="lg:ml-4 rounded-full size-6 lg:size-[34px] bg-white text-black "><Link to="/debonairs"><GoArrowUpRight className="size-[10px] lg:size-5" /></Link></Center>
+                  <Center className="lg:ml-4 rounded-full size-6 p-2 lg:size-[34px] bg-white text-black "><Link to="/debonairs"><GoArrowUpRight className="size-[10px] lg:size-5" /></Link></Center>
                 </Box></HStack>
             </Flex>
-            <Flex h={'238px'} w={10} className="" />
+
           </Flex>
         </Box>
       </Flex>

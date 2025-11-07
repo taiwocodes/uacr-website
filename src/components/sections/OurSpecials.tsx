@@ -18,9 +18,9 @@ export const OurSpecials = ({ OurSpecial, ScrollImages }: OurSpecialsProps) => {
                 <Image className="rounded-2xl" h={'full'} w={'736px'} src={OurSpecial[2]} />
                 <Center rounded={'2xl'} h={'full'} overflow={'hidden'}><Image className=" rounded-2xl" h={'800px'} w={'312px'} src={OurSpecial[3]} /></Center>
             </Flex>
-            <Flex h={'312px'} overflowX={'scroll'} overflowY={'hidden'} className=" items-center w-screen max-w-screen-2xl" gap={'1rem'}>
+            <Flex h={'312px'} overflowX={'scroll'} overflowY={'hidden'} className=" items-center w-screen max-w-screen-full" gap={'1rem'}>
                 {ScrollImages.map((image, index) => (
-                    <Image className=" rounded-full size-[197px]" key={index} src={image} />
+                    <Image className=" rounded-full size-[70%]" key={index} src={image} />
                 ))}
                 <Image className=" rounded-[90%] w-[200px] h-[200px]" src="/images/food8-our-specials.png" />
             </Flex>

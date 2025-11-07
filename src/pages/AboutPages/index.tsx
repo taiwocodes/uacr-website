@@ -11,9 +11,9 @@ export const About = () => {
   return (
     <Flex className="w-screen" alignItems={"center"} direction={"column"} color="dark.900">
       <Flex
-        h={{ base: '900px', lg: '1000px' }}
+        h={{ base: '900px', lg: '850px' }}
         direction={"column"}
-        className="justify-center items-center w-full bg-[linear-gradient(180deg,#E5F2F2_46.21%,#FFFFFF_105.1%)]"
+        className="justify-end items-center w-full pb-5 bg-[linear-gradient(180deg,#E5F2F2_46.21%,#FFFFFF_105.1%)]"
       >
         <Flex
           textAlign="center"
@@ -38,30 +38,14 @@ export const About = () => {
             joy for true flavor enthusiasts.
           </Text>
           <HStack maxW={'full'} overflowX={'scroll'}>
-            <Image
-              w="20rem"
-              h="23rem"
-              className="rounded-2xl border-8 border-white"
-              src={foodShots1}
-            />
-            <Image
-              w="20rem"
-              h="23rem"
-              className="rounded-2xl border-8 border-white"
-              src={foodShots2}
-            />
-            <Image
-              w="20rem"
-              h="23rem"
-              className="rounded-2xl border-8 border-white"
-              src={foodShots3}
-            />
-            <Image
-              w="20rem"
-              h="23rem"
-              className="rounded-2xl border-8 border-white"
-              src={foodShots4}
-            />
+            {foodShots.map((image, index) =>
+              <Image
+                key={index}
+                w="20rem"
+                h="23rem"
+                className="rounded-2xl border-8 border-white"
+                src={image}
+              />)}
           </HStack>
         </Flex>
       </Flex>
@@ -142,3 +126,7 @@ const coreValues = ([
   { value: "Community", meaning: "We give back to our community in a sustainable way" },
   { value: "Flexiblity", meaning: "We can blend our personal and professional responsibilities." }
 ])
+
+const foodShots = [
+  foodShots1, foodShots2, foodShots3, foodShots4
+]

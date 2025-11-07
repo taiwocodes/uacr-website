@@ -19,7 +19,7 @@ import Shots3 from "@/assets/images/shots-3.png"
 export const Shots = () => {
   return (
     <>
-      <Box h={{ base: "110rem", lg: "60rem" }} className="relative  py-10">
+      <Box h={{ base: "110rem", lg: "50rem" }} className="relative  py-1">
         <Flex direction="column" justify='center' className="absolute top-0 py-20 px-3 lg:px-16 items-center">
           <Flex direction={{ base: 'column', lg: 'row' }} className="mb-5">
             <Flex direction="column" justifyContent="space-between" w={{ base: 'full', lg: "20rem" }} className=" h-[240px] mb-4 lg:mb-0 lg:h-auto shadow-lg rounded-lg p-4 " bg="white">

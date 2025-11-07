@@ -4,7 +4,7 @@ import heroImage from '@/assets/images/impact-hero-image.png'
 export const Impact = () => {
     return (
         <Box>
-            <Flex w={'full'} h={{ base: '600px', lg: '824px' }} align={'end'} pb={'102px'} bgRepeat={'none'} backgroundPosition={'center'} bgSize={'cover'} bgImage={`url('${heroImage}')`}>
+            <Flex w={'full'} h={{ base: '600px', lg: '824px' }} color={'white'} align={'end'} pb={'102px'} bgRepeat={'none'} backgroundPosition={'center'} bgSize={'cover'} bgImage={`url('${heroImage}')`}>
                 <Box w={{ base: 'full', lg: '720px' }} ml={{ base: '16px', lg: '104px' }}>
                     <Flex bg={''} className=' w-full lg:w-[381px] border-l-2 border-white backdrop-filter backdrop-blur-sm  p-2 items-center'>
                         <Text color={'white'} className='uppercase' fontWeight={'semibold'}>CORPORATE ANNOUNCEMENTS </Text>

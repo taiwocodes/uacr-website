@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Span, Text, Image, VStack, HStack, Stack } from "@chakra-ui/react";
+import { Box, Button, Heading, Span, Text, Image, VStack, HStack, Stack, Flex } from "@chakra-ui/react";
 import { ContactForm } from "@/components/sections/ContactForm";
 
 import UacCatering from '@/assets/images/update-and-promos-image4.png'
@@ -32,13 +32,13 @@ export const Catering = () => {
                 <Image src={bgImage} w={'1304px'} h={'580px'} alt='buffet' mt={8} className="rounded-xl w-full" />
             </VStack>
 
-            <Box py={{ base: '2rem', lg: '6rem' }} px={{ base: '1.2rem', lg: '8rem' }} bg={'#F3F5FBB2'} position='relative'>
-                <section title="Why Choose Us?">
-                    <Heading className="text-3xl md:text-5xl font-bold mb-3">Why Choose UAC Catering</Heading>
-                    <Text className="font-medium text-gray-500">
+            <Flex className="justify-center items-center" py={{ base: '2rem', lg: '6rem' }} px={{ base: '1.2rem', lg: '8rem' }} bg={'#F3F5FBB2'} position='relative'>
+                <section style={{ maxWidth: '1440px' }} title="Why Choose Us?">
+                    <Heading className="text-3xl w-full md:text-5xl font-bold mb-3">Why Choose UAC Catering</Heading>
+                    <Text w={'full'} className="font-medium text-gray-500">
                         From boardroom lunches to grand celebrations, we bring UAC Restaurant's signature quality and service excellence to every event—because your guests deserve nothing less.
                     </Text>
-                    <HStack justify='center' gap='3rem' maxW={{ base: 'full', lg: '82rem' }} margin='2rem auto' wrap={{ base: "wrap", lg: "revert" }}>
+                    <HStack justify='center' gap='3rem' maxW={{ base: 'full', lg: 'full' }} margin='2rem auto' wrap={{ base: "wrap", lg: "revert" }}>
                         <Image src={UacCatering} rounded={'2xl'} w={'554px'} h={'348px'} alt='restaurant' />
                         <Text color='gray.500' fontSize='lg'>
                             Trusted Culinary Excellence: With decades of experience in the food industry, our chefs know how to deliver both taste and consistency across all meals.<br /><br />
@@ -48,7 +48,7 @@ export const Catering = () => {
                         </Text>
                     </HStack>
                 </section>
-            </Box>
+            </Flex>
 
             <section title='Book Catering' className="bg-white px-[1.3rem] py-20 lg:px-[8rem]" id='contact-form'>
                 <Box maxW={{ base: 'full', lg: '82rem' }} margin='auto' pt='1.2rem'>

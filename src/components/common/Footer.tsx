@@ -1,13 +1,20 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { Box, Flex, Grid, Image, Span, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Center, Flex, Grid, Image, Span, Stack, Text, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import logo from "@/assets/logo/logoLight.png";
 import footerBg from '@/assets/images/footer-bg.jpg'
-import { BsArrowUpRight } from "react-icons/bs";
+import { BsArrowUp, BsArrowUpRight } from "react-icons/bs";
 
 export const Footer = () => {
   const navigate = useNavigate();
   const currentYear = dayjs().year();
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <Box bg="dark.900" w="full">
@@ -45,10 +52,13 @@ export const Footer = () => {
                 </NavLink>
               ))}
             </Grid>
+            <Center className="mt-40 border border-white rounded-full w-[40px] h-[40px] cursor-pointer" onClick={scrollToTop} color="white">
+              <BsArrowUp />
+            </Center>
           </Box>
           <Box>
             <Text color={'gray.90'} className="mt-5 text-sm ">{footerLinks[2].heading}</Text>
-            <Text fontWeight={'bold'} fontSize={'22px'}>+234 815 8991 518</Text>
+            <Text fontWeight={'bold'} color={'white'} fontSize={'22px'}>+234 815 8991 518</Text>
             <VStack className="mt-4" align="start" key={footerLinks[2].heading} gapY={1} gapX={0}>
               {footerLinks[2].links.map((link) => (
                 'title' in link &&
@@ -85,7 +95,7 @@ export const Footer = () => {
           </Box>
         </Flex>
 
-        <Flex p={'55px'} mt={8} rounded={'2xl'} justify={'space-between'} align={'center'} bgImage={`url(${footerBg})`} bgSize="cover" bgRepeat="no-repeat" >
+        <Flex p={'55px'} color={'white'} mt={8} rounded={'2xl'} justify={'space-between'} align={'center'} bgImage={`url(${footerBg})`} bgSize="cover" bgRepeat="no-repeat" >
           <Text w={'132px'} fontWeight={'bold'} fontSize={'22px'}>Explore Restaurants</Text>
           <Link to={'/'}>
             <BsArrowUpRight size={'21px'} />

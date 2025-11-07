@@ -12,24 +12,25 @@ import { Link, NewsItem } from './model'
 export const navLinks: Link[] = [
   {
     title: "Brands",
+    path: '/brands',
     subLinks: [
-      { path: "/mrbiggs", title: "Mr Biggs", image: mrBiggsNavImage, logo: MrBiggsLogo },
-      { path: "/debonairs", title: "Debonairs", image: debonairsNavImage, logo: DebonairsLogo },
+      { path: "/brands/mrbiggs", title: "Mr Biggs", image: mrBiggsNavImage, logo: MrBiggsLogo },
+      { path: "/brands/debonairs", title: "Debonairs", image: debonairsNavImage, logo: DebonairsLogo },
       { path: "#", title: "Ice Cream", image: iceCreamNavImage, logo: IceCreamLogo },
     ],
   },
   {
-    title: "About Us", subLinks: [
+    title: "About Us", path: "/about", subLinks: [
       { path: "/about", title: "About UACR" },
-      { path: '/team', title: 'Team (Management and Board)' },
-      { path: "/impact", title: "Impact" },
-      { path: '/faq', title: "FAQ" },
+      { path: '/about/team', title: 'Team (Management and Board)' },
+      { path: "/about/impact", title: "Impact" },
+      { path: '/about/faq', title: "FAQ" },
 
     ]
   },
   { path: "/blogs", title: "Blogs" },
   {
-    title: "Careers", subLinks: [
+    title: "Careers", path: "/careers", subLinks: [
       { path: "/careers/careers-at-uacr", title: "Careers at UACR", logo: CareersNavIcon, image: CareersNavImage },
       { path: "/careers/open-roles", title: "Open Roles", logo: CareersNavIcon, image: OpenRolesNavImage },
     ]

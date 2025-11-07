@@ -59,7 +59,7 @@ export const Hero = () => {
             timeless moments we create together.
           </Text>
           <Button
-            bg="brand.900"
+            bg="brand.100"
             className="text-white text-[18px] font-medium p-6 rounded-lg"
           >
             Explore Restaurants

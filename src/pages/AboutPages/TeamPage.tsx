@@ -21,7 +21,7 @@ export const TeamPage = () => {
     })
     return (
         <Box>
-            <Flex h={{ base: '650px', lg: '550px' }} direction={'column'} className="justify-end items-center bg-[linear-gradient(180deg,#E5F2F2_46.21%,#FFFFFF_105.1%)] py-16 px-3 lg:px-24">
+            <Flex h={{ base: '650px', lg: '550px' }} direction={'column'} className="justify-end items-center bg-[linear-gradient(180deg,#E5F2F2_46.21%,#FFFFFF_105.1%)] py-16 pb-10 px-3 lg:px-24">
                 <Heading w={{ base: 'full', lg: "595px" }} fontSize={{ base: '32px', lg: "48px" }} lineHeight="normal" fontWeight="bold" className="mb-2 text-center text-black">
                     Seasoned Non-Executive Board of Directors
                 </Heading>
@@ -29,12 +29,12 @@ export const TeamPage = () => {
                     Our board believes good governance is a journey, not a destination. We are committed to strong governance principles geared towards continuous improvement. For us, our stakeholders and customers remain our top priority.
                 </Text>
             </Flex>
-            <Flex h={'fit'} direction={'column'} className="px-3 lg:px-16 my-10" >
+            <Flex h={'fit'} direction={'column'} className="px-3 lg:px-16 my-0" >
                 <Stack direction={{ base: 'column', md: 'row' }} className="justify-center" w={'full'} gap={0}>
                     {boardOfDirectors.map((director) => (
                         <GridItem onClick={() => { setSelected(director); setIsOpen(true) }} w={{ base: 'full', md: '302.23px' }} h="fit" borderColor="gray.50" className="relative rounded-lg">
                             <Flex onClick={() => { setSelected(director); setIsOpen(true) }} w={'full'} direction={'column'} h="full" className="cursor-pointer p-4">
-                                <Image w="full" className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
+                                <Image w="full" bg={'#F3F5FBB2'} h={'389px'} className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
                                 <Span w={'full'} className="">
                                     <Text color="brand.900" className=" my-2 w-fit text-start items-center">{director.role}</Text>
                                     <Text w="full" color={'dark.900'} fontWeight="semibold" fontSize="22px">{director.name}</Text>
@@ -53,7 +53,7 @@ export const TeamPage = () => {
                     {management.map((director) => (
                         <GridItem key={director.name} onClick={() => { setSelected(director); setIsOpen(true); }} w={{ base: 'full', md: '413.67px' }} h="fit" borderColor="gray.50" className="relative rounded-lg">
                             <Flex onClick={() => setIsOpen(true)} w={'full'} direction={'column'} h="full" className="cursor-pointer p-4">
-                                <Image w="full" className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
+                                <Image w="full" h={'389px'} className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
                                 <Span w={'full'} className="">
                                     <Text color="brand.900" className=" my-2 w-fit text-start items-center">{director.role}</Text>
                                     <Text w="full" color={'dark.900'} fontWeight="semibold" fontSize="22px">{director.name}</Text>
@@ -71,7 +71,7 @@ export const TeamPage = () => {
                 onInteractOutside={() => setSelected({ name: "", role: "", description: "", img: "" })}>
                 <Dialog.Backdrop />
                 <Dialog.Positioner>
-                    <Dialog.Content w={'90%'} h={'90%'} m={10} bg={'white'}>
+                    <Dialog.Content w={'90%'} h={'90%'} my={10} bg={'white'}>
                         <Dialog.CloseTrigger
                             onClick={() => {
                                 setIsOpen(false);
@@ -79,11 +79,11 @@ export const TeamPage = () => {
                             }}>
                             <CloseButton size={'xl'} className="border-none outline-none" color={'brand.100'} />
                         </Dialog.CloseTrigger>
-                        <Flex h={'full'} w={'fit'}>
+                        <Flex h={'full'} w={'full'}>
                             <Box p={14} color={'black'}>
                                 <Text color="brand.900">{selected.role}</Text>
                                 <Text w="full" color={'dark.900'} my={2} fontWeight="semibold" fontSize="26px">{selected.name}</Text>
-                                <Text fontSize={'20px'} color={'gray.90'}>Over the course of his career he has lived and worked in Sub-Saharan Africa’s most important economies gaining experience of the operating landscape in the region.<br /><br />
+                                <Text lineHeight={'120%'} maxH={'98%'} scrollbar={'hidden'} overflowY={'scroll'} textAlign={'justify'} fontSize={'18px'} color={'gray.90'}>Over the course of his career he has lived and worked in Sub-Saharan Africa’s most important economies gaining experience of the operating landscape in the region.<br /><br />
                                     Fola is the founder of Themis Capital Management, an investment firm focused on concentrating capital and talent on high-potential opportunities in Sub-Saharan Africa.<br /><br />
                                     Prior to founding Themis, he worked with Kohlberg Kravis Roberts, a leading global investment firm with $168 billion in assets under management. His experience also includes working with the Standard Bank Group, where he led mergers and acquisitions in Nigeria.<br /><br />
                                     Fola spent the early part of his career with Ocean and Oil Holdings Limited, a principal investment firm in Nigeria and ARM Investment Managers, one of Nigeria’s leading investment advisory and wealth management firms.<br /><br />
@@ -91,7 +91,7 @@ export const TeamPage = () => {
                                     He holds a B.Sc (Hons) degree in Estate Management from the University of Lagos, where he was awarded a Certificate of Excellence in Real estate development and finance, and earned the right to use the CFA designation in 2006.
                                 </Text>
                             </Box>
-                            <Image w="50%" className="p-2" src={selected.img} />
+                            <Image bg={'#F3F5FBB2'} w="50%" objectPosition={'center'} className="" src={selected.img} />
                         </Flex>
                     </Dialog.Content>
                 </Dialog.Positioner>
