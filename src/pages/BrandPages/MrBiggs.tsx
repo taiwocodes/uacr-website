@@ -44,8 +44,8 @@ export const MrBiggs = () => {
 }
 
 const OurSpecial = [
-    "/images/jollof-rice-our-specials.png",
     "/images/jollof-rice2-our-specials.png",
+    "/images/jollof-rice-our-specials.png",
     "/images/timeless-flavours-our-specials.png",
     "/images/hmm-delicious-our-specials.png"
 ]

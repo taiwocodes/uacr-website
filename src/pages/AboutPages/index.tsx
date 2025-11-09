@@ -3,11 +3,9 @@ import { Box, Flex, Grid, GridItem, Heading, HStack, Image, Stack, Text } from "
 import foodShots1 from "@/assets/images/nav-images/mrbiggs-nav-image.png"
 import foodShots2 from "@/assets/images/nav-images/debonairs-nav-image.png"
 import foodShots3 from "@/assets/images/stay-updated-image.png"
-import foodShots4 from "@/assets/images/when-you-see-the-chop.png"
-import { useState } from "react"
+import foodShots4 from "@/assets/images/about-nav-image.png"
 
 export const About = () => {
-  const [isOpen, setIsOpen] = useState(false)
   return (
     <Flex className="w-screen" alignItems={"center"} direction={"column"} color="dark.900">
       <Flex
@@ -97,19 +95,19 @@ export const About = () => {
           </Stack>
         </Flex>
       </Box>
-      <Box h={{ base: "1972px", lg: '47rem' }} bgColor="blue.100" className="w-full py-16 relative px-4 lg:pl-16">
-        <Flex w="full" direction="column" justifyContent="center" >
+      <Flex h={{ base: "1972px", lg: '47rem' }} bgColor="blue.100" justify={'center'} className="w-full py-16 relative px-4 lg:pl-16">
+        <Flex w="full" maxW={'1440px'} direction="column" justifyContent="center" >
           <Text fontSize="2.3rem" fontWeight="bold">Core Values</Text>
           <Text color="gray.90" fontSize="1.2rem" className="mb-14">These principles guide every decision, from kitchen to dining room</Text>
           <Grid className="lg:h-[28rem] h-[1672px] overflow-hidden" templateColumns={{ base: 'repeat(1,1fr)', md: "repeat(3,1fr)" }} gapX={{ base: 1, lg: 6 }} >
             {coreValues.map((coreValue) => (
-              <GridItem w={{ base: 'full', lg: "24rem" }}>
+              <GridItem w={{ base: 'full', lg: "100%" }}>
                 <Text fontSize="1.5rem" h="1.8rem" borderColor="brand.900" fontWeight="bold" className="flex items-center border-l-2 pl-6 pt-0">{coreValue.value}</Text>
                 <Text color="gray.90" fontSize="1.2rem" borderColor="gray.50" h="5.5rem" className="pl-6 pt-4 pb-32 border-l-2 border-dashed">{coreValue.meaning}</Text>
               </GridItem>
             ))}</Grid>
         </Flex>
-      </Box>
+      </Flex>
 
     </Flex >
   )

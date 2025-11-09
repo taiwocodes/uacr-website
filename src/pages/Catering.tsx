@@ -1,8 +1,9 @@
-import { Box, Button, Heading, Span, Text, Image, VStack, HStack, Stack, Flex } from "@chakra-ui/react";
+import { Box, Button, Heading, Span, Text, Image, VStack, HStack, Stack, Flex, Dialog } from "@chakra-ui/react";
 import { ContactForm } from "@/components/sections/ContactForm";
 
 import UacCatering from '@/assets/images/update-and-promos-image4.png'
 import bgImage from '@/assets/images/stay-updated-image.png'
+import MenuImage from '@/assets/images/menu-image.png'
 
 export const Catering = () => {
     return (
@@ -17,18 +18,38 @@ export const Catering = () => {
                 <Text color='gray.500' className="text-center text-xl md:text-2xl" maxW={{ base: 'full', lg: '846px' }}>
                     Whether you're planning a corporate event, private party, or a special celebration, UAC Restaurants brings flavor, quality, and impeccable service to every occasion.
                 </Text>
-                <Button
-                    className="text-white text-[18px] font-medium p-6 rounded-lg"
-                    bg="brand.900"
-                    onClick={() => {
-                        const contactForm = document.getElementById('contact-form');
-                        if (contactForm) {
-                            contactForm.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }}
-                >
-                    Book Now
-                </Button>
+                <HStack>
+                    <Button
+                        className="text-white text-[18px] font-medium p-6 rounded-lg"
+                        bg="brand.900"
+                        onClick={() => {
+                            const contactForm = document.getElementById('contact-form');
+                            if (contactForm) {
+                                contactForm.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
+                    >
+                        Book Now
+                    </Button>
+                    <Dialog.Root placement={'center'}>
+                        <Dialog.Trigger>
+                            <Button
+                                className="border border-[#EF0909] text-[#EF0909] text-[18px] font-medium p-6 rounded-lg"
+                                bg="#EF09091A"
+                                onClick={() => {
+                                }}
+                            >
+                                Menu
+                            </Button>
+                        </Dialog.Trigger>
+                        <Dialog.Backdrop />
+                        <Dialog.Positioner>
+                            <Dialog.Content m={2} w={'full'}>
+                                <Image src={MenuImage} w={{ base: '900%', lg: '1304px' }} h={'580px'} alt='buffet' mt={8} className="rounded-xl w-full" />
+                            </Dialog.Content>
+                        </Dialog.Positioner>
+                    </Dialog.Root>
+                </HStack>
                 <Image src={bgImage} w={'1304px'} h={'580px'} alt='buffet' mt={8} className="rounded-xl w-full" />
             </VStack>
 
@@ -63,6 +84,7 @@ export const Catering = () => {
                     </HStack>
                 </Box>
             </section>
+
         </Box>
     )
 };

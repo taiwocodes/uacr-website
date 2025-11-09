@@ -15,7 +15,7 @@ import bgExplore4 from '@/assets/images/bg-explore/900-team.png';
 import exploreBg from '@/assets/images/bg-explore/explore-bg.png';
 
 
-export const FAQ = () => {
+export const WeAreGrowing = () => {
   return (
     <Flex className="justify-center items-center">
       <Box w={'full'} maxW="1440px" h={{ base: '55rem', lg: "60rem" }} justifyContent="space-between" alignItems="center" className=" px-3 lg:px-16 py-10" >
@@ -28,30 +28,14 @@ export const FAQ = () => {
         </Flex>
         <Image className="w-full h-[249px] rounded-2xl lg:h-[504px]" src={exploreBg} />
         <Grid templateColumns={{ base: 'repeat(2,1fr)', lg: 'repeat(4,1fr)' }} className="mt-5" gap={5}>
-          <Span bg={`url(${bgExplore})`} className="py-5 px-7  rounded-lg flex flex-col justify-center w-[100%]">
-            <Text color="white" fontSize={{
-              base: '32px', lg: "46px"
-            }} fontWeight="semibold">61+</Text>
-            < Text fontSize={{ base: '16px', lg: '20px' }} color="white" > Restaurants</Text>
-          </Span>
-          <Span bg={`url(${bgExplore2})`} className=" py-5 px-7 rounded-lg flex flex-col justify-center w-[100%]">
-            <Text color="brand.100" fontSize={{
-              base: '32px', lg: "46px"
-            }} fontWeight="semibold">40+</Text>
-            < Text fontSize={{ base: '16px', lg: '20px' }} color="brand.100" > Franchaise Stores</Text>
-          </Span>
-          <Span bg={`url(${bgExplore3})`} className=" py-5 px-7 rounded-lg flex flex-col justify-center w-[100%]">
-            <Text color="white" fontSize={{
-              base: '32px', lg: "46px"
-            }} fontWeight="semibold">14</Text>
-            < Text fontSize={{ base: '16px', lg: '20px' }} color="white" > States</Text>
-          </Span >
-          <Span bg={`url(${bgExplore4})`} className=" py-5 px-7 rounded-lg flex flex-col justify-center w-[100%]">
-            <Text color="black" fontSize={{
-              base: '32px', lg: "46px"
-            }} fontWeight="semibold">900+</Text>
-            < Text fontSize={{ base: '16px', lg: '20px' }} color="black" > Team Members</Text>
-          </Span >
+          {Growth.map((item, index) => (
+            <Span key={index} bg={`url(${item.img})`} className={`py-5 px-7 ${item.style ? item.style : 'text-white'}  rounded-lg flex flex-col justify-center w-[100%]`}>
+              <Text fontSize={{
+                base: '32px', lg: "46px"
+              }} fontWeight="semibold">{item.number}</Text>
+              < Text fontSize={{ base: '16px', lg: '20px' }}  >{item.text}</Text>
+            </Span>))}
+
         </Grid >
       </Box >
       {/*<Box className="relative mt-10 mb-32">
@@ -75,3 +59,27 @@ export const FAQ = () => {
     </Flex>)
 }
 
+const Growth = [
+  {
+    number: '61+',
+    img: bgExplore,
+    text: 'Restaurants'
+  },
+  {
+    number: '40+',
+    img: bgExplore2,
+    text: 'Franchaise Stores',
+    style: 'text-[#EF0909]'
+  },
+  {
+    number: '14',
+    img: bgExplore3,
+    text: 'States'
+  },
+  {
+    number: '900+',
+    img: bgExplore4,
+    text: 'Team Members',
+    style: 'text-black'
+  }
+]

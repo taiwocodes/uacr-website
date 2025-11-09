@@ -28,6 +28,7 @@ export const navLinks: Link[] = [
 
     ]
   },
+  { path: "/catering", title: "Catering" },
   { path: "/blogs", title: "Blogs" },
   {
     title: "Careers", path: "/careers", subLinks: [
@@ -35,7 +36,7 @@ export const navLinks: Link[] = [
       { path: "/careers/open-roles", title: "Open Roles", logo: CareersNavIcon, image: OpenRolesNavImage },
     ]
   },
-  { path: "/catering", title: "Catering" },
+
 ]
 
 export const ManagementTraineePrograms: NewsItem[] = [

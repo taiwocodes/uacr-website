@@ -19,8 +19,8 @@ import Shots3 from "@/assets/images/shots-3.png"
 export const Shots = () => {
   return (
     <>
-      <Box h={{ base: "110rem", lg: "50rem" }} className="relative  py-1">
-        <Flex direction="column" justify='center' className="absolute top-0 py-20 px-3 lg:px-16 items-center">
+      <Flex h={{ base: "110rem", lg: "50rem" }} justify='center' className="relative  py-1">
+        <Flex direction="column" justify='center' maxW={'1440px'} className="absolute top-0 py-20 px-3 lg:px-16 items-center">
           <Flex direction={{ base: 'column', lg: 'row' }} className="mb-5">
             <Flex direction="column" justifyContent="space-between" w={{ base: 'full', lg: "20rem" }} className=" h-[240px] mb-4 lg:mb-0 lg:h-auto shadow-lg rounded-lg p-4 " bg="white">
               <Span><Text color="gray.90">See us from our lens</Text>
@@ -35,7 +35,7 @@ export const Shots = () => {
             <Image w={{ base: 'full', lg: "27rem" }} h="20rem" className="rounded-lg" src={Shots4} />
           </Stack>
         </Flex>
-      </Box>
+      </Flex>
       <Flex className="relative justify-center px-3 lg:px-16 py-16">
         <Flex direction={{ base: 'column', lg: 'row' }} bg="dark.900" w="full" h={{ base: "40rem", lg: "25rem" }} alignItems="center" justifyContent="space-between" className="rounded-2xl overflow-hidden p-6 pb-0 lg:p-0">
           <Box color="white" className="lg:ml-16">

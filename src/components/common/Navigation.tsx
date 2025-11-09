@@ -104,8 +104,8 @@ export const Navigation: React.FC<({ color: string })> = () => {
   }
 
   return (
-    <Box w="100%" className="absolute px-4 z-40" background="transparent">
-      <HStack justifyContent={{ base: 'space-between', lg: "start" }} className="shadow-sm rounded-xl" bg={{ base: 'transparent', lg: 'white' }} px={4} py={4} mt="36px" w="full" h={{ lg: "87px" }}>
+    <Box w="100%" className="absolute px-6 z-40" background="transparent">
+      <HStack justifyContent={{ base: 'space-between', lg: "start" }} className="shadow-sm rounded-xl" bg={{ base: 'transparent', lg: 'white' }} px={4} py={4} mt="24px" w="full" h={{ lg: "87px" }}>
         <Image src={logo} alt="Logo" mr={20} onClick={() => navigate("/")} cursor="pointer" />
         {isMobile ? (
           <Drawer.Root size="full" open={open} onOpenChange={(e) => setOpen(e.open)}>

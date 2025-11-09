@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
-import { FAQ } from "@/components/sections/FAQ";
+import { WeAreGrowing } from "@/components/sections/WeAreGrowing";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Shots } from "@/components/sections/Shots";
 import { OurSpecials } from "@/components/sections/OurSpecials";
@@ -14,7 +14,7 @@ export const LandingPage = () => {
       <Hero />
       <Services />
       <OurSpecials OurSpecial={OurSpecial} ScrollImages={ScrollImages} />
-      <FAQ />
+      <WeAreGrowing />
       <StayUpdated />
       <UpdatesPromos />
       <Testimonials />

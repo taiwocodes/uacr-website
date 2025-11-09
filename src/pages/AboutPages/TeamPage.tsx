@@ -44,24 +44,26 @@ export const TeamPage = () => {
                         </GridItem>))}
                 </Stack>
             </Flex>
-            <Flex direction={'column'} color={'dark.900'} bg={'#F3F5FBB2'} className="px-3 lg:px-24 py-10 my-10">
-                <Flex direction={{ base: 'column', md: 'row' }} justify={'space-between'} align={'center'}>
-                    <Heading fontSize={{ base: '32px', md: '48px' }} lineHeight={'normal'} fontWeight={'bold'}>Strong and Experienced Management Team</Heading>
-                    <Text className="mt-4 lg:mt-0" fontSize={{ base: '16px', md: '20px' }} color={'gray.90'}>Behind scenes is our crew of young and vibrant professionals with a wealth of experience constantly ensuring that the UAC Restaurants promise is fulfilled.</Text>
-                </Flex>
-                <Grid templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(2,1fr)', lg: 'repeat(3,1fr)' }} className="justify-center mt-10" w={'full'} gap={0}>
-                    {management.map((director) => (
-                        <GridItem key={director.name} onClick={() => { setSelected(director); setIsOpen(true); }} w={{ base: 'full', md: '413.67px' }} h="fit" borderColor="gray.50" className="relative rounded-lg">
-                            <Flex onClick={() => setIsOpen(true)} w={'full'} direction={'column'} h="full" className="cursor-pointer p-4">
-                                <Image w="full" h={'389px'} className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
-                                <Span w={'full'} className="">
-                                    <Text color="brand.900" className=" my-2 w-fit text-start items-center">{director.role}</Text>
-                                    <Text w="full" color={'dark.900'} fontWeight="semibold" fontSize="22px">{director.name}</Text>
-                                    <Text w="full" lineClamp={2} color="gray.90">{director.description}</Text>
-                                </Span>
-                            </Flex>
-                        </GridItem>))}
-                </Grid>
+            <Flex direction={'column'} align={'center'} color={'dark.900'} bg={'#F3F5FBB2'} className="px-3 lg:px-24 py-10 my-10">
+                <Box maxW={'1440px'}>
+                    <Flex direction={{ base: 'column', md: 'row' }} justify={'space-between'} align={'center'}>
+                        <Heading fontSize={{ base: '32px', md: '48px' }} lineHeight={'normal'} fontWeight={'bold'}>Strong and Experienced Management Team</Heading>
+                        <Text className="mt-4 lg:mt-0" fontSize={{ base: '16px', md: '20px' }} color={'gray.90'}>Behind scenes is our crew of young and vibrant professionals with a wealth of experience constantly ensuring that the UAC Restaurants promise is fulfilled.</Text>
+                    </Flex>
+                    <Grid justifyItems={'center'} alignContent={'center'} templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(2,1fr)', lg: 'repeat(3,1fr)' }} className="justify-center mt-10" w={'full'} gap={0}>
+                        {management.map((director) => (
+                            <GridItem key={director.name} onClick={() => { setSelected(director); setIsOpen(true); }} w={{ base: 'full', md: '413.67px' }} h="fit" borderColor="gray.50" className="relative rounded-lg">
+                                <Flex onClick={() => setIsOpen(true)} w={'full'} direction={'column'} h="full" className="cursor-pointer p-4">
+                                    <Image w="full" h={'389px'} className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
+                                    <Span w={'full'} className="">
+                                        <Text color="brand.900" className=" my-2 w-fit text-start items-center">{director.role}</Text>
+                                        <Text w="full" color={'dark.900'} fontWeight="semibold" fontSize="22px">{director.name}</Text>
+                                        <Text w="full" lineClamp={2} color="gray.90">{director.description}</Text>
+                                    </Span>
+                                </Flex>
+                            </GridItem>))}
+                    </Grid>
+                </Box>
             </Flex>
 
             <Dialog.Root

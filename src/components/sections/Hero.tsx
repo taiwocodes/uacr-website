@@ -19,71 +19,79 @@ import { useEffect, useState } from "react";
 
 export const Hero = () => {
 
-  const [activeSlide, setActiveSlide] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState(true);
 
   useEffect(() => {
-    const interval = setInterval(
-      () => setActiveSlide((slide) => (slide + 1) % SLIDES.length),
-      3_000
-    );
-
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % SLIDES.length);
+        setFade(true);
+      }, 500);
+    }, 5000);
     return () => clearInterval(interval);
-  }, [activeSlide]);
-
+  }, [fade]);
   return (
-    <Box as="section" className="relative h-[1050px] md:h-[900px] p-3  md:px-16 md:py-10 ">
-      <Flex
-        direction={{ base: 'column', lg: 'row' }}
-        key={activeSlide}
-        backgroundImage={{ base: 'none', lg: `url(${SLIDES[activeSlide]})` }}
-        bgRepeat="no-repeat"
-        backgroundSize={'cover'}
-        className=" absolute justify-end lg:justify-center items-center text-start px-3 inset-0 h-full"
-        wrap={{ base: 'wrap', lg: 'revert' }}>
+    <Box as="section" className="relative h-[1050px] m-2 md:h-[900px] p-3  md:px-16 md:py-10 ">
 
-        <VStack
-          justifyContent="start"
-          alignItems="start"
-          className=" w-full lg:w-fit h-fit lg:ml-5  px-2 lg:px-0  lg:mb-10  mt-[2rem]"
-        >
-          <Text fontWeight="medium" className="text-start" color="gray.70">
-            Welcome to UAC Restaurants
-          </Text>
-          <Heading
-            className=" text-[40px] lg:text-[3rem] text-black lg:text-white leading-[120%] lg:leading-none font-bold w-full md:w-[34rem]"
-          >
-            Flavors Crafted to Last Where Every Bite Becomes a Memory
-          </Heading>
-          <Text color={{ base: 'gray.90', lg: "#FFFFFF" }} fontWeight="medium" className=" w-full lg:w-[29rem]">
-            Designed to stay with you; the unforgettable flavors we craft, the
-            timeless moments we create together.
-          </Text>
-          <Button
-            bg="brand.100"
-            className="text-white text-[18px] font-medium p-6 rounded-lg"
-          >
-            Explore Restaurants
-          </Button>
-        </VStack>
-        <Flex
-          key={activeSlide}
-          bgRepeat="no-repeat"
-          backgroundSize={'cover'}
-          backgroundPosition={'right'}
-          backgroundImage={{ base: `url(${SLIDES[activeSlide]})`, lg: 'none' }} className="relative mt-7  rounded-2xl  h-[436px] lg:h-full items-center justify-center w-full md:w-[45rem]">
-          {ratingcardinfo.map((card) => (
-            <Flex
-              bg="white"
-              className={`rounded-md p-2 shadow-lg drop-shadow-lg w-fit m-2 absolute ${card.position} `}
+      {SLIDES.map((slide, index) => {
+        const isActive = currentIndex === index;
+        return (
+          <Flex
+            direction={{ base: 'column', lg: 'row' }}
+            key={slide.index}
+            pointerEvents={isActive ? "auto" : "none"}
+            backgroundImage={{ base: 'none', lg: `url(${SLIDES[currentIndex].img})` }}
+            bgRepeat="no-repeat"
+            backgroundSize={'cover'}
+            className={`${currentIndex === index ? 'opacity-100' : 'opacity-0'} absolute justify-end lg:justify-center transition-opacity duration-1000 rounded-2xl items-center text-start px-3 inset-0 h-full`}
+            wrap={{ base: 'wrap', lg: 'revert' }}>
+
+            <VStack
+              justifyContent="start"
+              alignItems="start"
+              className=" w-full lg:w-fit h-fit lg:ml-5  px-2 lg:px-0  lg:mb-10  mt-[2rem]"
             >
-              <Image src={card.logo} className="size-[56px] rounded-full p-1" />
-              <Span>
-                <Text color="dark.900">{card.name}</Text>
-                <Span color="gray.70">{Array.from({ length: 5 }).map((_) => (<Image src={rating} className="inline" />))} (246)</Span>
-              </Span>
-            </Flex>))}
-        </Flex>
-      </Flex>
+              <Text fontWeight="medium" className="text-start" color="gray.70">
+                Welcome to UAC Restaurants
+              </Text>
+              <Heading
+                className=" text-[40px] lg:text-[3rem] text-black lg:text-white leading-[120%]  font-bold w-full md:w-[34rem]"
+              >
+                Flavors Crafted to Last Where Every Bite Becomes a Memory
+              </Heading>
+              <Text color={{ base: 'gray.90', lg: "#FFFFFF" }} fontWeight="medium" className=" w-full lg:w-[29rem]">
+                Designed to stay with you; the unforgettable flavors we craft, the
+                timeless moments we create together.
+              </Text>
+              <Button
+                bg="brand.100"
+                className="text-white text-[18px] font-medium p-6 rounded-lg"
+              >
+                Explore Restaurants
+              </Button>
+            </VStack>
+            <Flex
+              key={currentIndex}
+              bgRepeat="no-repeat"
+              backgroundSize={'cover'}
+              backgroundPosition={'right'}
+              backgroundImage={{ base: `url(${SLIDES[currentIndex].img})`, lg: 'none' }} className="relative mt-7  rounded-2xl  h-[436px] lg:h-full items-center justify-center w-full md:w-[45rem]">
+              {ratingcardinfo.map((card) => (
+                <Flex
+                  bg="white"
+                  className={`rounded-md p-2 shadow-lg drop-shadow-lg w-fit m-2 absolute ${card.position} `}
+                >
+                  <Image src={card.logo} className="size-[56px] rounded-full p-1" />
+                  <Span>
+                    <Text color="dark.900">{card.name}</Text>
+                    <Span color="gray.70">{Array.from({ length: 5 }).map((_) => (<Image src={rating} className="inline" />))} (246)</Span>
+                  </Span>
+                </Flex>))}
+            </Flex>
+          </Flex>)
+      })}
 
       {/*<Box bg="white" className="shadow-lg drop-shadow-lg w-[86%] rounded-lg p-5 absolute -bottom-20 z-10">
         <Text color="dark.900" className="mb-5 text-lg">Find a UAC restaurant close to you </Text>
@@ -130,7 +138,7 @@ export const Hero = () => {
     { label: "Ogun", value: "ogun" }]
 }) */
 
-const SLIDES = [heroImage1, heroImage2, heroImage3]
+const SLIDES = [{ index: 0, img: heroImage1 }, { index: 1, img: heroImage2 }, { index: 2, img: heroImage3 }]
 
 const ratingcardinfo = [
   { logo: mrBiggsLogo, name: "Mr Biggs", position: 'left-3 lg:left-10 bottom-64 lg:bottom-64' },
