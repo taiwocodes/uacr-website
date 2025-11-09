@@ -180,14 +180,14 @@ const Restaurants: { logo: string, image: string, title: string, description: st
     image: bgMrBiggs1,
     title: "Mr Biggs",
     description: "Mr Bigg’s is Nigeria’s pioneer QSR brand, renowned for its delicious meals and freshly baked pastries. We have grown over the years, constantly re-inventing our services, to match the ever-evolving needs of our customers.",
-    link: "/mrbiggs"
+    link: "/brands/mrbiggs"
   },
   {
     logo: debonairsLogo,
     image: bgDebonairs,
     title: "Debonairs Pizza",
     description: "Debonairs Pizza is a leading restaurant in Africa, known for amazing pizza and great deals.",
-    link: "/debonairs"
+    link: "/brands/debonairs"
   },
   {
     logo: iceCreamLogo,
