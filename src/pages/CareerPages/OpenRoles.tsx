@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 //import { useNavigate } from "react-router-dom";
 
 
@@ -6,7 +6,9 @@ import useDataFilter from "@/hooks/useDataFilter";
 import { BsArrowUpRight } from "react-icons/bs";
 import classNames from "classnames";
 import Pagination from "@/components/common/Pagination";
-import { Box, Center, Flex, Grid, Heading, HStack, Text } from "@chakra-ui/react";
+import { Box, Center, CloseButton, Dialog, Flex, Grid, Heading, HStack, Text } from "@chakra-ui/react";
+import { Vacancy } from "@/utils/model";
+import RolePage from "./RolePage";
 
 //import Pagination from "@/components/common/Pagination";
 //import { routes } from "@/utils/constants";
@@ -16,6 +18,14 @@ const OpenRoles: React.FC = () => {
     /*const handleRolePage = (roleIndex: number) => {
       navigate(`${routes.ROLE}?number=${roleIndex}`);
     }; */
+    const [isOpen, setIsOpen] = useState(false)
+    const [selected, setSelected] = useState<Vacancy>({
+        role: "",
+        description: "",
+        mode: ["", ""],
+        tag: ""
+    })
+
     const {
         activeTag,
         currentPage,
@@ -73,12 +83,13 @@ const OpenRoles: React.FC = () => {
 
                             return (
                                 <Flex
+                                    onClick={() => { setIsOpen(true); setSelected(vacancy) }}
                                     key={vacancy.role}
                                     bg={'#F3F5FBB2'}
                                     h={'284px'}
                                     rounded={'lg'}
                                     className={classNames({
-                                        "lg:py-[2.5rem] px-[1.5rem] lg:border-b border-b-[#B4B4B4]/20 lg:flex items-center justify-start":
+                                        "lg:py-[2.5rem] px-[1.5rem] cursor-pointer lg:border-b border-b-[#B4B4B4]/20 lg:flex items-center justify-start":
                                             true,
                                         "lg:mx-2": index !== 0,
                                     })}
@@ -104,7 +115,7 @@ const OpenRoles: React.FC = () => {
                                             </HStack>
                                             <Center
                                                 bg={'brand.900'}
-                                                //onClick={() => handleRolePage(index)} 
+                                                onClick={() => { setIsOpen(true); setSelected(vacancy) }}
                                                 className="w-[2rem] cursor-pointer lg:w-[3rem] h-[2rem] lg:h-[3rem] bg-dark rounded-full flex items-center justify-center text-white">
                                                 <BsArrowUpRight />
                                             </Center>
@@ -127,17 +138,34 @@ const OpenRoles: React.FC = () => {
                 </div>
             </Box>
 
-
-
+            <Dialog.Root
+                size="full" placement="center"
+                open={isOpen}
+                onOpenChange={(open) => !open && setSelected({ role: '', description: '', mode: [], tag: '' })}
+                onInteractOutside={() => setSelected({ role: '', description: '', mode: [], tag: '' })}>
+                <Dialog.Backdrop />
+                <Dialog.Positioner>
+                    <Dialog.Content w={'100%'} h={'100%'} maxH={'100%'} overflowY={'scroll'} rounded={'2xl'} p={4} mt={10} bg={'white'}>
+                        <Dialog.CloseTrigger
+                            onClick={() => {
+                                setIsOpen(false);
+                                setSelected({ role: '', description: '', mode: [], tag: '' })
+                            }}>
+                            <CloseButton size={'xl'} className="border-none outline-none" color={'brand.100'} />
+                        </Dialog.CloseTrigger>
+                        <RolePage vacancy={selected} />
+                    </Dialog.Content>
+                </Dialog.Positioner>
+            </Dialog.Root>
         </>
     );
 };
 
-const vacancies = [
+export const vacancies: Vacancy[] = [
     {
         role: "Operations Manager",
         description:
-            "We’re seeking a meticulous and driven Operations Manager to ensure exceptional guest experiences while maximizing efficiency across front-of-house, back-of-house, and administrat....",
+            "We’re seeking a meticulous and driven Operations Manager to ensure exceptional guest experiences while maximizing efficiency across front-of-house, back-of-house, and administrat....",
         mode: ["on-site", "full-time"],
         tag: "design",
     },

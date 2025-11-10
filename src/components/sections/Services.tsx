@@ -57,10 +57,10 @@ export const Services = () => {
   }
 
   return (
-    <Box className=" relative mt-12 py-10 h-[50rem]">
+    <Box className=" relative mt-12 py-10 h-[75rem] lg:h-[50rem]">
       <Flex
         direction={"column"}
-        className=" justify-center lg:items-center place-self-center mt-10 absolute w-[100%] top-0 z-10 py-10 "
+        className=" justify-center lg:items-center px-4 lg:px-0 place-self-center mt-10 absolute w-[100%] top-0 z-10 py-10 "
       >
         <HStack className="pl-5 ">
           <Center w={"36px"} marginLeft={"-20px"}>
@@ -108,8 +108,8 @@ export const Services = () => {
                 direction="column"
                 w={{ base: "full", lg: "900px" }}
                 h={{ base: "328px", lg: "498px" }}
-                ml={i === 0 ? "3rem" : "0"}
-                mr={i === 2 ? '3rem' : '0'}
+                ml={{ base: 'none', lg: i === 0 ? "3rem" : "0" }}
+                mr={{ base: 'none', lg: i === 2 ? '3rem' : '0' }}
                 className=" p-2 lg:p-4  relative items-center  justify-end rounded-lg"
               >
                 <Image
@@ -119,7 +119,7 @@ export const Services = () => {
                 <Flex
                   justify={'space-between'}
                   align={'center'}
-                  gap={{ base: "10rem", lg: "0" }}
+                  gap={0}
                   className="bg-[#FFFFFF4D] w-full rounded-2xl p-2 lg:p-3"
                 >
                   <Box className="flex items-center">
@@ -133,7 +133,6 @@ export const Services = () => {
                     <Text
                       display={{ base: "none", lg: "block" }}
                       lineClamp={{ base: "none", lg: 2 }}
-
                     >
                       {item.description}
                     </Text>
@@ -150,6 +149,7 @@ export const Services = () => {
           </Flex>
 
           <Flex
+            display={{ base: 'none', lg: 'flex' }}
             justifyContent={"center"}
             marginTop={"3rem"}
             placeSelf={"center"}

@@ -17,3 +17,10 @@ export interface NewsItem {
   description: string
   date: string
 }
+
+export interface Vacancy {
+  role: string
+  description: string
+  mode: string[]
+  tag: string
+}

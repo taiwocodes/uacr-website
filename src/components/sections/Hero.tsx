@@ -7,6 +7,7 @@ import {
   Text,
   Heading,
   Span,
+  HStack,
 } from "@chakra-ui/react";
 import heroImage1 from '@/assets/images/hero-image-1.png'
 import heroImage2 from '@/assets/images/hero-image-2.png'
@@ -21,6 +22,7 @@ export const Hero = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
+  const isMobile = window.innerWidth <= 768;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -28,13 +30,12 @@ export const Hero = () => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % SLIDES.length);
         setFade(true);
-      }, 500);
-    }, 5000);
+      }, 300);
+    }, 3000);
     return () => clearInterval(interval);
   }, [fade]);
   return (
-    <Box as="section" className="relative h-[1050px] m-2 md:h-[900px] p-3  md:px-16 md:py-10 ">
-
+    <Box as="section" className="relative h-[1050px] overflow-hidden m-2 md:h-[900px] p-3  md:px-16 md:py-10 ">
       {SLIDES.map((slide, index) => {
         const isActive = currentIndex === index;
         return (
@@ -45,7 +46,8 @@ export const Hero = () => {
             backgroundImage={{ base: 'none', lg: `url(${SLIDES[currentIndex].img})` }}
             bgRepeat="no-repeat"
             backgroundSize={'cover'}
-            className={`${currentIndex === index ? 'opacity-100' : 'opacity-0'} absolute justify-end lg:justify-center transition-opacity duration-1000 rounded-2xl items-center text-start px-3 inset-0 h-full`}
+            className={` absolute justify-end lg:justify-center transition-opacity duration-1000 
+              ${currentIndex === index ? 'opacity-100' : 'opacity-0'} rounded-2xl items-center text-start px-3 inset-0 h-full`}
             wrap={{ base: 'wrap', lg: 'revert' }}>
 
             <VStack
@@ -77,7 +79,7 @@ export const Hero = () => {
               bgRepeat="no-repeat"
               backgroundSize={'cover'}
               backgroundPosition={'right'}
-              backgroundImage={{ base: `url(${SLIDES[currentIndex].img})`, lg: 'none' }} className="relative mt-7  rounded-2xl  h-[436px] lg:h-full items-center justify-center w-full md:w-[45rem]">
+              backgroundImage={{ base: `url(${SLIDES[currentIndex].img})`, lg: 'none' }} className={`relative mt-7 ${isMobile ? currentIndex === index ? 'opacity-100' : 'opacity-0' : ''}  rounded-2xl  h-[436px] lg:h-full items-center justify-center w-full md:w-[45rem]`}>
               {ratingcardinfo.map((card) => (
                 <Flex
                   bg="white"
@@ -92,6 +94,18 @@ export const Hero = () => {
             </Flex>
           </Flex>)
       })}
+
+      <HStack position="absolute" bottom="40px" right="20px" gap={3}>
+        {SLIDES.map((_, index) => (
+          <Box
+            key={index}
+            borderRadius="4px"
+            className={`w-3 h-3 cursor-pointer transition-colors ${currentIndex === index ? "bg-white" : "bg-gray-500"
+              }`}
+            onClick={() => setCurrentIndex(index)}
+          />
+        ))}
+      </HStack>
 
       {/*<Box bg="white" className="shadow-lg drop-shadow-lg w-[86%] rounded-lg p-5 absolute -bottom-20 z-10">
         <Text color="dark.900" className="mb-5 text-lg">Find a UAC restaurant close to you </Text>
