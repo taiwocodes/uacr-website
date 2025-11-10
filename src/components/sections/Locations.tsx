@@ -8,15 +8,15 @@ export const Locations = () => {
                 <Heading ml={4} fontSize={"2.1rem"} fontWeight={"bold"} className="mb-20 ">Our Locations</Heading>
                 <Grid templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(3,1fr)' }} justifyItems={"center"} className="" alignContent={"center"}>
                     {Array.from({ length: 6 }).map((_) => (
-                        <VStack w={'90%'} gap={5} className="m-5  ">
+                        <VStack minW={'400px'} w={'90%'} gap={5} className="m-5  ">
                             <Box bgSize={"cover"} backgroundPosition={"center"} bgRepeat={"no-repeat"}
-                                w={"22rem"} h={"30vh"} className="rounded-2xl" bgImage={`url(${bgImage})`}>
+                                w={"full"} h={"254px"} className="rounded-2xl" bgImage={`url(${bgImage})`}>
                                 <Flex justifyContent={"center"} alignItems={"center"} h={"full"} color={"white"} direction={"column"} className="bg-black bg-opacity-50 rounded-2xl">
                                     <Text fontWeight={"medium"} fontSize={"1.5rem"}>Mr Biggs Ikoyi</Text>
                                     <Text>93 Awolowo Road Ikoyi, Lagos</Text>
                                 </Flex>
                             </Box>
-                            <Box textAlign={"center"}>
+                            <Box w={"full"} textAlign={"center"}>
                                 <Text className="mb-5" fontWeight={"bold"}>Opening Hours </Text>
                                 <Span color={"gray.90"}>
                                     <Text>Monday – Saturday: 8:00AM – 10:00PM</Text>

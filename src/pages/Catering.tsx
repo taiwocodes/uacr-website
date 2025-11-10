@@ -71,10 +71,10 @@ export const Catering = () => {
                 </section>
             </Flex>
 
-            <section title='Book Catering' className="bg-white px-[1.3rem] py-20 lg:px-[8rem]" id='contact-form'>
-                <Box maxW={{ base: 'full', lg: '82rem' }} margin='auto' pt='1.2rem'>
-                    <HStack align='start' wrap={{ base: 'wrap', lg: 'reverse' }} justify='space-between'>
-                        <Stack maxW={{ base: 'full', lg: '35rem' }}>
+            <section title='Book Catering' className="bg-white px-[1.3rem] py-20 lg:px-16" id='contact-form'>
+                <Box maxW={{ base: 'full', lg: '85rem' }} margin='auto' pt='1.2rem'>
+                    <HStack align='start' wrap={{ base: 'wrap', lg: 'nowrap' }} justify='space-between'>
+                        <Stack mr={'120px'} maxW={{ base: 'full', lg: '40rem' }}>
                             <Heading className="text-5xl font-bold">Book Us For Your<br />Events</Heading>
                             <Text className="text-xl text-gray-500">
                                 Let us handle every detail—from custom menus to flawless execution—so you can enjoy your own event stress-free

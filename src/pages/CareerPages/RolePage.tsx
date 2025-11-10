@@ -1,7 +1,7 @@
 
 import { FaLocationDot } from "react-icons/fa6"
 import { formatDate } from "@/utils/lib"
-import { TbCircleDotFilled } from "react-icons/tb"
+
 
 import { BsCalendar, BsClock, BsEnvelope, BsPencil } from "react-icons/bs"
 import logo from "@/assets/logo/logoLight.png"

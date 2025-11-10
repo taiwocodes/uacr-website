@@ -70,7 +70,7 @@ export const TeamPage = () => {
                 size="cover" placement="center"
                 open={isOpen}
                 onOpenChange={(open) => !open && setSelected({ name: "", role: "", description: "", img: "" })}
-                onInteractOutside={() => setSelected({ name: "", role: "", description: "", img: "" })}>
+                onInteractOutside={() => { setIsOpen(false); setSelected({ name: "", role: "", description: "", img: "" }) }}>
                 <Dialog.Backdrop />
                 <Dialog.Positioner>
                     <Dialog.Content w={'90%'} h={'90%'} my={10} bg={'white'}>
