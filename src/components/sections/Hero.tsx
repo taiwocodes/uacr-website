@@ -43,18 +43,36 @@ export const Hero = () => {
             direction={{ base: 'column', lg: 'row' }}
             key={slide.index}
             pointerEvents={isActive ? "auto" : "none"}
-            backgroundImage={{ base: 'none', lg: `url(${SLIDES[currentIndex].img})` }}
             bgRepeat="no-repeat"
             backgroundSize={'cover'}
             className={` absolute justify-end lg:justify-center transition-opacity duration-1000 
               ${currentIndex === index ? 'opacity-100' : 'opacity-0'} rounded-2xl items-center text-start px-3 inset-0 h-full`}
             wrap={{ base: 'wrap', lg: 'revert' }}>
-
+            <Image
+              display={{ base: 'none', lg: 'inline' }}
+              src={typeof slide.img === "string"
+                ? slide.img
+                : (slide.img as string[])[currentIndex]
+              }
+              alt={"Background Image"}
+              pointerEvents="none"
+              className="absolute rounded-2xl inset-0 w-full object-cover h-full"
+            />
             <VStack
               justifyContent="start"
               alignItems="start"
-              className=" w-full lg:w-fit h-fit lg:ml-5  px-2 lg:px-0  lg:mb-10  mt-[2rem]"
+              className=" w-full lg:z-20 lg:w-fit h-fit lg:ml-5 px-2 lg:px-0 lg:mb-10  mt-[2rem]"
             >
+              <Image
+                display={{ base: 'inline', lg: 'none' }}
+                src={typeof slide.img === "string"
+                  ? slide.img
+                  : (slide.img as string[])[currentIndex]
+                }
+                alt={"Background Image"}
+                pointerEvents="none"
+                className="absolute rounded-2xl bottom-0 inset-x-0 w-full object-cover h-[436px]"
+              />
               <Text fontWeight="medium" className="text-start" color="gray.70">
                 Welcome to UAC Restaurants
               </Text>
@@ -79,7 +97,7 @@ export const Hero = () => {
               bgRepeat="no-repeat"
               backgroundSize={'cover'}
               backgroundPosition={'right'}
-              backgroundImage={{ base: `url(${SLIDES[currentIndex].img})`, lg: 'none' }} className={`relative mt-7 ${isMobile ? currentIndex === index ? 'opacity-100' : 'opacity-0' : ''}  rounded-2xl  h-[436px] lg:h-full items-center justify-center w-full md:w-[45rem]`}>
+              className={`relative mt-7 ${isMobile ? currentIndex === index ? 'opacity-100' : 'opacity-0' : ''}  rounded-2xl  h-[436px] lg:h-full items-center justify-center w-full md:w-[45rem]`}>
               {ratingcardinfo.map((card) => (
                 <Flex
                   bg="white"
@@ -94,18 +112,6 @@ export const Hero = () => {
             </Flex>
           </Flex>)
       })}
-
-      <HStack position="absolute" bottom="40px" right="20px" gap={3}>
-        {SLIDES.map((_, index) => (
-          <Box
-            key={index}
-            borderRadius="4px"
-            className={`w-3 h-3 cursor-pointer transition-colors ${currentIndex === index ? "bg-white" : "bg-gray-500"
-              }`}
-            onClick={() => setCurrentIndex(index)}
-          />
-        ))}
-      </HStack>
 
       {/*<Box bg="white" className="shadow-lg drop-shadow-lg w-[86%] rounded-lg p-5 absolute -bottom-20 z-10">
         <Text color="dark.900" className="mb-5 text-lg">Find a UAC restaurant close to you </Text>
@@ -155,7 +161,7 @@ export const Hero = () => {
 const SLIDES = [{ index: 0, img: heroImage1 }, { index: 1, img: heroImage2 }, { index: 2, img: heroImage3 }]
 
 const ratingcardinfo = [
-  { logo: mrBiggsLogo, name: "Mr Biggs", position: 'left-3 lg:left-10 bottom-64 lg:bottom-64' },
+  { logo: mrBiggsLogo, name: "Mr Biggs", position: 'left-3 lg:left-10 bottom-56 lg:bottom-64' },
   { logo: debonairsLogo, name: "Debonairs", position: 'right-3 lg:right-20 top-3 lg:top-60' },
   { logo: iceCreamLogo, name: "Ice Cream", position: 'right-3 lg:right-40 bottom-3 lg:bottom-20' }
 ]
