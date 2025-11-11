@@ -18,7 +18,7 @@ export const Testimonials = () => {
         <Stack direction={{ base: 'column', lg: 'row' }} w="100%" gap={8} wrap="nowrap" className="pl-4 lg:pl-16 pr-4 py-4 lg:overflow-x-auto">
           {Array.from({ length: 5 }).map((_) => (
             testimonials.map((testiment) => (
-              <Flex direction="column" justifyContent="space-between" bg="white" borderWidth="thin" borderColor="gray.50" minW={{ base: 'full', lg: "24rem" }} h="17rem" className=" rounded-lg p-4 ">
+              <Flex key={testiment.name} direction="column" justifyContent="space-between" bg="white" borderWidth="thin" borderColor="gray.50" minW={{ base: 'full', lg: "24rem" }} h="17rem" className=" rounded-lg p-4 ">
                 <Flex justifyContent="space-between">
                   <Image src={quotes} />
                   <Image src={testiment.img} />

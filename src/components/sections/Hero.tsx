@@ -7,7 +7,6 @@ import {
   Text,
   Heading,
   Span,
-  HStack,
 } from "@chakra-ui/react";
 import heroImage1 from '@/assets/images/hero-image-1.png'
 import heroImage2 from '@/assets/images/hero-image-2.png'
@@ -30,8 +29,8 @@ export const Hero = () => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % SLIDES.length);
         setFade(true);
-      }, 300);
-    }, 3000);
+      }, 400);
+    }, 4000);
     return () => clearInterval(interval);
   }, [fade]);
   return (
@@ -100,13 +99,14 @@ export const Hero = () => {
               className={`relative mt-7 ${isMobile ? currentIndex === index ? 'opacity-100' : 'opacity-0' : ''}  rounded-2xl  h-[436px] lg:h-full items-center justify-center w-full md:w-[45rem]`}>
               {ratingcardinfo.map((card) => (
                 <Flex
+                  key={card.name}
                   bg="white"
                   className={`rounded-md p-2 shadow-lg drop-shadow-lg w-fit m-2 absolute ${card.position} `}
                 >
                   <Image src={card.logo} className="size-[56px] rounded-full p-1" />
                   <Span>
                     <Text color="dark.900">{card.name}</Text>
-                    <Span color="gray.70">{Array.from({ length: 5 }).map((_) => (<Image src={rating} className="inline" />))} (246)</Span>
+                    <Span color="gray.70">{Array.from({ length: 5 }).map((_, i) => (<Image key={i} src={rating} className="inline" />))} (246)</Span>
                   </Span>
                 </Flex>))}
             </Flex>

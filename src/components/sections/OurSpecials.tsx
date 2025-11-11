@@ -1,5 +1,5 @@
 import { Box, Center, Flex, Heading, Image } from "@chakra-ui/react"
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 interface OurSpecialsProps {
     OurSpecial: string[]
@@ -8,20 +8,21 @@ interface OurSpecialsProps {
 
 
 export const OurSpecials = ({ OurSpecial, ScrollImages }: OurSpecialsProps) => {
-    const ref = useRef<HTMLDivElement>(null);
+    const ref = useRef<HTMLDivElement>(null)
 
-    const handleWheel = (e: React.WheelEvent) => {
-        e.preventDefault();
+    useEffect(() => {
         const el = ref.current
-        if (!el) return;
-        const speed = 1;
-        const scrollAmount = e.deltaX * speed;
-        el.scrollBy({
-            left: scrollAmount,
-            behavior: "smooth",
-        })
-    };
+        if (!el) return
 
+        const handleWheel = (e: WheelEvent) => {
+            e.preventDefault()
+            const scrollSpeed = 0.3
+            el.scrollLeft += e.deltaX * scrollSpeed
+        }
+
+        el.addEventListener("wheel", handleWheel, { passive: false })
+        return () => el.removeEventListener("wheel", handleWheel)
+    }, [])
 
     return (
         <Box className=" relative bg-[#F3F5FBB2] mt-12 py-16">
@@ -34,7 +35,7 @@ export const OurSpecials = ({ OurSpecial, ScrollImages }: OurSpecialsProps) => {
                 <Image className="rounded-2xl" h={'full'} w={'736px'} src={OurSpecial[2]} />
                 <Center rounded={'2xl'} h={'full'} overflow={'hidden'}><Image className=" rounded-2xl" h={'800px'} w={'312px'} src={OurSpecial[3]} /></Center>
             </Flex>
-            <Flex ref={ref} onWheel={handleWheel} h={'312px'} overflowX={'scroll'} overflowY={'hidden'} className=" items-center w-screen max-w-screen-full scroll-smooth no-scrollbar " gap={'1rem'}>
+            <Flex ref={ref} h={'312px'} overflowX={'scroll'} overflowY={'hidden'} className=" items-center w-screen max-w-screen-full scroll-smooth no-scrollbar " gap={'1rem'}>
                 {ScrollImages.map((image, index) => (
                     <Image className=" rounded-full size-[70%] snap-center" key={index} src={image} />
                 ))}

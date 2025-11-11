@@ -26,22 +26,22 @@ export const Navigation: React.FC<({ color: string })> = () => {
   const NavLinks = (
     <>
       {navLinks.map((link) => (
-        <>
-          <NavLink end={false} className="nav-link font-medium border-b text-[#222222] border-gray-300 pb-6 md:p-0 md:border-none" to={link.path ? link.path : "#"} key={link.path} onClick={(e) => { link.subLinks ? e.preventDefault() : null; setOpen(link.subLinks ? true : false); setActiveLink(link.subLinks ?? []); if (link.title === "About Us") setIsAbout(true); else setIsAbout(false) }}>
-            {isMobile && link.subLinks ?
-              <Collapsible.Root>
-                <Collapsible.Trigger>{link.title}</Collapsible.Trigger>
-                <Collapsible.Content>
-                  <Flex ml={2} color={'gray.90'} direction={'column'}>
-                    {link.subLinks.map((link) => (
-                      <Link to={link.path} onClick={() => { setOpen(false); setActiveLink([]) }} className="my-2" color="gray.90">{link.title}</Link>
-                    ))}
-                  </Flex>
-                </Collapsible.Content>
-              </Collapsible.Root> : <HStack>{link.title} {link.subLinks && <BsChevronDown />}</HStack>}
-          </NavLink>
 
-        </>))}
+        <NavLink end={false} className="nav-link font-medium border-b text-[#222222] border-gray-300 pb-6 md:p-0 md:border-none" to={link.path ? link.path : "#"} key={link.path} onClick={(e) => { link.subLinks ? e.preventDefault() : null; setOpen(link.subLinks ? true : false); setActiveLink(link.subLinks ?? []); if (link.title === "About Us") setIsAbout(true); else setIsAbout(false) }}>
+          {isMobile && link.subLinks ?
+            <Collapsible.Root>
+              <Collapsible.Trigger>{link.title}</Collapsible.Trigger>
+              <Collapsible.Content>
+                <Flex ml={2} color={'gray.90'} direction={'column'}>
+                  {link.subLinks.map((link) => (
+                    <Link to={link.path} onClick={() => { setOpen(false); setActiveLink([]) }} className="my-2" color="gray.90">{link.title}</Link>
+                  ))}
+                </Flex>
+              </Collapsible.Content>
+            </Collapsible.Root> : <HStack>{link.title} {link.subLinks && <BsChevronDown />}</HStack>}
+        </NavLink>
+
+      ))}
 
     </>
   );
@@ -159,7 +159,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
             </Popover.Root>
             <Button
               onClick={() => { navigate("/contact"); setOpen(false) }}
-              bg="brand.900"
+              bg="brand.100"
               className="text-white text-[18px] font-medium p-6 rounded-lg"
             >
               Contact Us
