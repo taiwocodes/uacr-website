@@ -5,7 +5,7 @@ const system = createSystem(defaultConfig, {
     tokens: {
       colors: {
         brand: {
-          100: { value: "#D13536" },
+          100: { value: "#C80104" },
           900: { value: "#EF0909" },
         },
         dark: {

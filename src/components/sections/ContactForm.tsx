@@ -6,6 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Box, HStack, Input, Stack, RadioCard, RadioGroup, Textarea, Button, Flex } from "@chakra-ui/react";
 import { Field } from "@/components/ui/field";
 import { Radio } from "../ui/radio";
+import { useState } from "react";
+import { BsCheck } from "react-icons/bs";
 
 const contactFormSchema = z
     .object({
@@ -28,6 +30,7 @@ export const ContactForm = () => {
 
     const location = useLocation();
     const isContactPage = location.pathname.includes("/contact");
+    const [isChecked, setIsChecked] = useState(false);
 
 
     return (
@@ -108,7 +111,8 @@ export const ContactForm = () => {
                                     border: "1px solid #80808033",
                                     borderRadius: '8px',
                                     padding: '8px',
-                                    fontSize: '16px'
+                                    fontSize: '16px',
+                                    background: isContactPage ? 'white' : 'transparent'
                                 }}
                                 value={field.value}
                                 onChange={(value, country) => {
@@ -187,6 +191,29 @@ export const ContactForm = () => {
                             bg={isContactPage ? 'white' : 'transparent'}
                         />
                     </Field>
+
+                    <div className="flex justify-start items-start mt-3">
+                        <label className="relative text-[#6F7777] block cursor-pointer select-none mt-2 pr-10">
+                            <input
+                                type="checkbox"
+                                checked={isChecked}
+                                className="absolute opacity-0 h-0 w-0 peer"
+                                required
+                            />
+                            <div
+                                onClick={() => setIsChecked(!isChecked)}
+                                className={`absolute top-0 left-0 h-[1.375rem] w-[1.375rem] border border-primary rounded-sm flex items-center justify-center ${isChecked ? 'bg-[#EF09090A]' : 'bg-transparent'} `}>
+                                <BsCheck
+                                    className={`w-4 h-4 text-[#ef0909] transition-opacity duration-200 ${isChecked ? 'opacity-100' : 'opacity-0'
+                                        }`}
+                                />
+                            </div></label>
+                        <label style={{ color: "#6F7777" }}>
+                            I hereby consent to the processing of my personal data in compliance with the Nigeria Data Protection Act, 2023, and declare my agreement with Grand Cereal Limited's Data Privacy and Protection Policy.
+                        </label>
+                    </div>
+
+
 
                     <Flex justify={isContactPage ? 'center' : 'end'}>
                         <Button

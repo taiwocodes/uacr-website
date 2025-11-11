@@ -12,7 +12,7 @@ export const Layout = () => {
 
     return (
         <Box>
-            <Navigation />
+            <Navigation color="dark.900" />
             <Outlet />
             <Footer />
         </Box>
