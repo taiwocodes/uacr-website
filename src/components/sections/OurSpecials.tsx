@@ -9,19 +9,28 @@ interface OurSpecialsProps {
 
 export const OurSpecials = ({ OurSpecial, ScrollImages }: OurSpecialsProps) => {
     const ref = useRef<HTMLDivElement>(null)
+    const isMobile = window.innerWidth <= 768
 
     const loopImgs = useMemo(() => [...ScrollImages, ...ScrollImages], [ScrollImages]);
 
     return (
         <Box className="relative bg-[#F3F5FBB2] mt-12 py-16">
             <Heading fontWeight="bold" className="text-[2rem] text-black w-fulll text-center my-6">Our Specials</Heading>
-            <Flex overflow={'hidden'} maxW={'100%'} h={'658px'} className="justify-center items-center w-screen max-w-screen-2xl px-3 lg:px-16" gap={'1rem'}>
-                <Flex direction={{ base: 'row', lg: 'column' }} className=" w-fit h-full">
-                    <Image w='312px' h={'317px'} rounded={'2xl'} src={OurSpecial[0]} />
-                    <Image w='312px' h={'317px'} rounded={'2xl'} className="mt-5" src={OurSpecial[1]} />
-                </Flex>
-                <Image className="rounded-2xl" h={'full'} w={'736px'} src={OurSpecial[2]} />
-                <Center rounded={'2xl'} h={'full'} overflow={'hidden'}><Image className=" rounded-2xl" h={'800px'} w={'312px'} src={OurSpecial[3]} /></Center>
+            <Flex w={'full'} maxW={'100%'} h={{ base: 'auto', lg: '658px' }} className="lg:justify-center items-center overflow-x-scroll no-scrollbar px-3 lg:px-16" gap={'1rem'}>
+                {isMobile ? <>
+                    <Image w={{ base: 'full', lg: '312px' }} h={'317px'} rounded={'2xl'} src={OurSpecial[0]} />
+                    <Image w={{ base: 'full', lg: '312px' }} h={'317px'} rounded={'2xl'} src={OurSpecial[1]} />
+                    <Image className="rounded-2xl" h={'full'} w={{ base: '312px', lg: '736px' }} src={OurSpecial[2]} />
+                    <Image className=" rounded-2xl" h={{ base: '357px', lg: '800px' }} w={'412px'} src={OurSpecial[3]} /> </> : <>
+                    <Flex direction={{ base: 'row', lg: 'column' }} className="w-[640px] lg:w-fit lg:h-full">
+                        <Image w={{ base: 'full', lg: '312px' }} h={'317px'} rounded={'2xl'} src={OurSpecial[0]} />
+                        <Image w={{ base: 'full', lg: '312px' }} h={'317px'} rounded={'2xl'} className="mt-5" src={OurSpecial[1]} />
+                    </Flex>
+                    <Image className="rounded-2xl" h={'full'} w={{ base: '312px', lg: '736px' }} src={OurSpecial[2]} />
+                    <Center rounded={'2xl'} h={'full'} overflow={'hidden'}>
+                        <Image className=" rounded-2xl" h={{ base: 'full', lg: '800px' }} w={'312px'} src={OurSpecial[3]} />
+                    </Center>
+                </>}
             </Flex>
 
             <div className="relative w-full pt-[4rem] overflow-hidden">
@@ -36,7 +45,6 @@ export const OurSpecials = ({ OurSpecial, ScrollImages }: OurSpecialsProps) => {
                     {loopImgs.map((image, index) => (
                         <Image className="rounded-full w-[200px] h-[200px] shrink-0" key={`scroll-${index}`} src={image} alt='food' loading="lazy" />
                     ))}
-                    <Image className=" rounded-[90%] w-[200px] h-[200px]" src="/images/food8-our-specials.png" />
                 </motion.div>
             </div>
         </Box>

@@ -44,19 +44,19 @@ export const MrBiggs = () => {
 }
 
 const OurSpecial = [
-    "/images/jollof-rice2-our-specials.png",
-    "/images/jollof-rice-our-specials.png",
-    "/images/timeless-flavours-our-specials.png",
-    "/images/hmm-delicious-our-specials.png"
+    "/images/our-special-images/jollof-rice2-our-specials.png",
+    "/images/our-special-images/jollof-rice-our-specials.png",
+    "/images/our-special-images/timeless-flavours-our-specials.png",
+    "/images/our-special-images/hmm-delicious-our-specials.png"
 ]
 
 const ScrollImages = [
-    "/images/food9-our-specials.png",
-    "/images/food-our-specials.png",
-    "/images/food2-our-specials.png",
-    "/images/food3-our-specials.png",
-    "/images/food4-our-specials.png",
-    "/images/food5-our-specials.png",
-    "/images/food7-our-specials.png",
-    "/images/food8-our-specials.png"
+    "/images/our-special-images/food9-our-specials.png",
+    "/images/our-special-images/food-our-specials.png",
+    "/images/our-special-images/food2-our-specials.png",
+    "/images/our-special-images/food3-our-specials.png",
+    "/images/our-special-images/food4-our-specials.png",
+    "/images/our-special-images/food5-our-specials.png",
+    "/images/our-special-images/food7-our-specials.png",
+    "/images/our-special-images/food8-our-specials.png"
 ]

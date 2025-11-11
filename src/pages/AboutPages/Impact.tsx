@@ -6,7 +6,7 @@ export const Impact = () => {
         <Box>
             <Flex w={'full'} h={{ base: '600px', lg: '824px' }} color={'white'} align={'end'} pb={'102px'} bgRepeat={'none'} backgroundPosition={'center'} bgSize={'cover'} bgImage={`url('${heroImage}')`}>
                 <Box w={{ base: 'full', lg: '720px' }} ml={{ base: '16px', lg: '104px' }}>
-                    <Flex bg={''} className=' w-full lg:w-[381px] border-l-2 border-white backdrop-filter backdrop-blur-sm  p-2 items-center'>
+                    <Flex bg={'#FFFFFF33'} className=' w-full lg:w-[381px] border-l-2 border-white backdrop-filter backdrop-blur-sm py-3 px-4 items-center'>
                         <Text color={'white'} className='uppercase' fontWeight={'semibold'}>CORPORATE ANNOUNCEMENTS </Text>
                         <Circle bg={'white'} mx={2} size={'10px'} />
                         <Text color={'white'}>5 min read</Text>
@@ -39,31 +39,31 @@ const impactNews = [
     {
         category: 'Sustainability & CSR',
         title: 'Sustainability Milestone: 50% of Packaging Now Recyclable',
-        img: '/impact-images/impact-images6.png'
+        img: '/images/impact-images/impact-images6.png'
     },
     {
         category: 'Press Releases',
         title: 'UAC Celebrates Five Years of Community Giving',
-        img: '/impact-images/impact-images1.png'
+        img: '/images/impact-images/impact-images1.png'
     },
     {
         category: 'Press Releases',
         title: 'UAC Restaurants Launches New Signature Menu',
-        img: '/impact-images/impact-images2.png'
+        img: '/images/impact-images/impact-images2.png'
     },
     {
         category: 'Sustainability & CSR',
         title: 'Sustainability Milestone: 50% of Packaging Now Recyclable',
-        img: '/impact-images/impact-images3.png'
+        img: '/images/impact-images/impact-images3.png'
     },
     {
         category: 'Press Releases',
         title: 'UAC Celebrates Five Years of Community Giving',
-        img: '/impact-images/impact-images4.png'
+        img: '/images/impact-images/impact-images4.png'
     },
     {
         category: 'Press Releases',
         title: 'UAC Restaurants Launches New Signature Menu',
-        img: '/impact-images/impact-images5.png'
+        img: '/images/impact-images/impact-images5.png'
     },
 ]

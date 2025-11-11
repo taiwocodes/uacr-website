@@ -41,19 +41,19 @@ export const navLinks: Link[] = [
 
 export const ManagementTraineePrograms: NewsItem[] = [
   {
-    image: '/career-images/management-trainee-1.png',
+    image: '/images/career-images/management-trainee-1.png',
     title: 'UAC Foods Limited – Management Trainee Program',
     description: 'Join UACR, a subsidiary of UAC PLC, in building a rewarding career through structured learning in sales, manufacturing, and supply chain.',
     date: 'October 5, 2024',
   },
   {
-    image: '/career-images/management-trainee-2.png',
+    image: '/images/career-images/management-trainee-2.png',
     title: 'Grand Cereals Limited – Management Trainee Program',
     description: 'Join UACR, a subsidiary of UAC PLC, in building a rewarding career through structured learning in sales, manufacturing, and supply chain.',
     date: 'August 20, 2024',
   },
   {
-    image: '/career-images/management-trainee-3.png',
+    image: '/images/career-images/management-trainee-3.png',
     title: 'UAC Nigeria Management Trainee Scheme',
     description: 'A corporate-wide initiative by UAC of Nigeria PLC to develop fresh graduates into future managers through intensive business training and rotations.',
     date: 'April 18, 2024',
@@ -63,19 +63,19 @@ export const ManagementTraineePrograms: NewsItem[] = [
 export const GraduateTrainee: NewsItem[] = [
 
   {
-    image: '/career-images/graduate-trainee-3.png',
+    image: '/images/career-images/graduate-trainee-3.png',
     title: 'UACR Graduate Trainee Program – Marketing & Brand Development',
     description: 'Develop skills in digital marketing, campaign execution, and customer engagement across flagship food brands like Mr. Bigg’s and Debonairs Pizza.',
     date: 'June 15, 2024',
   },
   {
-    image: '/career-images/graduate-trainee-4.png',
+    image: '/images/career-images/graduate-trainee-4.png',
     title: 'UACR Graduate Trainee Program – Finance & Accounting',
     description: 'Build a solid finance foundation with rotational assignments in budgeting, auditing, and financial reporting.',
     date: 'April 8, 2024',
   },
   {
-    image: '/career-images/graduate-trainee-5.png',
+    image: '/images/career-images/graduate-trainee-5.png',
     title: 'UACR Graduate Trainee Program – Human Resources Track',
     description: 'Learn the ropes of people management, talent acquisition, and employee engagement in a fast-paced food services environment.',
     date: 'February 27, 2024',

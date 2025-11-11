@@ -38,7 +38,7 @@ export default function Career() {
                 <Text w={{ base: 'full', lg: '612px' }} fontSize={{ base: '16px', lg: '20px' }} textAlign={'center'} color={'gray.90'}>From special offers to behind-the-scenes moments—see what’s buzzing right now across our restaurants.</Text>
                 <Flex direction={{ base: 'column', lg: 'row' }} w={{ base: 'full', lg: '1342px' }} mt={8}>
                     <Flex direction={{ base: 'column', lg: 'row' }} h={{ base: 'fit', lg: '333px' }} rounded={'12px'}>
-                        <Image w={'479px'} src={'/career-images/graduate-trainee-1.png'} className="rounded-t-[12px] lg:rounded-t-none lg:rounded-l-[12px] " />
+                        <Image w={'479px'} src={'/images/career-images/graduate-trainee-1.png'} className="rounded-t-[12px] lg:rounded-t-none lg:rounded-l-[12px] " />
                         <Box w={{ base: 'full', lg: '413px' }} bg={'white'} className="rounded-b-[12px] lg:rounded-b-none lg:rounded-r-[12px]" p={'24px'}>
                             <Text fontSize={'26px'} fontWeight={'bold'}>UAC Restaurants Launches New Signature Menu</Text>
                             <Text fontSize={'20px'} color={'gray.90'}>Catch up on major announcements, milestones, and everything shaping our journey across Nigeria and beyond.</Text>
@@ -46,7 +46,7 @@ export default function Career() {
                         </Box>
                     </Flex>
                     <Box className="lg:ml-5" w={{ base: 'full', lg: '436px' }}>
-                        <Image roundedTop={'12px'} src={'/career-images/graduate-trainee-2.png'} />
+                        <Image roundedTop={'12px'} src={'/images/career-images/graduate-trainee-2.png'} />
                         <Box roundedBottom={'12px'} p={'19px'} bg={'white'}>
                             <Text truncate color={'black'} fontSize={'20px'} fontWeight={'medium'} mb={'12px'}>UACR Graduate Trainee Program – Supply Chain & Logistics</Text>
                             <Text lineClamp={2} color={'gray.90'} className=' items-center'>Gain hands-on experience in procurement, vendor management, and logistics processes supporting UACR’s nationwide outlets.</Text>
@@ -75,12 +75,12 @@ export default function Career() {
                                 <Text fontSize="2rem" fontWeight="bold">Employee Experience</Text></Span>
                             <Text color="gray.90" >See what it’s like to work at UACR from our employees experience</Text>
                         </Flex>
-                        <Image w={{ base: 'full', lg: "914px" }} h="352px" className="rounded-lg lg:ml-5" src={'/career-images/employee-experience-1.png'} />
+                        <Image w={{ base: 'full', lg: "914px" }} h="352px" className="rounded-lg lg:ml-5" src={'/images/career-images/employee-experience-1.png'} />
                     </Flex>
                     <Stack direction={{ base: 'column', lg: 'row' }} w={{ base: 'full', lg: '1304px' }} justify={'center'} gap={5}>
-                        <Image w={{ base: 'full', lg: "419px" }} h="282px" className="rounded-lg" src={'/career-images/employee-experience-2.png'} />
-                        <Image w={{ base: 'full', lg: "419px" }} h="282px" className="rounded-lg" src={'/career-images/employee-experience-3.png'} />
-                        <Image w={{ base: 'full', lg: "419px" }} h="282px" className="rounded-lg" src={'/career-images/employee-experience-4.png'} />
+                        <Image w={{ base: 'full', lg: "419px" }} h="282px" className="rounded-lg" src={'/images/career-images/employee-experience-2.png'} />
+                        <Image w={{ base: 'full', lg: "419px" }} h="282px" className="rounded-lg" src={'/images/career-images/employee-experience-3.png'} />
+                        <Image w={{ base: 'full', lg: "419px" }} h="282px" className="rounded-lg" src={'/images/career-images/employee-experience-4.png'} />
                     </Stack>
                 </Flex>
             </Flex>
