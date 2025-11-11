@@ -28,12 +28,13 @@ export const OurSpecials = ({ OurSpecial, ScrollImages }: OurSpecialsProps) => {
                 <motion.div
                     ref={ref}
                     className="flex gap-[1rem] h-[312px] scroll-smooth no-scrollbar will-change-transform"
-                    initial={{ x: 0 }}
+                    initial={{ x: "0%" }}
                     animate={{ x: ["0%", "-50%"] }}
                     transition={{ ease: "linear", duration: 50, repeat: Infinity }}
+                    style={{ translateZ: 0 }}
                 >
                     {loopImgs.map((image, index) => (
-                        <Image className="rounded-full size-[70%] snap-center" key={`scroll-${index}`} src={image} alt='food' loading="lazy" />
+                        <Image className="rounded-full w-[200px] h-[200px] shrink-0" key={`scroll-${index}`} src={image} alt='food' loading="lazy" />
                     ))}
                     <Image className=" rounded-[90%] w-[200px] h-[200px]" src="/images/food8-our-specials.png" />
                 </motion.div>
