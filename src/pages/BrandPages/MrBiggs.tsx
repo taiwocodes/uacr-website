@@ -58,4 +58,5 @@ const ScrollImages = [
     "/images/food4-our-specials.png",
     "/images/food5-our-specials.png",
     "/images/food7-our-specials.png",
+    "/images/food8-our-specials.png"
 ]
