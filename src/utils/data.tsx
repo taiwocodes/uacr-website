@@ -8,23 +8,32 @@ import CareersNavIcon from '@/assets/images/careers-nav-icon.png'
 import OpenRolesNavImage from '@/assets/images/nav-images/open-roles-nav-image.png'
 import CareersNavImage from '@/assets/images/nav-images/careers-nav-image.png'
 import { Link, NewsItem } from './model'
+import { AiOutlineTeam } from "react-icons/ai";
+import { IoIceCreamOutline } from "react-icons/io5";
+import { IoPizzaOutline } from "react-icons/io5";
+import { IoRestaurantOutline } from "react-icons/io5";
+import { RiQuestionAnswerLine } from "react-icons/ri";
+import { FaHandsHelping } from "react-icons/fa";
+import { LuBriefcaseBusiness } from "react-icons/lu";
+import { IoBusiness } from "react-icons/io5";
+import { RiTeamLine } from "react-icons/ri";
 
 export const navLinks: Link[] = [
   {
     title: "Brands",
     path: '/brands',
     subLinks: [
-      { path: "/brands/mrbiggs", title: "Mr Biggs", image: mrBiggsNavImage, logo: MrBiggsLogo },
-      { path: "/brands/debonairs", title: "Debonairs", image: debonairsNavImage, logo: DebonairsLogo },
-      { path: "#", title: "Ice Cream", image: iceCreamNavImage, logo: IceCreamLogo },
+      { path: "/brands/mrbiggs", title: "Mr Biggs", image: mrBiggsNavImage, logo: MrBiggsLogo, icon: <IoRestaurantOutline /> },
+      { path: "/brands/debonairs", title: "Debonairs", image: debonairsNavImage, logo: DebonairsLogo, icon: <IoPizzaOutline /> },
+      { path: "#", title: "Ice Cream", image: iceCreamNavImage, logo: IceCreamLogo, icon: <IoIceCreamOutline /> },
     ],
   },
   {
     title: "About Us", path: "/about", subLinks: [
-      { path: "/about", title: "About UACR" },
-      { path: '/about/team', title: 'Team (Management and Board)' },
-      { path: "/about/impact", title: "Impact" },
-      { path: '/about/faq', title: "FAQ" },
+      { path: "/about", title: "About UACR", icon: <IoBusiness /> },
+      { path: '/about/team', title: 'Team (Management and Board)', icon: <AiOutlineTeam /> },
+      { path: "/about/impact", title: "Impact", icon: <FaHandsHelping /> },
+      { path: '/about/faq', title: "FAQ", icon: <RiQuestionAnswerLine /> },
 
     ]
   },
@@ -32,8 +41,8 @@ export const navLinks: Link[] = [
   { path: "/blogs", title: "Blogs" },
   {
     title: "Careers", path: "/careers", subLinks: [
-      { path: "/careers/careers-at-uacr", title: "Careers at UACR", logo: CareersNavIcon, image: CareersNavImage },
-      { path: "/careers/open-roles", title: "Open Roles", logo: CareersNavIcon, image: OpenRolesNavImage },
+      { path: "/careers/careers-at-uacr", title: "Careers at UACR", logo: CareersNavIcon, image: CareersNavImage, icon: <RiTeamLine /> },
+      { path: "/careers/open-roles", title: "Open Roles", logo: CareersNavIcon, image: OpenRolesNavImage, icon: <LuBriefcaseBusiness /> },
     ]
   },
 

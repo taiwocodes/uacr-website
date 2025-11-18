@@ -20,8 +20,8 @@ const NewsComponent = ({ items }: NewsItemProps) => {
     <Grid maxW={'1440px'} templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(3,1fr)' }} gap='2rem' margin='auto' alignContent='center'>
       {items.map((item, index) => (
         <Flex justify={'center'} align={'center'} w={'100%'} key={index}>
-          <Stack w={'413px'} >
-            <Image w={'413px'} h={'254px'} rounded={'lg'} src={item.image} />
+          <Stack w={{ base: 'full', lg: '413px' }} >
+            <Image w={{ base: 'full' }} h={'254px'} rounded={'lg'} src={item.image} />
             <Heading className='font-bold text-xl'>{item.title}</Heading>
             <HStack color="gray.500" fontSize="xs">
               <Text>{item.author}</Text>
