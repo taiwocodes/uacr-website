@@ -52,7 +52,7 @@ export const Footer = () => {
                 </NavLink>
               ))}
             </Grid>
-            <Center className="mt-40 border border-white rounded-full w-[40px] h-[40px] cursor-pointer" onClick={scrollToTop} color="white">
+            <Center display={{ base: 'none', lg: 'inline' }} className="mt-40 border border-white rounded-full w-[40px] h-[40px] cursor-pointer" onClick={scrollToTop} color="white">
               <BsArrowUp />
             </Center>
           </Box>
@@ -89,12 +89,11 @@ export const Footer = () => {
               <Text color={'#ADB3AB'} fontSize={'22px'}>9am—6pm</Text>
             </Span>
 
-            <Flex color="gray.70" justify={"start"} fontSize="sm" mt="7rem">
+            <Flex color="gray.70" justify={"start"} fontSize="sm" mt={{ base: '3rem', lg: "7rem" }}>
               Copyright UACR ©{currentYear}
             </Flex>
           </Box>
         </Flex>
-
         <Flex p={'55px'} color={'white'} mt={8} rounded={'2xl'} justify={'space-between'} align={'center'} bgImage={`url(${footerBg})`} bgSize="cover" bgRepeat="no-repeat" >
           <Text w={'132px'} fontWeight={'bold'} fontSize={'22px'}>Explore Restaurants</Text>
           <Link to={'/'}>

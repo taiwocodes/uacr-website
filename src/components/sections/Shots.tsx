@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 
 import bgLine5 from "@/assets/images/bg-line.png";
+import bgLineMobile from "@/assets/images/bg-line-mobile.png";
 import eatingImage2 from "@/assets/images/eating-image2.png"
 import Shots2 from "@/assets/images/shots-2.png";
 import Shots4 from "@/assets/images/shots-4.png";
@@ -19,7 +20,7 @@ import Shots3 from "@/assets/images/shots-3.png"
 export const Shots = () => {
   return (
     <>
-      <Flex h={{ base: "110rem", lg: "50rem" }} justify='center' className="relative  py-1">
+      <Flex h={{ base: "110rem", lg: "50rem" }} justify='center' className="relative py-1">
         <Flex direction="column" justify='center' maxW={'1440px'} className="absolute top-0 py-20 px-3 lg:px-16 items-center">
           <Flex direction={{ base: 'column', lg: 'row' }} className="mb-5">
             <Flex direction="column" justifyContent="space-between" w={{ base: 'full', lg: "20rem" }} className=" h-[240px] mb-4 lg:mb-0 lg:h-auto shadow-lg rounded-lg p-4 " bg="white">
@@ -36,16 +37,17 @@ export const Shots = () => {
           </Stack>
         </Flex>
       </Flex>
-      <Flex className="relative justify-center px-3 lg:px-16 py-16">
-        <Flex direction={{ base: 'column', lg: 'row' }} bg="dark.900" w="full" h={{ base: "40rem", lg: "25rem" }} alignItems="center" justifyContent="space-between" className="rounded-2xl overflow-hidden p-6 pb-0 lg:p-0">
-          <Box color="white" className="lg:ml-16">
+      <Flex className=" justify-center px-3 lg:px-16 py-16">
+        <Flex direction={{ base: 'column', lg: 'row' }} bg="dark.900" w="full" h={{ base: "35rem", lg: "25rem" }} alignItems="center" justifyContent="space-between" className="rounded-2xl relative overflow-hidden pb-0 lg:p-0">
+          <Box color="white" className="p-5 lg:ml-16">
             <Text fontSize="2rem" fontWeight="bold">Become a Partner in Success</Text>
             <Text w={{ base: 'full', lg: "25rem" }} className="mb-5">Grow your business while elevating ours – let’s create excellence together.</Text>
             <Button bg={'brand.100'} className=" p-4 rounded-md">Register</Button>
           </Box>
-          <Box className="relative w-[545px]" h="100%">
-            <Image w={'full'} src={bgLine5} />
-            <Image src={eatingImage2} className="absolute rounded-r-lg lg:right-0 bottom-0" />
+          <Box className="relative w-full lg:w-[545px]" h="100%">
+            <Image w={'full'} display={{ base: 'none', lg: 'block' }} src={bgLine5} />
+            <Image w={'full'} display={{ base: 'block', lg: 'none' }} src={bgLineMobile} />
+            <Image src={eatingImage2} className="absolute rounded-r-lg  lg:right-0 bottom-14" />
           </Box>
         </Flex>
       </Flex>

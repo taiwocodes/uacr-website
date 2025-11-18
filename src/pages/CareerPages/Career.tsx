@@ -45,7 +45,7 @@ export default function Career() {
                             <Text borderTop={'1px dashed #80808033'} mt={'26px'} pt={'26px'} fontWeight={'medium'} color={'gray.90'}>May 3, 2024</Text>
                         </Box>
                     </Flex>
-                    <Box className="lg:ml-5" w={{ base: 'full', lg: '436px' }}>
+                    <Box className="lg:ml-5 mt-4 lg:mt-5" w={{ base: 'full', lg: '436px' }}>
                         <Image roundedTop={'12px'} src={'/images/career-images/graduate-trainee-2.png'} />
                         <Box roundedBottom={'12px'} p={'19px'} bg={'white'}>
                             <Text truncate color={'black'} fontSize={'20px'} fontWeight={'medium'} mb={'12px'}>UACR Graduate Trainee Program – Supply Chain & Logistics</Text>

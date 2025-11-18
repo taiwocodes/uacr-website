@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { Box, Button, HStack, IconButton, Image, useBreakpointValue, Stack, Drawer, Portal, Popover, Flex, Text, Icon, Center, Collapsible } from "@chakra-ui/react";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { CloseButton } from "../ui/close-button";
+import { Box, Button, HStack, IconButton, Image, useBreakpointValue, Stack, Portal, Popover, Flex, Text, Icon, Center, Collapsible, Accordion } from "@chakra-ui/react";
+import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 import logo from "@/assets/logo/logoDark.png";
 import { navLinks } from "../../utils/data";
 import { GoArrowUpRight } from "react-icons/go"
@@ -10,7 +9,7 @@ import { SubLink } from "../../utils/model";
 import { useRef } from "react"
 import aboutUs from "@/assets/images/about-nav-image.png"
 import { TbCirclePercentageFilled } from "react-icons/tb"
-import { BsChevronDown } from "react-icons/bs";
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 
 
 export const Navigation: React.FC<({ color: string })> = () => {
@@ -19,30 +18,55 @@ export const Navigation: React.FC<({ color: string })> = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [isAbout, setIsAbout] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(['']);
   const isMobile = useBreakpointValue({ base: true, md: false });
   const [activeLink, setActiveLink] = useState<SubLink[]>([]);
 
 
   const NavLinks = (
     <>
-      {navLinks.map((link) => (
-
-        <NavLink end={false} className="nav-link font-medium border-b text-[#222222] border-gray-300 pb-6 md:p-0 md:border-none" to={link.path ? link.path : "#"} key={link.path} onClick={(e) => { link.subLinks ? e.preventDefault() : null; setOpen(link.subLinks ? true : false); setActiveLink(link.subLinks ?? []); if (link.title === "About Us") setIsAbout(true); else setIsAbout(false) }}>
-          {isMobile && link.subLinks ?
-            <Collapsible.Root>
-              <Collapsible.Trigger>{link.title}</Collapsible.Trigger>
-              <Collapsible.Content>
-                <Flex ml={2} color={'gray.90'} direction={'column'}>
-                  {link.subLinks.map((link) => (
-                    <Link to={link.path} onClick={() => { setOpen(false); setActiveLink([]) }} className="my-2" color="gray.90">{link.title}</Link>
-                  ))}
-                </Flex>
-              </Collapsible.Content>
-            </Collapsible.Root> : <HStack>{link.title} {link.subLinks && <BsChevronDown />}</HStack>}
-        </NavLink>
-
-      ))}
-
+      {isMobile ?
+        <Accordion.Root onValueChange={(e) => setIsExpanded(e.value)} className="lg:flex lg:gap-6" collapsible>
+          {navLinks.map((link) => (
+            <NavLink end={false} className="lg:nav-link font-semibold border-b text-[#222222] border-[#F3F5FB] py-5 lg:py-0 lg:pb-0 md:p-0 md:border-none" to={link.path ? link.path : "#"} key={link.path}
+              onClick={(e) => {
+                link.subLinks ? e.preventDefault() : null;
+                {
+                  !isMobile && setOpen(link.subLinks ? true : false);
+                  !isMobile && setActiveLink(link.subLinks ?? []);
+                }
+                if (link.title === "About Us") setIsAbout(true);
+                else setIsAbout(false)
+              }}>
+              {link.subLinks ?
+                <Accordion.Item className="border-b text-[#222222] border-[#F3F5FB] py-5 lg:py-0" value={link.title}>
+                  <Accordion.ItemTrigger>
+                    <HStack w={'full'} justifyContent={'space-between'} color={'brand.100'}><Text>{link.title}</Text>{link.subLinks && !isExpanded.includes(link.title) ? <BsChevronDown /> : <BsChevronUp />}</HStack></Accordion.ItemTrigger>
+                  <Accordion.ItemContent>
+                    <Flex color={'gray.90'} direction={'column'}>
+                      {link.subLinks.map((link) => (
+                        <HStack key={link.title} onClick={() => { setOpen(false); setActiveLink([]); navigate(link.path); }} className="my-4 flex items-center " color={'gray.90'}>
+                          <IconButton bg={'brand.100'} mr={3} color={'white'}>{link.icon}</IconButton><Text>{link.title}</Text>
+                        </HStack>
+                      ))}
+                    </Flex>
+                  </Accordion.ItemContent>
+                </Accordion.Item>
+                : <HStack onClick={() => { setOpen(false); setActiveLink([]) }} color={'brand.100'} className=" font-semibold border-b  border-[#F3F5FB] py-5 lg:py-0 md:p-0 md:border-none" >{link.title}</HStack>}
+            </NavLink>
+          ))}
+        </Accordion.Root> :
+        navLinks.map((link) => (
+          <NavLink end={false} className="nav-link font-semibold border-b text-[#222222] border-[#F3F5FB] py-5 lg:py-0 lg:pb-0 md:p-0 md:border-none" to={link.path ? link.path : "#"} key={link.path}
+            onClick={(e) => {
+              link.subLinks ? e.preventDefault() : null;
+              setOpen(link.subLinks ? true : false);
+              setActiveLink(link.subLinks ?? []);
+              if (link.title === "About Us") setIsAbout(true);
+              else setIsAbout(false)
+            }}><HStack>{link.title} {link.subLinks && <BsChevronDown />}</HStack>
+          </NavLink>
+        ))}
     </>
   );
 
@@ -104,44 +128,40 @@ export const Navigation: React.FC<({ color: string })> = () => {
   }
 
   return (
-    <Box w="100%" className="absolute px-6 z-40" background="transparent">
-      <HStack justifyContent={{ base: 'space-between', lg: "start" }} className="shadow-sm rounded-xl" bg={{ base: 'transparent', lg: 'white' }} px={4} py={4} mt="24px" w="full" h={{ lg: "87px" }}>
-        <Image src={logo} alt="Logo" mr={20} onClick={() => navigate("/")} cursor="pointer" />
+    <Box w="100%" px={{ lg: 6 }} className={`absolute ${isMobile ? open ? 'px-0 transition-[padding] delay-1000 ease-in-out' : 'px-6 transition-[padding] delay-1000 ease-in-out' : 'px-6'} z-40`} background="transparent">
+      <Stack
+        className={`nav ${isMobile ? open ? 'open' : '' : ''} shadow-sm`}
+        direction={{ base: 'column', lg: 'row' }}
+        justifyContent={"start"}
+        rounded={{ lg: 'xl' }}
+        bg={'white'}
+        px={{ lg: 6 }}
+        py={{ lg: 4 }}
+        mt={{ lg: "24px" }}
+        w={{ lg: "full" }}
+        h={{ lg: "87px" }}
+      >
+        <HStack className={`${isMobile ? open ? 'p-0 ' : 'p-4 transition-[padding] delay-1000 ease-in-out' : 'p-4'}`} p={{ base: open ? 4 : 0, lg: 4 }} justifyContent={'space-between'}>
+          <Image src={logo} alt="Logo" mr={20} onClick={() => navigate("/")} cursor="pointer" />
+          <IconButton display={{ base: 'inline', lg: 'none' }} onClick={() => setOpen(!open)} variant="ghost" w={'fit'} aria-label="Toggle Navigation">
+            {open ? <RxCross1 /> : <RxHamburgerMenu color="gray" />}
+          </IconButton>
+        </HStack>
         {isMobile ? (
-          <Drawer.Root size="full" open={open} onOpenChange={(e) => setOpen(e.open)}>
-            <Drawer.Backdrop />
-            <Drawer.Trigger>
-              <IconButton variant="ghost" aria-label="Toggle Navigation">
-                <RxHamburgerMenu />
-              </IconButton>
-            </Drawer.Trigger>
-
-            <Portal>
-              <Drawer.Positioner>
-                <Drawer.Content bg={'white'} pt={10}>
-                  <HStack justify="space-between">
-                    <Image src={logo} alt="Logo" onClick={() => { navigate("/"); setOpen(false) }} cursor="pointer" pt={8} pl={3} />
-                    <Drawer.CloseTrigger color={'black'}>
-                      <CloseButton size='2xl' />
-                    </Drawer.CloseTrigger>
-                  </HStack>
-
-                  <Drawer.Body>
-                    <Stack mt={10} p={5} fontWeight="medium" fontSize="18px">
-                      {NavLinks}
-                      <Button
-                        onClick={() => { navigate("/contact"); setOpen(false) }}
-                        bg="brand.100"
-                        className="text-white text-[20px] font-medium p-6 rounded-lg mt-10"
-                      >
-                        Contact Us
-                      </Button>
-                    </Stack>
-                  </Drawer.Body>
-                </Drawer.Content>
-              </Drawer.Positioner>
-            </Portal>
-          </Drawer.Root>
+          <Box w={'full'} visibility={open ? 'initial' : 'hidden'} className={` ${open ? '' : 'absolute -z-20'}`} px={open ? 4 : 0} bg={open ? 'white' : 'none'} rounded={open ? 'none' : 'xl'} >
+            <Box w={'full'} h={'full'} bg={'white'} pt={2}>
+              <Stack mt={0} px={5} fontWeight="medium" fontSize="18px">
+                {NavLinks}
+                <Button
+                  onClick={() => { navigate("/contact"); setOpen(false) }}
+                  bg="brand.100"
+                  className="text-white text-[20px] font-medium p-6 rounded-lg mt-10"
+                >
+                  Contact Us
+                </Button>
+              </Stack>
+            </Box>
+          </Box>
         ) : (
           <Flex w={'100%'} justifyContent={'space-between'}>
             <Popover.Root
@@ -168,7 +188,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
           </Flex>
         )}
 
-      </HStack>
+      </Stack>
 
     </Box >
   );
