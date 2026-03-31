@@ -4,8 +4,10 @@ import restaurantImage from "@/assets/images/debonairs-restaurant-image.png"
 import { Footer } from "@/components/common/Footer"
 import { OurSpecials } from "@/components/sections/OurSpecials"
 import { Locations } from "@/components/sections/Locations"
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 export const Debonairs = () => {
+    const aboutRef = useScrollReveal<HTMLDivElement>();
     return (
         <Box w={"full"} className="bg-white absolute top-0 ">
             <Flex direction="column" justifyContent={"center"} textAlign={"center"} alignItems={"center"} h="824px" w="100%"
@@ -18,7 +20,7 @@ export const Debonairs = () => {
                     <Button w={"10rem"} bg="brand.900" className="text-white text-[18px] font-medium p-6 rounded-lg">Learn More</Button>
                 </Span>
             </Flex>
-            <Flex justifyContent={"center"} w={"full"} color="dark.900" bgColor="white" className="relative py-16 px-3 md:px-16 ">
+            <Flex ref={aboutRef} justifyContent={"center"} w={"full"} color="dark.900" bgColor="white" className="relative py-16 px-3 md:px-16 ">
                 <Flex className="flex-col lg:flex-row" justifyContent={"center"} alignItems={"end"} w={"full"} >
                     <Span className="lg:mr-10" w={{ base: "full", lg: "fit" }}>
                         <Text fontSize={{ base: "1.5rem", lg: "2.1rem" }} w={{ base: "full", lg: "23rem" }} fontWeight={"bold"}>About Debonairs Pizza</Text>
@@ -46,11 +48,14 @@ const OurSpecial = [
 ]
 
 const ScrollImages = [
-    "/images/our-special-images/pizza-our-specials.png",
-    "/images/our-special-images/pizza2-our-specials.png",
-    "/images/our-special-images/pizza3-our-specials.png",
-    "/images/our-special-images/pizza4-our-specials.png",
-    "/images/our-special-images/pizza5-our-specials.png",
-    "/images/our-special-images/pizza6-our-specials.png",
-    "/images/our-special-images/pizza7-our-specials.png",
+    "/images/debonairs-updated images/3-Cheese_Blk Plate.jpg",
+    "/images/debonairs-updated images/Big Pizzas on Black Plate_Creamy Chicken_CA.png",
+    "/images/debonairs-updated images/Chicken Tikka_CMYK_BM.jpg",
+    "/images/debonairs-updated images/Club Pizza on Black Plate_CA.jpg",
+    "/images/debonairs-updated images/Four Seasons_Blk Plate.jpg",
+    "/images/debonairs-updated images/Garlic Bacon & Jalapeno Pizza_2_Etched.jpg",
+    "/images/debonairs-updated images/Something Meaty on Black Plate_ES copy.jpg",
+    "/images/debonairs-updated images/Sweet & Sour Pizza - Hero (Stacked)_VS.jpg",
+    "/images/debonairs-updated images/Sweet Chilli Chicken Triple-Decker_ES copy.jpg",
+    "/images/debonairs-updated images/Sweet Chilli Pizza on Black Plate_CA copy.jpg",
 ]

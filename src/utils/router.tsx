@@ -14,6 +14,7 @@ import { FAQ } from "@/pages/AboutPages/FAQ";
 
 import OpenRoles from "@/pages/CareerPages/OpenRoles";
 import Career from "@/pages/CareerPages/Career";
+import { IceCream } from "@/pages/BrandPages/IceCream";
 
 const routes: RouteObject[] = [
     {
@@ -25,6 +26,7 @@ const routes: RouteObject[] = [
                 path: 'brands', children: [
                     { path: "mrbiggs", element: <MrBiggs /> },
                     { path: "debonairs", element: <Debonairs /> },
+                    { path: "icecream", element: <IceCream /> },
                 ]
             },
             {

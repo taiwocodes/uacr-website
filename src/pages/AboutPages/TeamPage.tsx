@@ -6,10 +6,9 @@ import debolaBadejo from "@/assets/images/directors/debola-badejo.png"
 import darrenHele from "@/assets/images/directors/darren-hele.png"
 import phillipSmith from "@/assets/images/directors/phillip-smith.png"
 import nneomaObikili from "@/assets/images/directors/nneoma-obikili.png"
-import estherObiajulu from "@/assets/images/directors/francis.png"
 import davidDogeni from "@/assets/images/directors/ifeaoma.png"
 import dorcasOgunleye from "@/assets/images/directors/dorcas-ogunleye.png"
-import valentine from '@/assets/images/directors/valentine.png'
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 export const TeamPage = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -19,9 +18,13 @@ export const TeamPage = () => {
         description: "",
         img: ""
     })
+    const headerRef = useScrollReveal<HTMLDivElement>();
+    const boardRef = useScrollReveal<HTMLDivElement>();
+    const managementRef = useScrollReveal<HTMLDivElement>();
+    
     return (
         <Box>
-            <Flex h={{ base: '650px', lg: '550px' }} direction={'column'} className="justify-end items-center bg-[linear-gradient(180deg,#E5F2F2_46.21%,#FFFFFF_105.1%)] py-16 pb-10 px-3 lg:px-24">
+            <Flex ref={headerRef} h={{ base: '650px', lg: '550px' }} direction={'column'} className="justify-end items-center bg-[linear-gradient(180deg,#E5F2F2_46.21%,#FFFFFF_105.1%)] py-16 pb-10 px-3 lg:px-24">
                 <Heading w={{ base: 'full', lg: "595px" }} fontSize={{ base: '32px', lg: "48px" }} lineHeight="normal" fontWeight="bold" className="mb-2 text-center text-black">
                     Seasoned Non-Executive Board of Directors
                 </Heading>
@@ -29,7 +32,7 @@ export const TeamPage = () => {
                     Our board believes good governance is a journey, not a destination. We are committed to strong governance principles geared towards continuous improvement. For us, our stakeholders and customers remain our top priority.
                 </Text>
             </Flex>
-            <Flex h={'fit'} direction={'column'} className="px-3 lg:px-16 my-0" >
+            <Flex ref={boardRef} h={'fit'} direction={'column'} className="px-3 lg:px-16 my-0" >
                 <Stack direction={{ base: 'column', md: 'row' }} className="justify-center" w={'full'} gap={0}>
                     {boardOfDirectors.map((director) => (
                         <GridItem onClick={() => { setSelected(director); setIsOpen(true) }} w={{ base: 'full', md: '302.23px' }} h="fit" borderColor="gray.50" className="relative rounded-lg">
@@ -44,7 +47,7 @@ export const TeamPage = () => {
                         </GridItem>))}
                 </Stack>
             </Flex>
-            <Flex direction={'column'} align={'center'} color={'dark.900'} bg={'#F3F5FBB2'} className="px-3 lg:px-24 py-10 my-10">
+            <Flex ref={managementRef} direction={'column'} align={'center'} color={'dark.900'} bg={'#F3F5FBB2'} className="px-3 lg:px-24 py-10 my-10">
                 <Box maxW={'1440px'}>
                     <Flex direction={{ base: 'column', md: 'row' }} justify={'space-between'} align={'center'}>
                         <Heading fontSize={{ base: '32px', md: '48px' }} lineHeight={'normal'} fontWeight={'bold'}>Strong and Experienced Management Team</Heading>
@@ -54,7 +57,7 @@ export const TeamPage = () => {
                         {management.map((director) => (
                             <GridItem key={director.name} onClick={() => { setSelected(director); setIsOpen(true); }} w={{ base: 'full', md: '413.67px' }} h="fit" borderColor="gray.50" className="relative rounded-lg">
                                 <Flex onClick={() => setIsOpen(true)} w={'full'} direction={'column'} h="full" className="cursor-pointer p-4">
-                                    <Image w="full" h={'389px'} className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
+                                    <Image w="full" h={'389px'} objectFit="cover" objectPosition={director.name === 'David Dogeni' ? 'center 0%' : 'center top'} className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
                                     <Span w={'full'} className="">
                                         <Text color="brand.900" className=" my-2 w-fit text-start items-center">{director.role}</Text>
                                         <Text w="full" color={'dark.900'} fontWeight="semibold" fontSize="22px">{director.name}</Text>
@@ -139,14 +142,8 @@ const management = [
         img: nneomaObikili
     },
     {
-        name: 'Esther Obiajulu',
-        role: 'Chief Financial Officer',
-        description: 'Esther Obiajulu has over ten years of experience spanning through Consulting, Financing, Manufacturing and healthcare sectors',
-        img: estherObiajulu
-    },
-    {
         name: 'David Dogeni',
-        role: 'Chief Operating Officer',
+        role: 'Chief Technology Officer',
         description: 'Prior to joining UACR, David was the Head, Information Technology at UAC of Nigeria Plc, He lead the digital transformation journey for the business and it’s subsidiaries',
         img: davidDogeni
     },
@@ -155,11 +152,5 @@ const management = [
         role: 'Brand Manager',
         description: 'Prior to joining UACR, Dorcas held the esteemed position as the Senior Brand Manager at Montaigne AH Limited',
         img: dorcasOgunleye
-    },
-    {
-        name: 'Valentine',
-        role: 'Procurement Manager',
-        description: 'Prior to joining UACR, Valentine was the Head of Procurement at UAC of Nigeria Plc, He lead the digital transformation journey for the business and it’s subsidiaries',
-        img: valentine
     }
 ]

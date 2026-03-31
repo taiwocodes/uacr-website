@@ -18,11 +18,13 @@ import bgIceCream from "@/assets/images/nav-images/icecream-nav-image.png"
 import { GoArrowUpRight } from "react-icons/go"
 import { Link } from "react-router-dom"
 import { useEffect, useRef, useState } from "react"
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 export const Services = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const slideRefs = useRef<HTMLDivElement[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const revealRef = useScrollReveal<HTMLDivElement>();
 
   useEffect(() => {
     const container = containerRef.current
@@ -57,10 +59,10 @@ export const Services = () => {
   }
 
   return (
-    <Box className=" relative mt-12 py-10 h-[75rem] lg:h-[50rem]">
+    <Box ref={revealRef} as="section" className=" relative mt-12 py-10 h-fit">
       <Flex
         direction={"column"}
-        className=" justify-center lg:items-center px-4 lg:px-0 place-self-center mt-10 absolute w-[100%] top-0 z-10 py-10 "
+        className=" justify-center lg:items-center px-4 lg:px-0 place-self-center mt-10 relative w-[100%] z-10 py-10 "
       >
         <HStack className="pl-5 ">
           <Center w={"36px"} marginLeft={"-20px"}>
@@ -95,7 +97,7 @@ export const Services = () => {
             direction={{ base: "column", lg: "row" }}
             gap={'1rem'}
             color="white"
-            className=" mt-4 lg:my-7 overflow-x-scroll snap-x snap-mandatory scroll-smooth"
+            className=" mt-4 lg:my-7 overflow-x-scroll snap-x snap-mandatory scroll-smooth overscroll-x-contain"
           >
             {Restaurants.map((item, i) => (
               <Flex

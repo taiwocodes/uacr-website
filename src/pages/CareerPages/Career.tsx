@@ -2,11 +2,17 @@ import { Box, Button, Flex, Heading, Image, Span, Stack, Text } from "@chakra-ui
 import HeroImage from '@/assets/images/careers-hero.png'
 import { Link } from "react-router-dom";
 import { GraduateTrainee, ManagementTraineePrograms } from "@/utils/data";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function Career() {
+    const heroRef = useScrollReveal<HTMLDivElement>();
+    const program1Ref = useScrollReveal<HTMLDivElement>();
+    const program2Ref = useScrollReveal<HTMLDivElement>();
+    const experienceRef = useScrollReveal<HTMLDivElement>();
+
     return (
         <>
-            <Flex direction="column" justifyContent={"center"} textAlign={"center"} alignItems={"center"} h={{ base: '600px', lg: "824px" }} w="100%"
+            <Flex ref={heroRef} direction="column" justifyContent={"center"} textAlign={"center"} alignItems={"center"} h={{ base: '600px', lg: "824px" }} w="100%"
                 bgImage={`url(${HeroImage})`}
                 bgSize="cover" backgroundPosition="center"
                 bgRepeat="no-repeat" color={"white"} className="relative">
@@ -17,7 +23,7 @@ export default function Career() {
                     <Link to={'/careers/open-roles'}><Button w={"10rem"} bg="brand.900" className="text-white text-[18px] font-medium p-6 rounded-lg">Apply Now</Button></Link>
                 </Span>
             </Flex>
-            <Flex color={'black'} w={'full'} className="justify-center items-center px-3 lg:px-20" py={16} direction={'column'}>
+            <Flex ref={program1Ref} color={'black'} w={'full'} className="justify-center items-center px-3 lg:px-20" py={16} direction={'column'}>
                 <Heading w={{ base: 'full', lg: "612px" }} fontSize={{ base: '32px', md: "40px" }} textAlign={'center'} lineHeight={"normal"} fontWeight={"bold"}>Management Trainee Programs</Heading>
                 <Text w={{ base: 'full', lg: '612px' }} fontSize={{ base: '16px', lg: '20px' }} textAlign={'center'} color={'gray.90'}>From special offers to behind-the-scenes moments—see what’s buzzing right now across our restaurants.</Text>
                 <Stack direction={{ base: 'column', lg: 'row' }} justify={'center'} w={'full'} gap={5} mt={'28px'}>
@@ -33,7 +39,7 @@ export default function Career() {
                     ))}
                 </Stack>
             </Flex>
-            <Flex color={'black'} w={'full'} className="justify-center items-center bg-[#F3F5FBB2] px-3 lg:px-20" py={16} direction={'column'}>
+            <Flex ref={program2Ref} color={'black'} w={'full'} className="justify-center items-center bg-[#F3F5FBB2] px-3 lg:px-20" py={16} direction={'column'}>
                 <Heading w={{ base: 'full', lg: "612px" }} fontSize={{ base: '32px', md: "40px" }} textAlign={'center'} lineHeight={"normal"} fontWeight={"bold"}>Graduate Trainee Program</Heading>
                 <Text w={{ base: 'full', lg: '612px' }} fontSize={{ base: '16px', lg: '20px' }} textAlign={'center'} color={'gray.90'}>From special offers to behind-the-scenes moments—see what’s buzzing right now across our restaurants.</Text>
                 <Flex direction={{ base: 'column', lg: 'row' }} w={{ base: 'full', lg: '1342px' }} mt={8}>
@@ -67,7 +73,7 @@ export default function Career() {
                     ))}
                 </Stack>
             </Flex >
-            <Flex color={'black'} w={'full'} className="justify-center items-center px-3" py={16} direction={'column'}>
+            <Flex ref={experienceRef} color={'black'} w={'full'} className="justify-center items-center px-3" py={16} direction={'column'}>
                 <Flex direction="column" w={{ base: 'full', lg: '1304px' }} justify='center' className=" py-20  items-center">
                     <Flex direction={{ base: 'column', lg: 'row' }} className="mb-5">
                         <Flex direction="column" justifyContent="space-between" w={{ base: 'full', lg: "366px" }} className="h-[240px] mb-4 lg:mb-0 lg:h-auto shadow-lg rounded-2xl p-4 " bg="white">

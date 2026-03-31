@@ -50,3 +50,36 @@ body {
   transition: margin-top 0.5s 0.5s, padding 0.5s, inset 0.5s, height 0.5s 1s,
     background 0.5s 1s, position 0.5s ease-in-out, border-radius 0.5s;
 }
+
+/* ── Scroll Reveal: Rise-Up Animation ── */
+@keyframes revealRise {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(60px);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.reveal-visible {
+  animation: revealRise 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Staggered delays for child elements */
+.reveal-visible.delay-100 { animation-delay: 0.1s; }
+.reveal-visible.delay-200 { animation-delay: 0.2s; }
+.reveal-visible.delay-300 { animation-delay: 0.3s; }
+.reveal-visible.delay-400 { animation-delay: 0.4s; }
+.reveal-visible.delay-500 { animation-delay: 0.5s; }
+

@@ -1,10 +1,12 @@
 import bgImage from '@/assets/images/stay-updated-image.png'
 import avatar from '@/assets/images/testimonial-image.png'
 import { Box, Circle, Flex, Image, Text } from '@chakra-ui/react'
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 export const StayUpdated = () => {
+    const revealRef = useScrollReveal<HTMLDivElement>();
     return (
-        <Flex bg={'#F3F5FBB2'} direction={{ base: 'column', lg: 'row' }} className='px-3 items-center justify-center lg:px-16 py-10 lg:py-16' >
+        <Flex ref={revealRef} bg={'#F3F5FBB2'} direction={{ base: 'column', lg: 'row' }} className='px-3 items-center justify-center lg:px-16 py-10 lg:py-16' >
             <Flex maxW={'1440px'} direction={{ base: 'column', lg: 'row' }}>
                 <Flex direction={{ base: 'column', lg: 'row' }} className='lg:mr-10 h-[663px] relative items-center lg:items-start justify-center'>
                     <Box display={{ base: 'block', lg: 'none' }} mb={4}>

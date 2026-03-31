@@ -20,21 +20,16 @@ import { useEffect, useState } from "react";
 export const Hero = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fade, setFade] = useState(true);
   const isMobile = window.innerWidth <= 768;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % SLIDES.length);
-        setFade(true);
-      }, 400);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % SLIDES.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, [fade]);
+  }, []);
   return (
-    <Box as="section" className="relative h-[1050px] overflow-hidden m-2 md:h-[900px] p-3  md:px-16 md:py-10 ">
+    <Box as="section" className="relative h-[1050px] overflow-hidden md:h-[900px] p-3  md:px-16 md:py-10" style={{ touchAction: 'pan-y' }}>
       {SLIDES.map((slide, index) => {
         const isActive = currentIndex === index;
         return (
@@ -46,6 +41,7 @@ export const Hero = () => {
             backgroundSize={'cover'}
             className={` absolute justify-end lg:justify-center transition-opacity duration-1000 
               ${currentIndex === index ? 'opacity-100' : 'opacity-0'} rounded-2xl items-center text-start px-3 inset-0 h-full`}
+            style={{ willChange: "opacity" }}
             wrap={{ base: 'wrap', lg: 'revert' }}>
             <Image
               display={{ base: 'none', lg: 'inline' }}

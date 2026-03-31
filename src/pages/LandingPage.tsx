@@ -32,13 +32,25 @@ const OurSpecial = [
 ]
 
 const ScrollImages = [
-  "/images/our-special-images/food9-our-specials.png",
-  "/images/our-special-images/food-our-specials.png",
-  "/images/our-special-images/food2-our-specials.png",
-  "/images/our-special-images/food3-our-specials.png",
-  "/images/our-special-images/food4-our-specials.png",
-  "/images/our-special-images/food5-our-specials.png",
-  "/images/our-special-images/food6-our-specials.png",
-  "/images/our-special-images/food7-our-specials.png",
-  "/images/our-special-images/food8-our-specials.png"
+  // Debonairs Pizza
+  "/images/debonairs-updated images/3-Cheese_Blk Plate.jpg",
+  "/images/debonairs-updated images/Club Pizza on Black Plate_CA.jpg",
+  "/images/debonairs-updated images/Four Seasons_Blk Plate.jpg",
+  "/images/debonairs-updated images/Garlic Bacon & Jalapeno Pizza_2_Etched.jpg",
+  "/images/debonairs-updated images/Sweet & Sour Pizza - Hero (Stacked)_VS.jpg",
+  // Mr Biggs
+  "/images/Mr-biggs-updated images/NB4526.jpg",
+  "/images/Mr-biggs-updated images/NB4527.jpg",
+  "/images/Mr-biggs-updated images/NB4529.jpg",
+  "/images/Mr-biggs-updated images/NB4530.jpg",
+  "/images/Mr-biggs-updated images/NB4538.jpg",
+  "/images/Mr-biggs-updated images/NB4617.jpg",
+  // Ice Cream
+  "/images/Ice-cream-updated images/cones/CREAMY COVE IMAGES-10.jpg",
+  "/images/Ice-cream-updated images/cones/CREAMY COVE IMAGES-11.jpg",
+  "/images/Ice-cream-updated images/cones/CREAMY COVE IMAGES-12.jpg",
+  "/images/Ice-cream-updated images/MILKSHAKE/CHOCOLATE MILKHAKE.jpg",
+  "/images/Ice-cream-updated images/MILKSHAKE/STRAWBERRY MILKSHAKE.jpg",
+  "/images/Ice-cream-updated images/TUBZ/oreos tubz.jpg",
+  "/images/Ice-cream-updated images/TUBZ/tubz 2.jpg",
 ]

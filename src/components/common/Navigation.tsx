@@ -103,7 +103,7 @@ export const Navigation: React.FC<({ color: string })> = () => {
             onClick={() => { setOpen(false); setActiveLink([]); navigate(link.path) }}
             _hover={{ cursor: 'pointer' }}
           >
-            {link.title === 'Ice Cream' && <Center bg={'#C80104'} className="p-3 absolute right-2 top-2 rounded-lg w-[112px] h-[50px] text-white">Coming Soon</Center>}
+            {/* Removed 'Coming Soon' badge for Ice Cream */}
             <Flex
               w="96%"
               h="52px"
@@ -128,9 +128,9 @@ export const Navigation: React.FC<({ color: string })> = () => {
   }
 
   return (
-    <Box w="100%" px={{ lg: 6 }} className={`absolute ${isMobile ? open ? 'px-0 transition-[padding] delay-1000 ease-in-out' : 'px-6 transition-[padding] delay-1000 ease-in-out' : 'px-6'} z-40`} background="transparent">
+    <Box w="100%" px={{ lg: 6 }} className={`absolute pointer-events-none ${isMobile ? open ? 'px-0 transition-[padding] delay-1000 ease-in-out' : 'px-6 transition-[padding] delay-1000 ease-in-out' : 'px-6'} z-40`} background="transparent">
       <Stack
-        className={`nav ${isMobile ? open ? 'open' : '' : ''} shadow-sm`}
+        className={`nav pointer-events-auto ${isMobile ? open ? 'open' : '' : ''} shadow-sm`}
         direction={{ base: 'column', lg: 'row' }}
         justifyContent={"start"}
         rounded={{ lg: 'xl' }}

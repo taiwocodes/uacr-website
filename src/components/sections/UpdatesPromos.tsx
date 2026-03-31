@@ -5,10 +5,12 @@ import UpdatePromoImage from '@/assets/images/update-and-promos-image.png'
 import UpdatePromoImage2 from '@/assets/images/update-and-promos-image2.png'
 import UpdatePromoImage3 from '@/assets/images/update-and-promos-image3.png'
 import UpdatePromoImage4 from '@/assets/images/update-and-promos-image4.png'
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 export const UpdatesPromos = () => {
+    const revealRef = useScrollReveal<HTMLDivElement>();
     return (
-        <Flex direction={'column'} className=" justify-center items-center py-16 px-3 lg:px-24 relative">
+        <Flex ref={revealRef} direction={'column'} className=" justify-center items-center py-16 px-3 lg:px-24 relative">
             <Heading fontSize={{ base: '32px', lg: '40px' }} fontWeight={'bold'} mb={'16px'} textAlign={'center'}>Stories, Updates & Promos You’ll Love</Heading>
             <Text w={{ base: 'full', lg: '704px' }} color={'gray.90'} fontSize={{ base: '16px', lg: '20px' }} mb={'32px'} textAlign={'center'}>From special offers to behind-the-scenes moments—see what’s buzzing right now across our restaurants.</Text>
             <Flex direction={{ base: 'column', lg: 'row' }} w={{ base: 'full', lg: '1342px' }}>

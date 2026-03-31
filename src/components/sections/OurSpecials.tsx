@@ -1,6 +1,7 @@
 import { Box, Center, Flex, Heading, Image } from "@chakra-ui/react"
 import { useMemo, useRef } from "react";
 import { motion } from "framer-motion";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 interface OurSpecialsProps {
     OurSpecial: string[]
@@ -10,11 +11,12 @@ interface OurSpecialsProps {
 export const OurSpecials = ({ OurSpecial, ScrollImages }: OurSpecialsProps) => {
     const ref = useRef<HTMLDivElement>(null)
     const isMobile = window.innerWidth <= 768
+    const revealRef = useScrollReveal<HTMLDivElement>();
 
     const loopImgs = useMemo(() => [...ScrollImages, ...ScrollImages], [ScrollImages]);
 
     return (
-        <Box className="relative bg-[#F3F5FBB2] mt-12 py-16">
+        <Box ref={revealRef} className="relative bg-[#F3F5FBB2] mt-12 py-16">
             <Heading fontWeight="bold" className="text-[2rem] text-black w-fulll text-center my-6">Our Specials</Heading>
             <Flex w={'full'} maxW={'100%'} h={{ base: 'auto', lg: '658px' }} className="lg:justify-center items-center overflow-x-scroll no-scrollbar px-3 lg:px-16" gap={'1rem'}>
                 {isMobile ? <>
@@ -43,7 +45,16 @@ export const OurSpecials = ({ OurSpecial, ScrollImages }: OurSpecialsProps) => {
                     style={{ translateZ: 0 }}
                 >
                     {loopImgs.map((image, index) => (
-                        <Image className="rounded-full w-[200px] h-[200px] shrink-0" key={`scroll-${index}`} src={image} alt='food' loading="lazy" />
+                        <Image
+                            key={`scroll-${index}`}
+                            src={image}
+                            alt='food'
+                            loading="lazy"
+                            objectFit="cover"
+                            objectPosition="center"
+                            className="rounded-full shrink-0"
+                            style={{ width: '200px', height: '200px', minWidth: '200px' }}
+                        />
                     ))}
                 </motion.div>
             </div>
