@@ -59,7 +59,7 @@ export const Services = () => {
   }
 
   return (
-    <Box ref={revealRef} as="section" className=" relative mt-12 py-10 h-fit">
+    <Box id="uac-restaurants" ref={revealRef} as="section" className=" relative mt-12 py-10 h-fit">
       <Flex
         direction={"column"}
         className=" justify-center lg:items-center px-4 lg:px-0 place-self-center mt-10 relative w-[100%] z-10 py-10 "
@@ -196,6 +196,6 @@ const Restaurants: { logo: string, image: string, title: string, description: st
     image: bgIceCream,
     title: "Creamy Cove",
     description: "Creamy Cove is a delightful dessert brand offering rich, creamy ice creams and irresistible flavors made to satisfy every sweet craving.",
-    link: "#"
+    link: "/brands/creamycove"
   }
 ]

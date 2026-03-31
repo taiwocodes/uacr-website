@@ -1,4 +1,4 @@
-import { Flex, Box, Heading, Text, Button, Span, Image } from "@chakra-ui/react"
+import { Flex, Box, Heading, Text, Span, Image } from "@chakra-ui/react"
 import heroImg from "@/assets/images/mrbiggs-hero-img.png"
 import restaurantImage from "@/assets/images/mrbiggs-restaurant-image.png"
 import { Footer } from "@/components/common/Footer"
@@ -9,15 +9,14 @@ import { useScrollReveal } from "@/hooks/useScrollReveal"
 export const MrBiggs = () => {
     const aboutRef = useScrollReveal<HTMLDivElement>();
     return (
-        <Box w={"full"} className="bg-white absolute top-0 ">
+        <Box w={"full"} className="bg-white relative ">
             <Flex direction="column" justifyContent={"center"} textAlign={"center"} alignItems={"center"} h="824px" w="100%"
                 bgImage={`url(${heroImg})`}
                 bgSize="cover" backgroundPosition="center"
                 bgRepeat="no-repeat" color={"white"} className="relative">
                 <Span alignItems="center" className="place-self-center self-center justify-self-center" justifySelf={"center"} alignSelf={"center"}>
                     <Heading w={{ base: 'full', lg: "50rem" }} fontSize={{ base: '32px', lg: "3rem" }} lineHeight={"normal"} fontWeight={"bold"}>Nigeria’s Favorite Comfort Food, Served Fresh & Fast Since 1986</Heading>
-                    <Text fontSize={{ base: '16px', lg: "1.2rem" }} w={{ base: 'full', lg: "45rem" }} className="mb-5">From our legendary chicken to golden meat pies—every bite delivers the taste you’ve loved for generations. Dine in, grab & go, or order for delivery!</Text>
-                    <Button w={"10rem"} bg="brand.900" className="text-white text-[18px] font-medium p-6 rounded-lg">Learn More</Button>
+                    <Text fontSize={{ base: '16px', lg: "1.2rem" }} w={{ base: 'full', lg: "45rem" }} className="mb-5">From our legendary chicken to golden meat pies every bite delivers the taste you’ve loved for generations. Dine in, grab & go, or order for delivery!</Text>
                 </Span>
             </Flex>
             <Flex ref={aboutRef} justifyContent={"center"} w={"full"} color="dark.900" bgColor="white" className="relative py-16 px-3 md:px-16 ">

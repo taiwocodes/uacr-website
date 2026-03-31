@@ -12,7 +12,7 @@ export const UpdatesPromos = () => {
     return (
         <Flex ref={revealRef} direction={'column'} className=" justify-center items-center py-16 px-3 lg:px-24 relative">
             <Heading fontSize={{ base: '32px', lg: '40px' }} fontWeight={'bold'} mb={'16px'} textAlign={'center'}>Stories, Updates & Promos You’ll Love</Heading>
-            <Text w={{ base: 'full', lg: '704px' }} color={'gray.90'} fontSize={{ base: '16px', lg: '20px' }} mb={'32px'} textAlign={'center'}>From special offers to behind-the-scenes moments—see what’s buzzing right now across our restaurants.</Text>
+            <Text w={{ base: 'full', lg: '704px' }} color={'gray.90'} fontSize={{ base: '16px', lg: '20px' }} mb={'32px'} textAlign={'center'}>From special offers to behind-the-scenes moments see what’s buzzing right now across our restaurants.</Text>
             <Flex direction={{ base: 'column', lg: 'row' }} w={{ base: 'full', lg: '1342px' }}>
                 <Flex direction={{ base: 'column', lg: 'row' }} h={{ base: 'fit', lg: '333px' }} rounded={'12px'}>
                     <Image w={'479px'} src={bgImage} className="rounded-t-[12px] lg:rounded-t-none lg:rounded-l-[12px] " />

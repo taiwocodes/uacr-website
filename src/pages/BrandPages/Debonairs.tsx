@@ -1,4 +1,4 @@
-import { Flex, Box, Heading, Text, Button, Span, Image } from "@chakra-ui/react"
+import { Flex, Box, Heading, Text, Span, Image } from "@chakra-ui/react"
 import heroImg from "@/assets/images/debonairs-hero-img.png"
 import restaurantImage from "@/assets/images/debonairs-restaurant-image.png"
 import { Footer } from "@/components/common/Footer"
@@ -9,15 +9,14 @@ import { useScrollReveal } from "@/hooks/useScrollReveal"
 export const Debonairs = () => {
     const aboutRef = useScrollReveal<HTMLDivElement>();
     return (
-        <Box w={"full"} className="bg-white absolute top-0 ">
+        <Box w={"full"} className="bg-white relative ">
             <Flex direction="column" justifyContent={"center"} textAlign={"center"} alignItems={"center"} h="824px" w="100%"
                 bgImage={`url(${heroImg})`}
                 bgSize="cover" backgroundPosition="center"
                 bgRepeat="no-repeat" color={"white"} className="relative">
                 <Span alignItems="center" className="place-self-center self-center justify-self-center" justifySelf={"center"} alignSelf={"center"}>
                     <Heading w={{ base: "full", lg: "42rem" }} fontSize={{ base: "32px", lg: "3rem" }} lineHeight={"normal"} fontWeight={"bold"}>Mouthwatering Pizza, Loaded Your Way Since 1991</Heading>
-                    <Text fontSize={{ base: "16px", lg: "1.2rem" }} w={{ base: "full", lg: "43rem" }} className="mb-5">From our famous Triple-Decker® to custom creations—every pizza is packed with flavor, topped with love, and delivered piping hot</Text>
-                    <Button w={"10rem"} bg="brand.900" className="text-white text-[18px] font-medium p-6 rounded-lg">Learn More</Button>
+                    <Text fontSize={{ base: "16px", lg: "1.2rem" }} w={{ base: "full", lg: "43rem" }} className="mb-5">From our famous Triple-Decker® to custom creations every pizza is packed with flavor, topped with love, and delivered piping hot</Text>
                 </Span>
             </Flex>
             <Flex ref={aboutRef} justifyContent={"center"} w={"full"} color="dark.900" bgColor="white" className="relative py-16 px-3 md:px-16 ">
