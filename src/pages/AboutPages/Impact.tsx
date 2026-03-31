@@ -1,10 +1,13 @@
 import { Box, Circle, Flex, Grid, GridItem, Heading, Image, Text } from "@chakra-ui/react"
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 import heroImage from '@/assets/images/impact-hero-image.png'
 
 export const Impact = () => {
+    const heroRef = useScrollReveal<HTMLDivElement>();
+    const feedRef = useScrollReveal<HTMLDivElement>();
     return (
         <Box>
-            <Flex w={'full'} h={{ base: '600px', lg: '824px' }} color={'white'} align={'end'} pb={'102px'} bgRepeat={'none'} backgroundPosition={'center'} bgSize={'cover'} bgImage={`url('${heroImage}')`}>
+            <Flex ref={heroRef} w={'full'} h={{ base: '600px', lg: '824px' }} color={'white'} align={'end'} pb={'102px'} bgRepeat={'none'} backgroundPosition={'center'} bgSize={'cover'} bgImage={`url('${heroImage}')`}>
                 <Box w={{ base: 'full', lg: '720px' }} ml={{ base: '16px', lg: '104px' }}>
                     <Flex bg={'#FFFFFF33'} className=' w-full lg:w-[381px] border-l-2 border-white backdrop-filter backdrop-blur-sm py-3 px-4 items-center'>
                         <Text color={'white'} className='uppercase' fontWeight={'semibold'}>CORPORATE ANNOUNCEMENTS </Text>
@@ -15,7 +18,7 @@ export const Impact = () => {
                     <Text mt={'12px'} fontSize={{ base: '16px', lg: '20px' }}>Catch up on major announcements, milestones, and everything shaping our journey across Nigeria and beyond.</Text>
                 </Box>
             </Flex>
-            <Grid templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(3,1fr)' }} gapY={'24px'} gapX={'12px'} className='px-3 lg:px-16 py-16'>
+            <Grid ref={feedRef} templateColumns={{ base: 'repeat(1,1fr)', md: 'repeat(3,1fr)' }} gapY={'24px'} gapX={'12px'} className='px-3 lg:px-16 py-16'>
                 {impactNews.map((item, index) => (
                     <GridItem key={index} className='bg-white p-6 border border-[#80808033] rounded-lg'>
                         <Image w={'100%'} src={item.img} />

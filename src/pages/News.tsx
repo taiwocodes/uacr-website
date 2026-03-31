@@ -2,11 +2,15 @@ import { Box, Flex, Stack, Image, HStack, Avatar, Text, Heading, Button } from "
 import { NewsCard } from "@/components/sections/NewsCard";
 import editorImg from "@/assets/images/news-editor.png";
 import newsImage from "@/assets/images/blogs-hero.png";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const News = () => {
+    const heroRef = useScrollReveal<HTMLDivElement>();
+    const feedRef = useScrollReveal<HTMLDivElement>();
   return (
     <Flex justify="center" align="center" direction={'column'} maxW={{ base: "full", lg: "full" }} color={'black'} >
       <Flex
+        ref={heroRef}
         justify="center"
         gap="2rem"
         w="full"
@@ -54,7 +58,7 @@ export const News = () => {
         </Flex>
       </Flex>
 
-      <Box bg='white' pt={20} px={{ base: 3, lg: 20 }} pb={{ base: "1.2rem", lg: "5rem" }}>
+      <Box ref={feedRef} bg='white' pt={20} px={{ base: 3, lg: 20 }} pb={{ base: "1.2rem", lg: "5rem" }}>
         <NewsCard />
       </Box>
     </Flex>

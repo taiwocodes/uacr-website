@@ -20,21 +20,23 @@ import { useEffect, useState } from "react";
 export const Hero = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fade, setFade] = useState(true);
   const isMobile = window.innerWidth <= 768;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % SLIDES.length);
-        setFade(true);
-      }, 400);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % SLIDES.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, [fade]);
+  }, []);
+
+  const scrollToServices = () => {
+    const section = document.getElementById("uac-restaurants");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
-    <Box as="section" className="relative h-[1050px] overflow-hidden m-2 md:h-[900px] p-3  md:px-16 md:py-10 ">
+    <Box as="section" className="relative h-[1050px] overflow-hidden md:h-[900px] p-3  md:px-16 md:py-10" style={{ touchAction: 'pan-y' }}>
       {SLIDES.map((slide, index) => {
         const isActive = currentIndex === index;
         return (
@@ -46,6 +48,7 @@ export const Hero = () => {
             backgroundSize={'cover'}
             className={` absolute justify-end lg:justify-center transition-opacity duration-1000 
               ${currentIndex === index ? 'opacity-100' : 'opacity-0'} rounded-2xl items-center text-start px-3 inset-0 h-full`}
+            style={{ willChange: "opacity" }}
             wrap={{ base: 'wrap', lg: 'revert' }}>
             <Image
               display={{ base: 'none', lg: 'inline' }}
@@ -85,6 +88,7 @@ export const Hero = () => {
                 timeless moments we create together.
               </Text>
               <Button
+                onClick={scrollToServices}
                 bg="brand.100"
                 className="text-white text-[18px] font-medium p-6 rounded-lg"
               >
@@ -163,5 +167,5 @@ const SLIDES = [{ index: 0, img: heroImage1 }, { index: 1, img: heroImage2 }, { 
 const ratingcardinfo = [
   { logo: mrBiggsLogo, name: "Mr Biggs", position: 'left-3 lg:left-10 bottom-56 lg:bottom-64' },
   { logo: debonairsLogo, name: "Debonairs", position: 'right-3 lg:right-20 top-3 lg:top-60' },
-  { logo: iceCreamLogo, name: "Ice Cream", position: 'right-3 lg:right-40 bottom-3 lg:bottom-20' }
+  { logo: iceCreamLogo, name: "Creamy Cove", position: 'right-3 lg:right-40 bottom-3 lg:bottom-20' }
 ]

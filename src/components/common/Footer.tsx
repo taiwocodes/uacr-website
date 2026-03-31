@@ -1,20 +1,14 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { Box, Center, Flex, Grid, Image, Span, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Grid, Image, Span, Stack, Text, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import logo from "@/assets/logo/logoLight.png";
 import footerBg from '@/assets/images/footer-bg.jpg'
-import { BsArrowUp, BsArrowUpRight } from "react-icons/bs";
+import { BsArrowUpRight } from "react-icons/bs";
 
 export const Footer = () => {
   const navigate = useNavigate();
   const currentYear = dayjs().year();
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   return (
     <Box bg="dark.900" w="full">
@@ -52,9 +46,6 @@ export const Footer = () => {
                 </NavLink>
               ))}
             </Grid>
-            <Center display={{ base: 'none', lg: 'inline' }} className="mt-40 border border-white rounded-full w-[40px] h-[40px] cursor-pointer" onClick={scrollToTop} color="white">
-              <BsArrowUp />
-            </Center>
           </Box>
           <Box>
             <Text color={'gray.90'} className="mt-5 text-sm ">{footerLinks[2].heading}</Text>
@@ -85,8 +76,8 @@ export const Footer = () => {
             </Stack>
 
             <Span w={'224px'}>
-              <Text color={'gray.90'} className="mt-5 text-sm ">Mo—Fr</Text>
-              <Text color={'#ADB3AB'} fontSize={'22px'}>9am—6pm</Text>
+              <Text color={'gray.90'} className="mt-5 text-sm ">Hours: Mo - Fr</Text>
+              <Text color={'#ADB3AB'} fontSize={'22px'}>9am - 6pm</Text>
             </Span>
 
             <Flex color="gray.70" justify={"start"} fontSize="sm" mt={{ base: '3rem', lg: "7rem" }}>

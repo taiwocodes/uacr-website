@@ -4,11 +4,15 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import UacCatering from '@/assets/images/update-and-promos-image4.png'
 import bgImage from '@/assets/images/stay-updated-image.png'
 import MenuImage from '@/assets/images/menu-image.png'
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 export const Catering = () => {
+    const heroRef = useScrollReveal<HTMLDivElement>();
+    const whyUsRef = useScrollReveal<HTMLDivElement>();
+    const bookRef = useScrollReveal<HTMLDivElement>();
     return (
         <Box className=" text-black" pb={{ base: '1.2rem', lg: '9rem' }} position='relative'>
-            <VStack className="bg-[linear-gradient(180deg,#E5F2F2_46.21%,#FFFFFF_105.1%)] pb-24 " px={{ base: '1.2rem', lg: '8rem' }} pt={'240px'} gap={5}>
+            <VStack ref={heroRef} className="bg-[linear-gradient(180deg,#E5F2F2_46.21%,#FFFFFF_105.1%)] pb-24 " px={{ base: '1.2rem', lg: '8rem' }} pt={'240px'} gap={5}>
                 <Heading className="text-5xl font-semibold text-center" lineHeight={1.3}>
                     Deliciously
                     <Span>{' '}Crafted with Passion,</Span><br />
@@ -53,7 +57,7 @@ export const Catering = () => {
                 <Image src={bgImage} w={'1304px'} h={'580px'} alt='buffet' mt={8} className="rounded-xl w-full" />
             </VStack>
 
-            <Flex className="justify-center items-center" py={{ base: '2rem', lg: '6rem' }} px={{ base: '1.2rem', lg: '8rem' }} bg={'#F3F5FBB2'} position='relative'>
+            <Flex ref={whyUsRef} className="justify-center items-center" py={{ base: '2rem', lg: '6rem' }} px={{ base: '1.2rem', lg: '8rem' }} bg={'#F3F5FBB2'} position='relative'>
                 <section style={{ maxWidth: '1440px' }} title="Why Choose Us?">
                     <Heading className="text-3xl w-full md:text-5xl font-bold mb-3">Why Choose UAC Catering</Heading>
                     <Text w={'full'} className="font-medium text-gray-500">
@@ -71,7 +75,7 @@ export const Catering = () => {
                 </section>
             </Flex>
 
-            <section title='Book Catering' className="bg-white px-[1.3rem] py-20 lg:px-16" id='contact-form'>
+            <section ref={bookRef} title='Book Catering' className="bg-white px-[1.3rem] py-20 lg:px-16" id='contact-form'>
                 <Box maxW={{ base: 'full', lg: '85rem' }} margin='auto' pt='1.2rem'>
                     <HStack align='start' wrap={{ base: 'wrap', lg: 'nowrap' }} justify='space-between'>
                         <Stack mr={'120px'} maxW={{ base: 'full', lg: '40rem' }}>

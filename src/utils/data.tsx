@@ -25,7 +25,7 @@ export const navLinks: Link[] = [
     subLinks: [
       { path: "/brands/mrbiggs", title: "Mr Biggs", image: mrBiggsNavImage, logo: MrBiggsLogo, icon: <IoRestaurantOutline /> },
       { path: "/brands/debonairs", title: "Debonairs", image: debonairsNavImage, logo: DebonairsLogo, icon: <IoPizzaOutline /> },
-      { path: "#", title: "Ice Cream", image: iceCreamNavImage, logo: IceCreamLogo, icon: <IoIceCreamOutline /> },
+      { path: "/brands/creamycove", title: "Creamy Cove", image: iceCreamNavImage, logo: IceCreamLogo, icon: <IoIceCreamOutline /> },
     ],
   },
   {

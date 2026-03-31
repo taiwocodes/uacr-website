@@ -13,11 +13,13 @@ import bgExplore2 from '@/assets/images/bg-explore/40-franchaise.png';
 import bgExplore3 from '@/assets/images/bg-explore/14-states.png';
 import bgExplore4 from '@/assets/images/bg-explore/900-team.png';
 import exploreBg from '@/assets/images/bg-explore/explore-bg.png';
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 
 export const WeAreGrowing = () => {
+  const revealRef = useScrollReveal<HTMLDivElement>();
   return (
-    <Flex className="justify-center items-center">
+    <Flex ref={revealRef} className="justify-center items-center">
       <Box w={'full'} maxW="1440px" h={{ base: '55rem', lg: "60rem" }} justifyContent="space-between" alignItems="center" className=" px-3 lg:px-16 py-10" >
         <Flex direction={{ base: 'column', lg: 'row' }} justifyContent='space-between' mb={5} alignItems={"start"}>
           <Box w={{ base: "full", lg: "25rem" }} >
