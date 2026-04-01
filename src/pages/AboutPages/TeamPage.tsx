@@ -60,7 +60,7 @@ export const TeamPage = () => {
                         {management.map((director) => (
                             <GridItem key={director.name} onClick={() => { setSelected(director); setIsOpen(true); }} w={{ base: 'full', md: '413.67px' }} h="fit" borderColor="gray.50" className="relative rounded-lg">
                                 <Flex onClick={() => setIsOpen(true)} w={'full'} direction={'column'} h="full" className="cursor-pointer p-4">
-                                    <Image w="full" h={'389px'} objectFit="cover" objectPosition={director.name === 'David Dogeni' ? 'center 0%' : 'center top'} className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
+                                    <Image w="full" h={'389px'} objectFit="cover" objectPosition={director.name === 'David Dogeni' || director.name === 'Valentine Ezeanochikwa' ? 'center 0%' : 'center top'} className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
                                     <Span w={'full'} className="">
                                         <Text color="brand.900" className=" my-2 w-fit text-start items-center">{director.role}</Text>
                                         <Text w="full" color={'dark.900'} fontWeight="semibold" fontSize="22px">{director.name}</Text>
