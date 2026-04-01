@@ -99,6 +99,7 @@ export const Services = () => {
             color="white"
             className=" mt-4 lg:my-7 overflow-x-scroll snap-x snap-mandatory scroll-smooth overscroll-x-contain"
           >
+            
             {Restaurants.map((item, i) => (
               <Flex
                 flex={{ lg: "0 0 auto" }}

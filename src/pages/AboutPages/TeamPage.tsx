@@ -7,7 +7,10 @@ import darrenHele from "@/assets/images/directors/darren-hele.png"
 import phillipSmith from "@/assets/images/directors/phillip-smith.png"
 import nneomaObikili from "@/assets/images/directors/nneoma-obikili.png"
 import davidDogeni from "@/assets/images/directors/ifeaoma.png"
-import dorcasOgunleye from "@/assets/images/directors/dorcas-ogunleye.png"
+import dorcasOgunleye from "@/assets/images/directors/dorcas2.png"
+import valentineEzeanochikwa from "@/assets/images/directors/valentine.png"
+import samsonObisesan from "@/assets/images/directors/samson.png"
+import muibatAjibade from "@/assets/images/directors/muibat.png"
 import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 export const TeamPage = () => {
@@ -41,7 +44,7 @@ export const TeamPage = () => {
                                 <Span w={'full'} className="">
                                     <Text color="brand.900" className=" my-2 w-fit text-start items-center">{director.role}</Text>
                                     <Text w="full" color={'dark.900'} fontWeight="semibold" fontSize="22px">{director.name}</Text>
-                                    <Text w="full" color="gray.90">{director.description}</Text>
+                                    <Text w="full" lineClamp={2} color="gray.90">{director.description}</Text>
                                 </Span>
                             </Flex>
                         </GridItem>))}
@@ -88,12 +91,8 @@ export const TeamPage = () => {
                             <Box p={14} color={'black'}>
                                 <Text color="brand.900">{selected.role}</Text>
                                 <Text w="full" color={'dark.900'} my={2} fontWeight="semibold" fontSize="26px">{selected.name}</Text>
-                                <Text lineHeight={'120%'} maxH={'98%'} scrollbar={'hidden'} overflowY={'scroll'} textAlign={'justify'} fontSize={'18px'} color={'gray.90'}>Over the course of his career he has lived and worked in Sub-Saharan Africa’s most important economies gaining experience of the operating landscape in the region.<br /><br />
-                                    Fola is the founder of Themis Capital Management, an investment firm focused on concentrating capital and talent on high-potential opportunities in Sub-Saharan Africa.<br /><br />
-                                    Prior to founding Themis, he worked with Kohlberg Kravis Roberts, a leading global investment firm with $168 billion in assets under management. His experience also includes working with the Standard Bank Group, where he led mergers and acquisitions in Nigeria.<br /><br />
-                                    Fola spent the early part of his career with Ocean and Oil Holdings Limited, a principal investment firm in Nigeria and ARM Investment Managers, one of Nigeria’s leading investment advisory and wealth management firms.<br /><br />
-                                    Mr. Aiyesimoju also sits on the Boards of Chemical and Allied Products(CAP) PLC,MDS Logistics Limited, Grand Cereals Limited, UAC Foods Limited and UPDC Plc.<br /><br />
-                                    He holds a B.Sc (Hons) degree in Estate Management from the University of Lagos, where he was awarded a Certificate of Excellence in Real estate development and finance, and earned the right to use the CFA designation in 2006.
+                                <Text lineHeight={'120%'} maxH={'98%'} scrollbar={'hidden'} overflowY={'scroll'} textAlign={'justify'} fontSize={'18px'} color={'gray.90'} className="whitespace-pre-line">
+                                    {selected.description}
                                 </Text>
                             </Box>
                             <Image bg={'#F3F5FBB2'} w="50%" objectPosition={'center'} className="" src={selected.img} />
@@ -111,7 +110,7 @@ const boardOfDirectors = ([
     {
         name: "Folasope Aiyesimoju",
         role: "Chairman",
-        description: "Fola is a finance professional with experience spanning corporate finance....",
+        description: `Over the course of his career he has lived and worked in Sub-Saharan Africa’s most important economies gaining experience of the operating landscape in the region.\n\nFola is the founder of Themis Capital Management, an investment firm focused on concentrating capital and talent on high-potential opportunities in Sub-Saharan Africa.\n\nPrior to founding Themis, he worked with Kohlberg Kravis Roberts, a leading global investment firm with $168 billion in assets under management. His experience also includes working with the Standard Bank Group, where he led mergers and acquisitions in Nigeria.\n\nFola spent the early part of his career with Ocean and Oil Holdings Limited, a principal investment firm in Nigeria and ARM Investment Managers, one of Nigeria’s leading investment advisory and wealth management firms.\n\nMr. Aiyesimoju also sits on the Boards of Chemical and Allied Products(CAP) PLC,MDS Logistics Limited, Grand Cereals Limited, UAC Foods Limited and UPDC Plc.\n\nHe holds a B.Sc (Hons) degree in Estate Management from the University of Lagos, where he was awarded a Certificate of Excellence in Real estate development and finance, and earned the right to use the CFA designation in 2006.`,
         img: folasopeAiyesimoju
     },
     {
@@ -152,5 +151,23 @@ const management = [
         role: 'Brand Manager',
         description: 'Prior to joining UACR, Dorcas held the esteemed position as the Senior Brand Manager at Montaigne AH Limited',
         img: dorcasOgunleye
+    },
+    {
+        name: "Valentine Ezeanochikwa",
+        role: "Procurement Manager",
+        description: "Valentine is a highly skilled Procurement professional with over 9 years of experience in strategic sourcing, supplier management, contract negotiation, and procurement process optimization spanning across diverse industries including FMCG, Healthcare and Regulatory sectors.\n\nSince taking up the role of Procurement Manager UAC Restaurants in February 2025, he has been pivotal in driving procurement excellence and optimizing supply chain processes.\n\nPrior to joining UAC Restaurants, Valentine served as the Procurement Manager at Vendease Limited where he successfully managed vendor portfolios, supported key negotiations, and led cross-functional procurement projects. His interdisciplinary background provides a strategic advantage in driving business transformation, aligning procurement and chain supply strategies with organizational objectives to deliver measurable impact on efficiency, cost savings, and overall performance.",
+        img: valentineEzeanochikwa
+    },
+    {
+        name: "Samson Obisesan",
+        role: "Distribution Manager",
+        description: "Samson is a seasoned supply chain professional with over 10years experience in Logistics, inventory, planning, sales and procurement.\n\nHe joined UACR in 2016 as a dispatch staff, where he was responsible for managing orders from over 80stores and planning deliveries pan Nigeria.\n\nIn 2021, he became the Demand planner/Logistics supervisor, where he was responsible for demand & supply planning, and sales forecasting for the business.\n\nHe also joined SAP Project refresh in 2021 as a subject matter expert (SME) for two workstreams, Procure to Pay(P2P) and Order to Cash (O2C) till the successful completion in 2022.\n\nIn 2023, he designed a delivery system that reduced the logistics cost by 20%, he was also nominated for internal control champions within the business in same year.\n\nPrior to joining UACR, Samson worked as sales representative with MTN Nigeria in 2012, before joining Shoprite as an inventory supervisor. His experience in inventory, fleet management and planning best prepare him to better support the growth and expansion of the business, He currently serves as Logistics manager, managing the warehouse, inbound and outbound Logistics and a mini production unit within the organization.",
+        img: samsonObisesan
+    },
+    {
+        name: "Muibat Ajibade",
+        role: "Risk Assurance Manager",
+        description: "Muibat Ajibade is the Risk Assurance Manager at UAC Restaurants Limited, with over five years of progressive experience within the organization. She has served in roles such as Restaurant Accountant, Internal Control Supervisor, and Data Protection Officer, and brings expertise in internal audit, finance, inventory management, risk management and regulatory compliance.",
+        img: muibatAjibade
     }
 ]
