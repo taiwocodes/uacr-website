@@ -197,6 +197,6 @@ const Restaurants: { logo: string, image: string, title: string, description: st
     image: bgIceCream,
     title: "Creamy Cove",
     description: "Creamy Cove is a delightful dessert brand offering rich, creamy ice creams and irresistible flavors made to satisfy every sweet craving.",
-    link: "/brands/creamycove"
+    link: "/brands/creamy-cove"
   }
 ]

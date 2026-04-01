@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { Box, Button, HStack, IconButton, Image, useBreakpointValue, Stack, Portal, Popover, Flex, Text, Icon, Center, Collapsible, Accordion } from "@chakra-ui/react";
+import { Box, Button, HStack, IconButton, Image, useBreakpointValue, Stack, Portal, Popover, Flex, Text, Icon, Center, Accordion } from "@chakra-ui/react";
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 import logo from "@/assets/logo/logoDark.png";
 import { navLinks } from "../../utils/data";

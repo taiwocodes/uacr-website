@@ -26,7 +26,7 @@ const routes: RouteObject[] = [
                 path: 'brands', children: [
                     { path: "mrbiggs", element: <MrBiggs /> },
                     { path: "debonairs", element: <Debonairs /> },
-                    { path: "creamycove", element: <IceCream /> },
+                    { path: "creamy-cove", element: <IceCream /> },
                 ]
             },
             {
