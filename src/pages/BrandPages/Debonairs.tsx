@@ -1,7 +1,6 @@
 import { Flex, Box, Heading, Text, Span, Image } from "@chakra-ui/react"
 import heroImg from "@/assets/images/debonairs-hero-img.png"
 import restaurantImage from "@/assets/images/debonairs-restaurant-image.png"
-import { Footer } from "@/components/common/Footer"
 import { OurSpecials } from "@/components/sections/OurSpecials"
 import { Locations } from "@/components/sections/Locations"
 import { useScrollReveal } from "@/hooks/useScrollReveal"
@@ -35,8 +34,8 @@ export const Debonairs = () => {
             </Flex>
             <OurSpecials OurSpecial={OurSpecial} ScrollImages={ScrollImages} />
             <Locations />
-            <Footer />
-        </Box>)
+        </Box>
+    )
 }
 
 const OurSpecial = [

@@ -1,5 +1,4 @@
 import { Flex, Box, Heading, Text, Span, Image } from "@chakra-ui/react"
-import { Footer } from "@/components/common/Footer"
 import { OurSpecials } from "@/components/sections/OurSpecials"
 import { Locations } from "@/components/sections/Locations"
 import { useScrollReveal } from "@/hooks/useScrollReveal"
@@ -49,8 +48,8 @@ export const IceCream = () => {
             </Flex>
             <OurSpecials OurSpecial={OurSpecial} ScrollImages={ScrollImages} />
             <Locations />
-            <Footer />
-        </Box>)
+        </Box>
+    )
 }
 
 const OurSpecial = [
