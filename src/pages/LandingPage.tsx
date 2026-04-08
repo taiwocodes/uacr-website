@@ -2,11 +2,11 @@ import { Box } from "@chakra-ui/react";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
 import { WeAreGrowing } from "@/components/sections/WeAreGrowing";
-import { Testimonials } from "@/components/sections/Testimonials";
+// import { Testimonials } from "@/components/sections/Testimonials";
 import { Shots } from "@/components/sections/Shots";
 import { OurSpecials } from "@/components/sections/OurSpecials";
-import { StayUpdated } from "@/components/sections/StayUpdated";
-import { UpdatesPromos } from "@/components/sections/UpdatesPromos";
+// import { StayUpdated } from "@/components/sections/StayUpdated";
+// import { UpdatesPromos } from "@/components/sections/UpdatesPromos";
 
 export const LandingPage = () => {
   return (
@@ -15,9 +15,9 @@ export const LandingPage = () => {
       <Services />
       <OurSpecials OurSpecial={OurSpecial} ScrollImages={ScrollImages} />
       <WeAreGrowing />
-      <StayUpdated />
-      <UpdatesPromos />
-      <Testimonials />
+      {/* <StayUpdated /> */}
+      {/* <UpdatesPromos /> */}
+      {/* <Testimonials /> */}
       <Shots />
     </Box>
   );

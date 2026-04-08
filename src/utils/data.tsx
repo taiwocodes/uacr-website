@@ -38,7 +38,7 @@ export const navLinks: Link[] = [
     ]
   },
   { path: "/catering", title: "Catering" },
-  { path: "/blogs", title: "Blogs" },
+  // { path: "/blogs", title: "Blogs" },
   {
     title: "Careers", path: "/careers", subLinks: [
       { path: "/careers/careers-at-uacr", title: "Careers at UACR", logo: CareersNavIcon, image: CareersNavImage, icon: <RiTeamLine /> },

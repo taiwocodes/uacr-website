@@ -63,23 +63,23 @@ export const WeAreGrowing = () => {
 
 const Growth = [
   {
-    number: '61+',
+    number: '14',
     img: bgExplore,
     text: 'Restaurants'
   },
   {
-    number: '40+',
+    number: '3',
     img: bgExplore2,
-    text: 'Franchaise Stores',
+    text: 'Franchise Stores',
     style: 'text-[#EF0909]'
   },
   {
-    number: '14',
+    number: '2',
     img: bgExplore3,
     text: 'States'
   },
   {
-    number: '900+',
+    number: '100+',
     img: bgExplore4,
     text: 'Team Members',
     style: 'text-black'
