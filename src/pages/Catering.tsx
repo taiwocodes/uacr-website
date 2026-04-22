@@ -48,8 +48,8 @@ export const Catering = () => {
                         </Dialog.Trigger>
                         <Dialog.Backdrop />
                         <Dialog.Positioner>
-                            <Dialog.Content m={2} w={'full'}>
-                                <Image src={MenuImage} w={{ base: '900%', lg: '1304px' }} h={'580px'} alt='buffet' mt={8} className="rounded-xl w-full" />
+                            <Dialog.Content m={2} w={{ base: 'full', lg: 'auto' }} maxW={'90vw'} bg="transparent" boxShadow="none">
+                                <Image src={MenuImage} w={'full'} h={'auto'} maxH={'90vh'} objectFit="contain" alt='menu' className="rounded-xl" />
                             </Dialog.Content>
                         </Dialog.Positioner>
                     </Dialog.Root>

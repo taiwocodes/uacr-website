@@ -48,22 +48,8 @@ export const Footer = () => {
             </Grid>
           </Box>
           <Box>
-            <Text color={'gray.90'} className="mt-5 text-sm ">{footerLinks[2].heading}</Text>
-            <Text fontWeight={'bold'} color={'white'} fontSize={'22px'}>+234 815 8991 518</Text>
-            <VStack className="mt-4" align="start" key={footerLinks[2].heading} gapY={1} gapX={0}>
-              {footerLinks[2].links.map((link) => (
-                'title' in link &&
-                <NavLink
-                  key={link.label}
-                  to={link.to}
-                  style={{ color: "#A6AEAE" }}
-                  className={'flex justify-start items-center'}
-                >
-
-                  <Text color={'#3C403C'} mx={2}>{link.label}</Text> <Text>{link.title}</Text>
-                </NavLink>
-              ))}
-            </VStack>
+            <Text color={'gray.90'} className="mt-5 text-sm ">Contact Us</Text>
+            <Text fontWeight={'bold'} color={'white'} fontSize={'22px'}>07007774992</Text>
             <Stack direction={{ base: 'column', lg: 'row' }} mt={{ base: 5, lg: 12 }} gap={10}>
               <Span w={'224px'}>
                 <Text color={'gray.90'} className="mt-5 text-sm" >Location</Text>
@@ -112,14 +98,6 @@ const footerLinks = [
     links: [
       { label: "Help Center", to: "/help" },
       { label: "Terms of Service", to: "/terms" },
-    ],
-  },
-  {
-    heading: "Contact Us",
-    links: [
-      { label: "TW", title: '/uacrestaurants', to: "/twitter" },
-      { label: "FB", title: '/uacrestaurants', to: "/facebook" },
-      { label: "IG", title: '/uacrestaurants', to: "/ig" },
     ],
   },
 ];
