@@ -82,22 +82,22 @@ export const ContactInfo = () => {
                     title: "Chat with us",
                     description: "Live Assistance: Connect with us for real-time support",
                     icons: [{ icon: FaEnvelope }],
-                    link: "mailto:team@uacresturant.com",
-                    linkText: "team@uacresturant.com"
+                    link: "mailto:customercare@uacrestaurants.com",
+                    linkText: "customercare@uacrestaurants.com"
                 },
                 {
                     title: "Call Us",
                     description: "Call our customer support from Mon-Fri 9am to 5pm",
                     icons: [{ icon: LuPhoneCall }],
-                    link: "tel:+2349090738401",
-                    linkText: "+234 909 073 8401"
+                    link: "tel:+2347007774992",
+                    linkText: "07007774992"
                 },
                 {
                     title: "Follow Us",
                     description: "Connect with us on social media",
                     icons: [
                         { icon: BsTwitterX, url: "https://twitter.com/uacrestaurant" },
-                        { icon: SlSocialLinkedin, url: "https://linkedin.com/company/uacrestaurant" },
+                        { icon: SlSocialLinkedin, url: "https://www.linkedin.com/company/uac-restaurants-limited" },
                         { icon: PiTiktokLogoLight, url: "https://tiktok.com/@uacrestaurant" },
                         { icon: SlSocialYoutube, url: "https://youtube.com/uacrestaurant" },
                         { icon: AiOutlineInstagram, url: "https://instagram.com/uacrestaurant" }

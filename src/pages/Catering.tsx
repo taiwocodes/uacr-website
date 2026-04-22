@@ -1,9 +1,9 @@
 import { Box, Button, Heading, Span, Text, Image, VStack, HStack, Stack, Flex, Dialog } from "@chakra-ui/react";
 import { ContactForm } from "@/components/sections/ContactForm";
 
-import UacCatering from '@/assets/images/update-and-promos-image4.png'
-import bgImage from '@/assets/images/stay-updated-image.png'
-import MenuImage from '@/assets/images/menu-image.png'
+const UacCatering = '/images/catering-refresh/catering-12.png'
+const bgImage = '/images/catering-refresh/catering-11.png'
+const MenuImage = '/images/catering-refresh/menu.jpeg'
 import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 export const Catering = () => {

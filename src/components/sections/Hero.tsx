@@ -13,7 +13,7 @@ import heroImage2 from '@/assets/images/hero-image-2.png'
 import heroImage3 from '@/assets/images/hero-image-3.png'
 import mrBiggsLogo from "@/assets/images/mrbiggs-logo.png";
 import debonairsLogo from "@/assets/images/debonairs-logo.png";
-import iceCreamLogo from "@/assets/images/ice-cream-logo.png";
+import iceCreamLogo from "@/assets/images/creamy-cove-logo.jpg";
 import rating from "@/assets/images/star.png";
 import { useEffect, useState } from "react";
 

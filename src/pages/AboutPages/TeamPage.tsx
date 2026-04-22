@@ -11,6 +11,7 @@ import dorcasOgunleye from "@/assets/images/directors/dorcas2.png"
 import valentineEzeanochikwa from "@/assets/images/directors/valentine.png"
 import samsonObisesan from "@/assets/images/directors/samson.png"
 import muibatAjibade from "@/assets/images/directors/muibat.png"
+import ifeomaProfile from "@/assets/images/directors/ifeoma.jpeg"
 import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 export const TeamPage = () => {
@@ -169,5 +170,11 @@ const management = [
         role: "Risk Assurance Manager",
         description: "Muibat Ajibade is the Risk Assurance Manager at UAC Restaurants Limited, with over five years of progressive experience within the organization. She has served in roles such as Restaurant Accountant, Internal Control Supervisor, and Data Protection Officer, and brings expertise in internal audit, finance, inventory management, risk management and regulatory compliance.",
         img: muibatAjibade
+    },
+    {
+        name: "Ifeoma",
+        role: "Management Team",
+        description: "Profile bio to be provided.",
+        img: ifeomaProfile
     }
 ]

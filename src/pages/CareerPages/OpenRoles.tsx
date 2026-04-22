@@ -41,8 +41,8 @@ const OpenRoles: React.FC = () => {
         <>
             <Flex className=" text-black bg-[#e5f2f2d3] h-[30rem] w-screen flex-col justify-center items-center pt-[5.5rem] px-[1.5rem] lg:px-[5.56rem]">
                 <Heading className="text-dark text-3xl lg:text-[2.5rem] font-bold">Open Roles</Heading>
-                <Text color={'gray.90'} w={{ base: 'full', lg: '891px' }} className=" lg:text-xl text-center mt-[1.5rem]">Exclusive doesn’t mean exclusionary—it means elevated care. From our kitchens to your table, every element is chosen to spark joy for true flavor enthusiasts.</Text>
-
+                <Text color={'gray.90'} w={{ base: 'full', lg: '891px' }} className=" lg:text-xl text-center mt-[1.5rem]">Explore opportunities to join UAC Restaurants and grow your career in a dynamic, fast-paced environment where talent is developed and excellence is valued.</Text>
+                <Text color={'gray.90'} w={{ base: 'full', lg: '891px' }} className=" text-sm lg:text-base text-center mt-[1rem]">Available Roles: Operations, Marketing, Finance, Risk &amp; Audit, Procurement (only Operations roles are currently open).</Text>
             </Flex>
 
             <Box className="py-[2.5rem] text-black lg:py-16 lg:pb-[7.375rem] px-[1.5rem] lg:px-[4rem] bg-white font-satoshi">
@@ -136,6 +136,17 @@ const OpenRoles: React.FC = () => {
                         pageSize={pageSize}
                     />}
                 </div>
+
+                <Box className="mt-[2rem] lg:mt-[3rem] p-[1.5rem] lg:p-[2.5rem] rounded-lg bg-[#F3F5FBB2]">
+                    <Heading className="text-dark text-2xl lg:text-[1.75rem] font-bold mb-[1rem]">How to Apply</Heading>
+                    <Text color={'gray.90'} className="lg:text-lg mb-[1rem]">
+                        Interested candidates should send their updated CV to:{" "}
+                        <a href="mailto:humanresource@uacrestaurants.com" className="text-[#EF0909] underline">humanresource@uacrestaurants.com</a>
+                    </Text>
+                    <Text color={'gray.90'} className="lg:text-lg">
+                        Join us and be part of a team that delivers great food, great service, and great experiences every day.
+                    </Text>
+                </Box>
             </Box>
 
             <Dialog.Root
@@ -163,31 +174,25 @@ const OpenRoles: React.FC = () => {
 
 export const vacancies: Vacancy[] = [
     {
-        role: "Operations Manager",
+        role: "Service Assistant",
         description:
-            "We’re seeking a meticulous and driven Operations Manager to ensure exceptional guest experiences while maximizing efficiency across front-of-house, back-of-house, and administrat....",
+            "If you are energetic, customer-focused, and ready to grow your career in the quick service restaurant industry, we would love to hear from you. Send your updated CV to humanresource@uacrestaurants.com to apply.",
         mode: ["on-site", "full-time"],
-        tag: "design",
+        tag: "Operations",
     },
     {
-        role: "Software Engineer",
+        role: "Restaurant Supervisor",
         description:
-            "We’re seeking a meticulous and driven Operations Manager to ensure exceptional guest experiences while maximizing efficiency across front-of-house, back-of-house, and administrat....",
+            "If you are energetic, customer-focused, and ready to grow your career in the quick service restaurant industry, we would love to hear from you. Send your updated CV to humanresource@uacrestaurants.com to apply.",
         mode: ["on-site", "full-time"],
-        tag: "engineering",
+        tag: "Operations",
     },
     {
-        role: "Accountant",
-        description: "We’re seeking a meticulous and driven Operations Manager to ensure exceptional guest experiences while maximizing efficiency across front-of-house, back-of-house, and administrat....",
-        mode: ["on-site", "full-time"],
-        tag: "accounting",
-    },
-    {
-        role: "Social Media Manager",
+        role: "Restaurant Manager",
         description:
-            "We’re seeking a meticulous and driven Operations Manager to ensure exceptional guest experiences while maximizing efficiency across front-of-house, back-of-house, and administrat....",
+            "If you are energetic, customer-focused, and ready to grow your career in the quick service restaurant industry, we would love to hear from you. Send your updated CV to humanresource@uacrestaurants.com to apply.",
         mode: ["on-site", "full-time"],
-        tag: "marketing",
+        tag: "Operations",
     },
 ];
 

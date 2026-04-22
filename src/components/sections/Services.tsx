@@ -10,10 +10,10 @@ import {
 
 import mrBiggsLogo from "@/assets/images/mrbiggs-logo.png"
 import debonairsLogo from "@/assets/images/debonairs-logo.png"
-import iceCreamLogo from "@/assets/images/ice-cream-logo.png"
-import bgMrBiggs1 from "@/assets/images/nav-images/mrbiggs-nav-image.png"
+import iceCreamLogo from "@/assets/images/creamy-cove-logo.jpg"
+import bgMrBiggs1 from "@/assets/images/standard-store.jpg"
 import bgDebonairs from "@/assets/images/nav-images/debonairs-nav-image.png"
-import bgIceCream from "@/assets/images/nav-images/icecream-nav-image.png"
+import bgIceCream from "@/assets/images/creamy-cove-parlour.png"
 
 import { GoArrowUpRight } from "react-icons/go"
 import { Link } from "react-router-dom"

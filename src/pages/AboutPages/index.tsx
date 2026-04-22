@@ -1,9 +1,10 @@
 import { Box, Flex, Grid, GridItem, Heading, HStack, Image, Stack, Text } from "@chakra-ui/react"
 
-import foodShots1 from "@/assets/images/nav-images/mrbiggs-nav-image.png"
-import foodShots2 from "@/assets/images/nav-images/debonairs-nav-image.png"
-import foodShots3 from "@/assets/images/stay-updated-image.png"
-import foodShots4 from "@/assets/images/about-nav-image.png"
+const foodShots1 = "/images/about-refresh/exclusive-1.jpg"
+const foodShots2 = "/images/about-refresh/exclusive-2.jpeg"
+const foodShots3 = "/images/about-refresh/exclusive-3.jpg"
+const foodShots4 = "/images/about-refresh/exclusive-4.jpg"
+const foodShots5 = "/images/about-refresh/exclusive-5.jpg"
 
 export const About = () => {
   return (
@@ -60,37 +61,30 @@ export const About = () => {
             </Box>
             <Box className="mt-4 lg:mt-0 lg:ml-20" fontSize="1.08rem" color="gray.90" w={{ base: 'full', lg: "37rem" }}>
               <Text>
-                UAC Restaurants (UACR) pioneered QSR in Nigeria with the launch
-                of Mr Bigg’s in 1986. Mr Biggs quickly became a household name
-                and was particularly loved for its meals, delectable pastries,
-                and confectionaries. In 2013, with the formation of a joint
-                venture between UAC of Nigeria PLC (“UAC”) and Famous Brands
-                Management Company (PTY) Limited (South Africa) (“Famous
-                Brands”), UACR added another popular brand to its portfolio.
-                “Debonairs Pizza”. UACR brands enjoy increased presence in urban
-                and sub-urban areas and Strong brand equity as with 605,000
-                transactions monthly.
+                UAC Restaurants (UACR) is a leading quick service restaurant company in Nigeria, committed to delivering quality, value, and memorable dining experiences across the country. We are passionate about creating moments that bring people together through great food, excellent service, and consistent brand experiences.
               </Text>
               <Text className="mt-5">
-                A growing network of suppliers and franchisees, UACR maintains
-                warehouses and operations in 14 states across four geo-political
-                zones in Nigeria.We are extremely proud of ~650 direct and
-                indirect employees and franchise associates in our network and
-                the distinct culture we’ve built grounded on customer
-                experience, innovation, and service delivery. Our leadership
-                team is committed to leading with values that engage everyone,
-                foster innovation, and support top-line growth.
+                We proudly manage a portfolio of trusted brands including Mr Bigg’s, Debonairs Pizza, and CreamyCove. Each brand offers a unique experience—from everyday local favourites to bold, innovative flavours and indulgent treats—while all reflecting our shared commitment to quality, consistency, and customer satisfaction.
+              </Text>
+              <Text className="mt-5">
+                At UACR, we are driven by innovation and operational excellence. We continuously evolve our offerings, processes, and customer touchpoints to meet changing consumer needs and deliver better value at every interaction.
+              </Text>
+              <Text className="mt-5">
+                People are at the heart of our business. We invest in building a strong, capable, and customer-focused team by providing opportunities for learning, growth, and career advancement across all levels of the organisation.
+              </Text>
+              <Text className="mt-5">
+                Guided by integrity, quality, and a relentless pursuit of excellence, UAC Restaurants continues to shape the future of quick service dining in Nigeria while creating lasting value for customers, employees, and stakeholders.
               </Text>
             </Box>
           </Flex>
           <Stack direction={{ base: 'column', lg: 'row' }} className=" mt-10" gap={5}>
             <Flex bgColor="#FFD7000D" direction="column" w={{ base: 'full', lg: '40rem' }} h="14rem" justifyContent="start" className="relative  p-10 rounded-2xl">
               <Text fontSize="1.5rem" fontWeight="bold">Our Mission</Text>
-              <Text color="gray.90" fontSize="1.1rem">To serve quality affordable and great-tasting meals by operating Africa’s most trusted QSR brands in an innovative and sustainable way.</Text>
+              <Text color="gray.90" fontSize="1.1rem">To provide a delightful experience to customers while serving great-tasting meals with the highest quality standards.</Text>
             </Flex>
             <Flex bgColor="#F812120D" direction="column" w={{ base: 'full', lg: '40rem' }} h="14rem" className="relative  p-10 rounded-2xl">
               <Text fontSize="1.5rem" fontWeight="bold">Our Vision</Text>
-              <Text color="gray.90" fontSize="1.1rem">To be the leading Quick Service Restaurant and Food Services business in Nigeria.</Text>
+              <Text color="gray.90" fontSize="1.1rem">To be the leading provider of quality and excellent meals through delightful QSR brands.</Text>
             </Flex>
           </Stack>
         </Flex>
@@ -98,7 +92,8 @@ export const About = () => {
       <Flex h={{ base: "1972px", lg: '47rem' }} bgColor="blue.100" justify={'center'} className="w-full py-16 relative px-4 lg:pl-16">
         <Flex w="full" maxW={'1440px'} direction="column" justifyContent="center" >
           <Text fontSize="2.3rem" fontWeight="bold">Core Values</Text>
-          <Text color="gray.90" fontSize="1.2rem" className="mb-14">These principles guide every decision, from kitchen to dining room</Text>
+          <Text color="gray.90" fontSize="1.2rem" className="mb-2">I-CRAFTED — the principles that guide every decision, from kitchen to dining room.</Text>
+          <Text color="gray.90" fontSize="1rem" className="mb-14">Innovation · Customer-Centric · Responsiveness · Accountability · Flexibility · Teamwork · Ethics · Dedication</Text>
           <Grid className="lg:h-[28rem] h-[1672px] overflow-hidden" templateColumns={{ base: 'repeat(1,1fr)', md: "repeat(3,1fr)" }} gapX={{ base: 1, lg: 6 }} >
             {coreValues.map((coreValue) => (
               <GridItem w={{ base: 'full', lg: "100%" }}>
@@ -114,17 +109,16 @@ export const About = () => {
 }
 
 const coreValues = ([
-  { value: "Integrity", meaning: "We will do the right thing always; operate with an ethical, honest, and open approach" },
+  { value: "Innovation", meaning: "We constantly improve, exploring new ways and processes to deliver to our customers." },
   { value: "Customer-Centric", meaning: "We exist to delight our customers." },
-  { value: "Respect", meaning: "Treat everyone with respect, dignity, and understanding in service delivery." },
-  { value: "Innovation", meaning: "Constantly improve, exploring new ways and processes to deliver to our customers" },
-  { value: "Ownership", meaning: "Taking ownership of providing services to our customers" },
-  { value: "Responsiveness", meaning: "Provide services in a timely manner, prioritizing requests as the need arises." },
-  { value: "Collaboration", meaning: "We deliver results together and reward accordingly" },
-  { value: "Community", meaning: "We give back to our community in a sustainable way" },
-  { value: "Flexiblity", meaning: "We can blend our personal and professional responsibilities." }
+  { value: "Responsiveness", meaning: "We provide services in a timely manner, prioritising requests as the need arises." },
+  { value: "Accountability", meaning: "We take ownership of our actions, decisions, and outcomes." },
+  { value: "Flexibility", meaning: "We blend our personal and professional responsibilities to adapt and thrive." },
+  { value: "Teamwork", meaning: "We deliver results together and reward accordingly." },
+  { value: "Ethics", meaning: "We operate with integrity, honesty, and an open approach." },
+  { value: "Dedication", meaning: "We are committed to excellence in everything we do." }
 ])
 
 const foodShots = [
-  foodShots1, foodShots2, foodShots3, foodShots4
+  foodShots1, foodShots2, foodShots3, foodShots4, foodShots5
 ]

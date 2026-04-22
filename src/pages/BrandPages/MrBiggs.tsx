@@ -21,19 +21,19 @@ export const MrBiggs = () => {
             <Flex ref={aboutRef} justifyContent={"center"} w={"full"} color="dark.900" bgColor="white" className="relative py-16 px-3 md:px-16 ">
                 <Flex className="flex-col lg:flex-row" justifyContent={"center"} alignItems={"end"} w={"full"} >
                     <Span className="lg:mr-10" w={{ base: "full", lg: "fit" }}>
-                        <Text fontSize={{ base: '32px', lg: "2.1rem" }} w={"20rem"} fontWeight={"bold"}>About Mr Biggs</Text>
-                        <Text w={{ base: "full", lg: "30rem" }} fontSize={{ base: '16px', lg: "1.1rem" }} color="gray.90" className="mb-5">Through decades of change, one thing stays the same: our commitment to hot, fresh, affordable joy.</Text>
+                        <Text fontSize={{ base: '32px', lg: "2.1rem" }} w={"20rem"} fontWeight={"bold"}>About Mr Bigg’s</Text>
+                        <Text w={{ base: "full", lg: "30rem" }} fontSize={{ base: '16px', lg: "1.1rem" }} color="gray.90" className="mb-5">Through decades of change, one thing has remained constant: our commitment to delivering hot, fresh, and affordable joy to every customer.</Text>
                         <Image w={"38rem"} h={"20rem"} className="rounded-2xl" src={restaurantImage} />
                     </Span>
                     <Span className="mt-4 lg:mt-0" fontSize={{ base: '16px', lg: "1.1rem" }} w={{ base: "full", lg: "43rem" }} color={"gray.90"}>
                         <Text>
-                            Mr Bigg’s is Nigeria’s pioneer QSR brand, renowned for its delicious meals and freshly baked pastries. We have grown over the years, constantly re-inventing our products and services, to match the ever-evolving needs of our customers.
+                            Mr Bigg’s is Nigeria’s pioneer QSR brand, renowned for its delicious meals and freshly baked pastries. Over the years, we have continued to evolve, constantly reinventing our offerings to meet the ever-changing needs and lifestyles of our customers.
                         </Text>
-                        <Text>
-                            To better serve our customers, we have expanded our service style with the introduction of (insert Express Logo). This modular store avails us the opportunity to better match up with the fast-paced lifestyles of our customers.
+                        <Text className="mt-4">
+                            To serve our customers even better, we have expanded our service formats with the introduction of our Express Stores. This modular concept allows us to seamlessly fit into fast-paced environments, bringing convenience and quality closer to you.
                         </Text>
-                        <Text>Our standard stores remain the choice location for family outings, hanging out with loved ones and enjoying a home cooked meal, away from home, as we will always be BIGG ON FOOD, BIGG ON YOU!
-                        </Text>
+                        <Text className="mt-4">Our Standard Stores remain the perfect destination for family outings, casual hangouts, and enjoying comforting, home-style meals away from home.</Text>
+                        <Text className="mt-4">Because at Mr Bigg’s, we are always BIGG ON FOOD, BIGG ON YOU.</Text>
                     </Span>
                 </Flex>
             </Flex>
@@ -44,10 +44,10 @@ export const MrBiggs = () => {
 }
 
 const OurSpecial = [
-    "/images/our-special-images/jollof-rice2-our-specials.png",
-    "/images/our-special-images/jollof-rice-our-specials.png",
-    "/images/our-special-images/timeless-flavours-our-specials.png",
-    "/images/our-special-images/hmm-delicious-our-specials.png"
+    "/images/specials-refresh/rich-jollof-rice.jpeg",
+    "/images/specials-refresh/special-fried-rice.jpeg",
+    "/images/specials-refresh/bigg-wizz.jpeg",
+    "/images/specials-refresh/rich-jollof-rice.jpeg"
 ]
 
 const ScrollImages = [

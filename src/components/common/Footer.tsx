@@ -67,11 +67,11 @@ export const Footer = () => {
             <Stack direction={{ base: 'column', lg: 'row' }} mt={{ base: 5, lg: 12 }} gap={10}>
               <Span w={'224px'}>
                 <Text color={'gray.90'} className="mt-5 text-sm" >Location</Text>
-                <Text color={'#ADB3AB'}>Km 16 Ikorodu Rd, Ojota, Lagos 101233, Lagos</Text>
+                <Text color={'#ADB3AB'}>139 Ogudu Road, Ogudu, Lagos</Text>
               </Span>
               <Span w={'224px'}>
                 <Text color={'gray.90'} className="mt-0 lg:mt-5 text-sm ">Email</Text>
-                <Text color={'#ADB3AB'}>info@uacrestaurants.com</Text>
+                <Text color={'#ADB3AB'}>customercare@uacrestaurants.com</Text>
               </Span>
             </Stack>
 

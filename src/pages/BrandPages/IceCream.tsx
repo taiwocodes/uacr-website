@@ -23,21 +23,30 @@ export const IceCream = () => {
                 {/* dark overlay so text stays readable */}
                 <Box className="absolute inset-0 z-[1] bg-black/40" />
                 <Span alignItems="center" className="place-self-center self-center justify-self-center relative z-[2]" justifySelf={"center"} alignSelf={"center"}>
-                    <Heading w={{ base: "full", lg: "42rem" }} fontSize={{ base: "32px", lg: "3rem" }} lineHeight={"normal"} fontWeight={"bold"}>Every Scoop is a Sweet Escape Pure Bliss in Every Bite</Heading>
-                    <Text fontSize={{ base: "16px", lg: "1.2rem" }} w={{ base: "full", lg: "43rem" }} className="mb-5">From velvety soft serve cones to indulgent milkshakes and loaded tubs discover happiness, one scoop at a time</Text>
+                    <Heading w={{ base: "full", lg: "42rem" }} fontSize={{ base: "32px", lg: "3rem" }} lineHeight={"normal"} fontWeight={"bold"}>Swirl into Happiness.</Heading>
+                    <Text fontSize={{ base: "16px", lg: "1.2rem" }} w={{ base: "full", lg: "43rem" }} className="mb-5">Rich. Smooth. Irresistible. Every bite is a Creamy Cove moment.</Text>
                 </Span>
             </Flex>
             <Flex ref={aboutRef} justifyContent={"center"} w={"full"} color="dark.900" bgColor="white" className="relative py-16 px-3 md:px-16 ">
                 <Flex className="flex-col lg:flex-row" justifyContent={"center"} alignItems={"end"} w={"full"} >
                     <Span className="lg:mr-10" w={{ base: "full", lg: "fit" }}>
                         <Text fontSize={{ base: "1.5rem", lg: "2.1rem" }} w={{ base: "full", lg: "23rem" }} fontWeight={"bold"}>About Creamy Cove</Text>
-                        <Text w={{ base: "full", lg: "30rem" }} fontSize={{ base: '16px', md: "1.1rem" }} color="gray.90" className="mb-5">Why settle for ordinary when you can have legendary?</Text>
-                        <Image w={"40rem"} h={"22rem"} objectFit="cover" className="rounded-2xl shadow-sm" src={"/images/Ice-cream-updated images/TUBZ/tubz 2.jpg"} />
+                        <Text w={{ base: "full", lg: "30rem" }} fontSize={{ base: '16px', md: "1.1rem" }} color="gray.90" className="mb-5">Welcome to Creamy Cove—where every swirl is crafted to delight.</Text>
+                        <Image w={"40rem"} h={"22rem"} objectFit="cover" className="rounded-2xl shadow-sm" src={"/images/specials-refresh/cc-5.jpg"} />
                     </Span>
                     <Span className="mt-4 lg:mt-0" fontSize={{ base: '16px', md: "1.1rem" }} w={{ base: "full", lg: "43rem" }} color={"gray.90"}>
                         <Text>
-                            Welcome to our Creamy Cove brand, where every scoop is a celebration! As one of the city’s favorite dessert destinations, we’re passionate about crafting unforgettable moments with our irresistible range of flavors and toppings. Whether you crave a classic vanilla cone or want to explore bold, new creations, we have something for everyone.</Text>
-                        <Text>Our commitment goes beyond just taste we believe in delivering happiness with every visit. From our friendly staff to our vibrant, welcoming spaces, we make sure your experience is as delightful as our desserts. Enjoy a family outing, a sweet date, or a solo treat in a place where smiles are always on the menu.</Text>
+                            At Creamy Cove, we serve irresistibly smooth soft-serve ice cream made for true indulgence. Our focus is simple: rich, creamy textures, exciting flavour combinations, and a fun, feel-good experience in every cup or cone. From classic favourites to playful, trend-inspired creations, every serving is designed to spark joy and keep you coming back for more.
+                        </Text>
+                        <Text className="mt-4">
+                            We’re not just about ice cream—we’re about moments. The quick treat after a long day, shared laughs with friends, and little rewards that make life sweeter. Creamy Cove brings together quality, creativity, and consistency to deliver an experience that feels as good as it tastes.
+                        </Text>
+                        <Text className="mt-4">
+                            Rooted in a deep understanding of the Nigerian consumer, Creamy Cove is built to be accessible, exciting, and memorable—whether you’re grabbing a quick swirl or exploring our signature toppings and combos.
+                        </Text>
+                        <Text className="mt-4">
+                            This is your happy place. This is Creamy Cove.
+                        </Text>
                     </Span>
                 </Flex>
             </Flex>
@@ -53,10 +62,10 @@ export const IceCream = () => {
 }
 
 const OurSpecial = [
-    "/images/our-special-images/pizza-debonairs-our-specials.png",
-    "/images/our-special-images/pizza-debonairs2-our-specials.png",
-    "/images/our-special-images/taste-the-best-our-specials.png",
-    "/images/our-special-images/delicious-pizza-our-specials.png"
+    "/images/specials-refresh/cc-1.jpeg",
+    "/images/specials-refresh/cc-2.png",
+    "/images/specials-refresh/cc-3.png",
+    "/images/specials-refresh/cc-4.jpg"
 ]
 
 const ScrollImages = [

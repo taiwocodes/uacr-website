@@ -3,7 +3,7 @@ import bgMrBiggs from "@/assets/images/mrbiggs-hero-img.png"
 import bgDebonairs from "@/assets/images/debonairs-hero-img.png"
 import bgNavMrBiggs from "@/assets/images/nav-images/mrbiggs-nav-image.png"
 import bgNavDebonairs from "@/assets/images/nav-images/debonairs-nav-image.png"
-import bgNavIceCream from "@/assets/images/nav-images/icecream-nav-image.png"
+import bgCreamyCoveLocation from "@/assets/images/creamy-cove-location.jpeg"
 import bgStay from "@/assets/images/stay-updated-image.png"
 
 const locationData = [
@@ -110,10 +110,10 @@ const locationData = [
         bg: bgNavDebonairs,
     },
     {
-        name: "Creamy Cove Abuja",
-        address: "Jabi Lake Mall, Jabi, Abuja",
+        name: "Creamy Cove Ogudu",
+        address: "139 Ogudu Road, Ogudu, Lagos",
         hours: "8:00am - 10:00pm",
-        bg: bgNavIceCream,
+        bg: bgCreamyCoveLocation,
     },
 ]
 
