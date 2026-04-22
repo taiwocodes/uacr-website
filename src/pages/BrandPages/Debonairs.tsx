@@ -21,11 +21,13 @@ export const Debonairs = () => {
             <Flex ref={aboutRef} justifyContent={"center"} w={"full"} color="dark.900" bgColor="white" className="relative py-16 px-3 md:px-16 ">
                 <Flex className="flex-col lg:flex-row" justifyContent={"center"} alignItems={"end"} w={"full"} >
                     <Span className="lg:mr-10" w={{ base: "full", lg: "fit" }}>
-                        <Text fontSize={{ base: "1.5rem", lg: "2.1rem" }} w={{ base: "full", lg: "23rem" }} fontWeight={"bold"}>About Debonairs Pizza</Text>
-                        <Text w={{ base: "full", lg: "30rem" }} fontSize={{ base: '16px', md: "1.1rem" }} color="gray.90" className="mb-5">Try Something Amazing.</Text>
+                        <Text fontSize={{ base: "1.5rem", lg: "2.1rem" }} w={{ base: "full", lg: "23rem" }} fontWeight={"bold"} className="mb-5">About Debonairs Pizza</Text>
                         <Image w={"40rem"} h={"22rem"} className="rounded-2xl" src={restaurantImage} />
                     </Span>
                     <Span className="mt-4 lg:mt-0" fontSize={{ base: '16px', md: "1.1rem" }} w={{ base: "full", lg: "43rem" }} color={"gray.90"}>
+                        <Text fontWeight="medium" color="dark.900" className="mb-4">
+                            Try Something Amazing.
+                        </Text>
                         <Text>
                             At Debonairs Pizza Nigeria, we create bold, flavour-packed pizzas for people who love something different.
                         </Text>

@@ -137,6 +137,10 @@ const OpenRoles: React.FC = () => {
                     />}
                 </div>
 
+                <Text color={'gray.90'} className="text-base lg:text-lg text-center mt-[2rem] lg:mt-[3rem]">
+                    If you are energetic, customer-focused, and ready to grow your career in the quick service restaurant industry, we would love to hear from you.
+                </Text>
+
                 <Box className="mt-[2rem] lg:mt-[3rem] p-[1.5rem] lg:p-[2.5rem] rounded-lg bg-[#F3F5FBB2]">
                     <Heading className="text-dark text-2xl lg:text-[1.75rem] font-bold mb-[1rem]">How to Apply</Heading>
                     <Text color={'gray.90'} className="lg:text-lg mb-[1rem]">
@@ -175,22 +179,19 @@ const OpenRoles: React.FC = () => {
 export const vacancies: Vacancy[] = [
     {
         role: "Service Assistant",
-        description:
-            "If you are energetic, customer-focused, and ready to grow your career in the quick service restaurant industry, we would love to hear from you. Send your updated CV to humanresource@uacrestaurants.com to apply.",
+        description: "",
         mode: ["on-site", "full-time"],
         tag: "Operations",
     },
     {
         role: "Restaurant Supervisor",
-        description:
-            "If you are energetic, customer-focused, and ready to grow your career in the quick service restaurant industry, we would love to hear from you. Send your updated CV to humanresource@uacrestaurants.com to apply.",
+        description: "",
         mode: ["on-site", "full-time"],
         tag: "Operations",
     },
     {
         role: "Restaurant Manager",
-        description:
-            "If you are energetic, customer-focused, and ready to grow your career in the quick service restaurant industry, we would love to hear from you. Send your updated CV to humanresource@uacrestaurants.com to apply.",
+        description: "",
         mode: ["on-site", "full-time"],
         tag: "Operations",
     },

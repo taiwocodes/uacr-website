@@ -30,11 +30,13 @@ export const IceCream = () => {
             <Flex ref={aboutRef} justifyContent={"center"} w={"full"} color="dark.900" bgColor="white" className="relative py-16 px-3 md:px-16 ">
                 <Flex className="flex-col lg:flex-row" justifyContent={"center"} alignItems={"end"} w={"full"} >
                     <Span className="lg:mr-10" w={{ base: "full", lg: "fit" }}>
-                        <Text fontSize={{ base: "1.5rem", lg: "2.1rem" }} w={{ base: "full", lg: "23rem" }} fontWeight={"bold"}>About Creamy Cove</Text>
-                        <Text w={{ base: "full", lg: "30rem" }} fontSize={{ base: '16px', md: "1.1rem" }} color="gray.90" className="mb-5">Welcome to Creamy Cove—where every swirl is crafted to delight.</Text>
+                        <Text fontSize={{ base: "1.5rem", lg: "2.1rem" }} w={{ base: "full", lg: "23rem" }} fontWeight={"bold"} className="mb-5">About Creamy Cove</Text>
                         <Image w={"40rem"} h={"22rem"} objectFit="cover" className="rounded-2xl shadow-sm" src={"/images/specials-refresh/cc-5.jpg"} />
                     </Span>
                     <Span className="mt-4 lg:mt-0" fontSize={{ base: '16px', md: "1.1rem" }} w={{ base: "full", lg: "43rem" }} color={"gray.90"}>
+                        <Text fontWeight="medium" color="dark.900" className="mb-4">
+                            Welcome to Creamy Cove—where every swirl is crafted to delight.
+                        </Text>
                         <Text>
                             At Creamy Cove, we serve irresistibly smooth soft-serve ice cream made for true indulgence. Our focus is simple: rich, creamy textures, exciting flavour combinations, and a fun, feel-good experience in every cup or cone. From classic favourites to playful, trend-inspired creations, every serving is designed to spark joy and keep you coming back for more.
                         </Text>

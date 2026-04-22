@@ -21,11 +21,13 @@ export const MrBiggs = () => {
             <Flex ref={aboutRef} justifyContent={"center"} w={"full"} color="dark.900" bgColor="white" className="relative py-16 px-3 md:px-16 ">
                 <Flex className="flex-col lg:flex-row" justifyContent={"center"} alignItems={"end"} w={"full"} >
                     <Span className="lg:mr-10" w={{ base: "full", lg: "fit" }}>
-                        <Text fontSize={{ base: '32px', lg: "2.1rem" }} w={"20rem"} fontWeight={"bold"}>About Mr Bigg’s</Text>
-                        <Text w={{ base: "full", lg: "30rem" }} fontSize={{ base: '16px', lg: "1.1rem" }} color="gray.90" className="mb-5">Through decades of change, one thing has remained constant: our commitment to delivering hot, fresh, and affordable joy to every customer.</Text>
+                        <Text fontSize={{ base: '32px', lg: "2.1rem" }} w={"20rem"} fontWeight={"bold"} className="mb-5">About Mr Bigg’s</Text>
                         <Image w={"38rem"} h={"20rem"} className="rounded-2xl" src={restaurantImage} />
                     </Span>
                     <Span className="mt-4 lg:mt-0" fontSize={{ base: '16px', lg: "1.1rem" }} w={{ base: "full", lg: "43rem" }} color={"gray.90"}>
+                        <Text fontWeight="medium" color="dark.900" className="mb-4">
+                            Through decades of change, one thing has remained constant: our commitment to delivering hot, fresh, and affordable joy to every customer.
+                        </Text>
                         <Text>
                             Mr Bigg’s is Nigeria’s pioneer QSR brand, renowned for its delicious meals and freshly baked pastries. Over the years, we have continued to evolve, constantly reinventing our offerings to meet the ever-changing needs and lifestyles of our customers.
                         </Text>
