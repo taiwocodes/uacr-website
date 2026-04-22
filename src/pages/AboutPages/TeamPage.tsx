@@ -173,8 +173,8 @@ const management = [
     },
     {
         name: "Ifeoma",
-        role: "Management Team",
-        description: "Profile bio to be provided.",
+        role: "HR Manager",
+        description: "Ifeoma is a highly skilled Human Resources professional with over 9 years’ experience in talent management, employee engagement, compensation and benefits, and performance optimization.\n\nShe joined the UAC Group in 2022 as an HR Associate, where she was responsible for driving HR service excellence and executing strategic HR initiatives to support business growth. Prior to her current role, she served as a Learning and Development Associate at UAC Foods Limited and also provided leadership support to the UAC Restaurants HR team as Acting HR Manager.\n\nIfeoma has also gained valuable commercial experience from her roles as Business Development Executive and Shopper & Customer Marketing Specialist at Beiersdorf Nivea Nigeria, prior to joining the UAC Group. This unique blend of HR expertise and commercial acumen gives her an edge in contributing to business transformation, aligning people strategies with organizational objectives, and ensuring measurable impact on performance and growth.\n\nShe holds a B.Sc. in Microbiology from the University of Nigeria and is certified as a Senior Professional in Human Resources International (SPHRi).",
         img: ifeomaProfile
     }
 ]
