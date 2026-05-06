@@ -6,7 +6,6 @@ import debolaBadejo from "@/assets/images/directors/debola-badejo.png"
 import darrenHele from "@/assets/images/directors/darren-hele.png"
 import phillipSmith from "@/assets/images/directors/phillip-smith.png"
 import nneomaObikili from "@/assets/images/directors/nneoma-obikili.png"
-import davidDogeni from "@/assets/images/directors/ifeaoma.png"
 import dorcasOgunleye from "@/assets/images/directors/dorcas2.png"
 import valentineEzeanochikwa from "@/assets/images/directors/valentine.png"
 import samsonObisesan from "@/assets/images/directors/samson.png"
@@ -61,7 +60,7 @@ export const TeamPage = () => {
                         {management.map((director) => (
                             <GridItem key={director.name} onClick={() => { setSelected(director); setIsOpen(true); }} w={{ base: 'full', md: '413.67px' }} h="fit" borderColor="gray.50" className="relative rounded-lg">
                                 <Flex onClick={() => setIsOpen(true)} w={'full'} direction={'column'} h="full" className="cursor-pointer p-4">
-                                    <Image w="full" h={'389px'} objectFit="cover" objectPosition={director.name === 'David Dogeni' || director.name === 'Valentine Ezeanochikwa' ? 'center 0%' : 'center top'} className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
+                                    <Image w="full" h={'389px'} objectFit="cover" objectPosition={director.name === 'Valentine Ezeanochikwa' ? 'center 0%' : 'center top'} className="rounded-lg border-[0.5px] border-[#80808033]" src={director.img} />
                                     <Span w={'full'} className="">
                                         <Text color="brand.900" className=" my-2 w-fit text-start items-center">{director.role}</Text>
                                         <Text w="full" color={'dark.900'} fontWeight="semibold" fontSize="22px">{director.name}</Text>
@@ -140,12 +139,6 @@ const management = [
         role: 'General Manager Corporate Services',
         description: 'Mrs. Nneoma Obikili brings a wealth of experience in Strategy Development, Performance Improvement, and Project Execution. Most recently, she served as Business Advisor & Head',
         img: nneomaObikili
-    },
-    {
-        name: 'David Dogeni',
-        role: 'Chief Technology Officer',
-        description: 'Prior to joining UACR, David was the Head, Information Technology at UAC of Nigeria Plc, He lead the digital transformation journey for the business and it’s subsidiaries',
-        img: davidDogeni
     },
     {
         name: 'Dorcas Ogunleye',

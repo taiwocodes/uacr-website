@@ -28,7 +28,7 @@ const locationData = [
     {
         name: "Mr Bigg's Magodo",
         address: "2, CMB Road, Magodo (Inside Mobil Filling Station), Lagos",
-        hours: "7:00am - 10:00pm",
+        hours: "7:00am - 10:00pm", 
         bg: bgMrBiggs,
     },
     {

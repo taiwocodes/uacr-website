@@ -17,46 +17,10 @@ import bgIceCream from "@/assets/images/creamy-cove-parlour.png"
 
 import { GoArrowUpRight } from "react-icons/go"
 import { Link } from "react-router-dom"
-import { useEffect, useRef, useState } from "react"
 import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 export const Services = () => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const slideRefs = useRef<HTMLDivElement[]>([]);
-  const [activeIndex, setActiveIndex] = useState(0);
   const revealRef = useScrollReveal<HTMLDivElement>();
-
-  useEffect(() => {
-    const container = containerRef.current
-    const slides = slideRefs.current
-    if (!container) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        let mostVisible = entries[0]
-        entries.forEach((entry) => {
-          if (entry.intersectionRatio > mostVisible.intersectionRatio) {
-            mostVisible = entry
-          }
-        })
-        const idx = Number((mostVisible.target as HTMLDivElement).dataset.index)
-        setActiveIndex(idx)
-      },
-      {
-        root: container,
-        threshold: 0.98,
-      }
-    )
-
-    slides.forEach((el) => el && observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
-
-  const scrollTo = (i: number) => {
-    const el = slideRefs.current[i]
-    if (!el) return
-    el.scrollIntoView({ behavior: "smooth", inline: "center" })
-  }
 
   return (
     <Box id="uac-restaurants" ref={revealRef} as="section" className=" relative mt-12 py-10 h-fit">
@@ -91,32 +55,25 @@ export const Services = () => {
           maxW={'100%'}
           margin={'0 auto'}
           py={6}
+          px={{ base: 0, lg: "3rem" }}
         >
           <Flex
-            ref={containerRef}
             direction={{ base: "column", lg: "row" }}
             gap={'1rem'}
             color="white"
-            className=" mt-4 lg:my-7 overflow-x-scroll snap-x snap-mandatory scroll-smooth overscroll-x-contain"
+            className="mt-4 lg:my-7"
           >
-
             {Restaurants.map((item, i) => (
               <Flex
-                flex={{ lg: "0 0 auto" }}
                 key={i}
-                data-index={i}
-                ref={(el) => {
-                  if (el) slideRefs.current[i] = el
-                }}
+                flex={{ lg: "1 1 0" }}
                 direction="column"
-                w={{ base: "full", lg: "900px" }}
-                h={{ base: "328px", lg: "498px" }}
-                ml={{ base: 'none', lg: i === 0 ? "3rem" : "0" }}
-                mr={{ base: 'none', lg: i === 2 ? '3rem' : '0' }}
-                className=" p-2 lg:p-4  relative items-center  justify-end rounded-lg"
+                w={{ base: "full" }}
+                h={{ base: "328px", lg: "440px" }}
+                className="p-2 lg:p-4 relative items-center justify-end rounded-lg"
               >
                 <Image
-                  className="absolute inset-0 -z-10 size-full rounded-lg"
+                  className="absolute inset-0 -z-10 size-full rounded-lg object-cover"
                   src={item.image}
                 />
                 <Flex
@@ -149,26 +106,6 @@ export const Services = () => {
 
                 </Flex>
               </Flex>))}
-          </Flex>
-
-          <Flex
-            display={{ base: 'none', lg: 'flex' }}
-            justifyContent={"center"}
-            marginTop={"3rem"}
-            placeSelf={"center"}
-            gap={".5rem"}
-            className=" w-fit rounded-[100px] bg-[#F3F5FB] p-5 "
-          >
-            {[0, 1, 2].map((i) => (
-              <button
-                key={i}
-                onClick={() => scrollTo(i)}
-                className={`rounded-[100px] border-none cursor-pointer transition-[background_.3s] h-[8px] ${i === activeIndex
-                  ? "bg-[#C80104] w-[40px] "
-                  : "bg-[#80808033] w-[14px]"
-                  }`}
-              />
-            ))}
           </Flex>
         </Box>
       </Flex>
