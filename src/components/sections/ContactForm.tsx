@@ -209,7 +209,7 @@ export const ContactForm = () => {
                                 />
                             </div></label>
                         <label style={{ color: "#6F7777" }}>
-                            I hereby consent to the processing of my personal data in compliance with the Nigeria Data Protection Act, 2023, and declare my agreement with Grand Cereal Limited's Data Privacy and Protection Policy.
+                            By Clicking here, I agree to UAC Restaurants Limited processing my personal data in line with our terms and conditions and Data Privacy Policy
                         </label>
                     </div>
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom"
 import { Footer } from "@/components/common/Footer"
 import { Navigation } from "@/components/common/Navigation"
+import { CookieConsent } from "@/components/common/CookieConsent"
 import { Box, Center } from "@chakra-ui/react";
 import { FaArrowUp } from "react-icons/fa";
 
@@ -31,6 +32,7 @@ export const Layout = () => {
             <Navigation color="dark.900" />
             <Outlet />
             <Footer />
+            <CookieConsent />
             {isVisible && (
                 <Center
                     onClick={scrollToTop}

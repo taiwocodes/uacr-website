@@ -94,9 +94,9 @@ const footerLinks = [
     ],
   },
   {
-    heading: "Support",
+    heading: "Legal",
     links: [
-      { label: "Help Center", to: "/help" },
+      { label: "Privacy Policy", to: "/privacy-policy" },
       { label: "Terms of Service", to: "/terms" },
     ],
   },
