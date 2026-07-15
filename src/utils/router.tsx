@@ -15,6 +15,7 @@ import { FAQ } from "@/pages/AboutPages/FAQ";
 import OpenRoles from "@/pages/CareerPages/OpenRoles";
 import Career from "@/pages/CareerPages/Career";
 import { IceCream } from "@/pages/BrandPages/IceCream";
+import { PrivacyPolicy } from "@/pages/PrivacyPolicy";
 
 const routes: RouteObject[] = [
     {
@@ -51,6 +52,7 @@ const routes: RouteObject[] = [
             },
             { path: "catering", element: <Catering /> },
             { path: "contact", element: <Contact /> },
+            { path: "privacy-policy", element: <PrivacyPolicy /> },
             { path: "*", element: <NotFound /> },
 
         ]
