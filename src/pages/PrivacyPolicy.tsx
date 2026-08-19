@@ -110,6 +110,8 @@ const sections: PolicySection[] = [
             "online registration information such as your password and other authentication information;",
             "payment details such as your credit card information and billing address;",
             "in certain cases, your marketing preferences.",
+        ],
+        paragraphsAfter: [
             "We automatically collect and store certain types of information regarding your use of our Site including information about your searches, views, downloads and purchases.",
         ],
     },
@@ -139,7 +141,7 @@ const sections: PolicySection[] = [
             "UAC Restaurants Limited shall only process your personal data if at least one of the following conditions apply:",
         ],
         list: [
-            "you have given your consent to the processing of your personal data for one or more specific purposes;",
+            "you have given your consent to the processing of his/her personal data for one or more specific purposes;",
             "the processing is necessary for the performance of a contract to which you are a party or in order to take steps at your request prior to entering into a contract;",
             "processing is necessary for compliance with a legal obligation to which UAC Restaurants is subject;",
             "processing is necessary in order to protect your vital interests or that of another natural person;",
@@ -153,7 +155,7 @@ const sections: PolicySection[] = [
             "We may need to share your personal data with third-parties under the following circumstances:",
         ],
         list: [
-            "to enable us provide our services to you, end to end.",
+            "to enable provide our services to you, end to end.",
             "to analyze data, provide marketing assistance, process payments, transmit content, and provide customer service.",
             "to comply with applicable laws and regulations or to respond to valid legal process, including from law enforcement or other government agencies.",
             "to protect the rights of our customers, operate and maintain the security of our systems and network to ensure the preservation of life and property and prevention of fraud and cyberattack.",
@@ -206,7 +208,7 @@ const sections: PolicySection[] = [
     {
         heading: "12. Dispute Resolution and Complaint Handling Mechanism",
         paragraphs: [
-            "In line with our objective of creating a rewarding customer experience on our website and mobile application, UAC Restaurants has developed a dispute resolution and complaint handling process to ensure the effective management and timely resolution of all complaints relating to this Privacy Notice. In the event that you have any complaint regarding this Privacy Notice, please send us an email via the DPO’s email address. We will investigate and work towards ensuring the prompt resolution of all disputes and complaints relating to the use and disclosure of personal data in line with the provisions of the NDP Act/GAID.",
+            "In line with our objective of creating a rewarding customer experience on our website and mobile application, UAC Restaurants has developed a dispute resolution and complaint handling process to ensure the effective management and timely resolution of all complaints relating to this Privacy Notice. In the event that you have any complaint regarding this Privacy Notice, please send us an email via dpo@uacrestaurants.com. We will investigate and work towards ensuring the prompt resolution of all disputes and complaints relating to the use and disclosure of personal data in line with the provisions of the NDP Act/GAID.",
             "In the event that the outcome of the resolution of your complaint is unsatisfactory, you are at liberty to lodge a complaint to the Nigeria Data Protection Commission (NDPC).",
         ],
     },
