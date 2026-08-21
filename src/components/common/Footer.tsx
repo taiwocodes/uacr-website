@@ -5,6 +5,9 @@ import logo from "@/assets/logo/logoLight.png";
 import footerBg from '@/assets/images/footer-bg.jpg'
 import { BsArrowUpRight } from "react-icons/bs";
 
+const DATA_PRIVACY_POLICY_URL =
+  "https://eur05.safelinks.protection.outlook.com/?url=https%3A%2F%2Ftinyurl.com%2FData-Privacy-and-Protection&data=05%7C02%7Cmogunkalu%40uacnplc.com%7C8669716c5a434dfc8b0c08deff785764%7C38a75fe8a5004cc0bcc5cbfd5322cee0%7C0%7C0%7C639229089522668174%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=pIXe9c3%2BG%2FOl2Xz8dlkmC3t9Wdpd8scwlBfs94WhPt4%3D&reserved=0";
+
 export const Footer = () => {
   const navigate = useNavigate();
   const currentYear = dayjs().year();
@@ -36,15 +39,27 @@ export const Footer = () => {
 
             <Text color={'gray.90'} className="mt-5 text-sm ">{footerLinks[1].heading}</Text>
             <Grid templateColumns={{ lg: 'repeat(2,1fr)' }} className="mt-0" key={footerLinks[1].heading} gapY={0} gapX={3}>
-              {footerLinks[1].links.map((link) => (
-                <NavLink
-                  key={link.label}
-                  to={link.to}
-                  style={{ color: "#A6AEAE" }}
-                >
-                  {link.label} /
-                </NavLink>
-              ))}
+              {footerLinks[1].links.map((link) =>
+                link.external ? (
+                  <a
+                    key={link.label}
+                    href={link.to}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "#A6AEAE" }}
+                  >
+                    {link.label} /
+                  </a>
+                ) : (
+                  <NavLink
+                    key={link.label}
+                    to={link.to}
+                    style={{ color: "#A6AEAE" }}
+                  >
+                    {link.label} /
+                  </NavLink>
+                )
+              )}
             </Grid>
           </Box>
           <Box>
@@ -96,7 +111,7 @@ const footerLinks = [
   {
     heading: "Legal",
     links: [
-      { label: "Privacy Policy", to: "/privacy-policy" },
+      { label: "Privacy Policy", to: DATA_PRIVACY_POLICY_URL, external: true },
       { label: "Terms of Service", to: "/terms" },
     ],
   },
