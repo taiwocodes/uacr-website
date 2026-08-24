@@ -1,5 +1,5 @@
 import { Controller, useForm } from "react-hook-form";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PhoneInput, { CountryData } from 'react-phone-input-2';
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,9 +8,6 @@ import { Field } from "@/components/ui/field";
 import { Radio } from "../ui/radio";
 import { useState } from "react";
 import { BsCheck } from "react-icons/bs";
-
-const DATA_PRIVACY_POLICY_URL =
-    "https://eur05.safelinks.protection.outlook.com/?url=https%3A%2F%2Ftinyurl.com%2FData-Privacy-and-Protection&data=05%7C02%7Cmogunkalu%40uacnplc.com%7C8669716c5a434dfc8b0c08deff785764%7C38a75fe8a5004cc0bcc5cbfd5322cee0%7C0%7C0%7C639229089522668174%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=pIXe9c3%2BG%2FOl2Xz8dlkmC3t9Wdpd8scwlBfs94WhPt4%3D&reserved=0";
 
 const contactFormSchema = z
     .object({
@@ -213,14 +210,9 @@ export const ContactForm = () => {
                             </div></label>
                         <label style={{ color: "#6F7777" }}>
                             By Clicking here, I agree to UAC Restaurants Limited processing my personal data in line with our terms and conditions and{" "}
-                            <a
-                                href={DATA_PRIVACY_POLICY_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: "underline" }}
-                            >
+                            <Link to="/privacy-policy" style={{ textDecoration: "underline" }}>
                                 Data Privacy Policy
-                            </a>
+                            </Link>
                         </label>
                     </div>
 

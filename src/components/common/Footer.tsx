@@ -111,8 +111,8 @@ const footerLinks = [
   {
     heading: "Legal",
     links: [
-      { label: "Privacy Policy", to: DATA_PRIVACY_POLICY_URL, external: true },
-      { label: "Terms of Service", to: "/terms" },
+      { label: "Privacy Policy", to: "/privacy-policy" },
+      { label: "Data Privacy and Protection Policy", to: DATA_PRIVACY_POLICY_URL, external: true },
     ],
   },
 ];
